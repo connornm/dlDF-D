@@ -1,0 +1,21 @@
+#!/bin/bash 
+# Runs Guassian once for a geometry NAMEKEY.com input file.
+# must be run in it's current directory to function properly
+# Prints an output file and a NAMEKEY.log Gaussian output in appropriate directories
+# Usage:
+# 	./run NAMEKEY
+
+
+# First arguement is the system to be input into Gaussian:
+system=${1}
+
+# Template bash file and temporary file to be ran
+template="bin/runsrc"
+runfile="bin/temp/"${1}
+
+# Replace all instances of NAMEKEY with the name arguement
+cat $template | sed -e 's/NAMEKEY/'${system}'/g' > $runfile
+
+# Submit the job  
+sbatch $runfile
+rm -f $runfile

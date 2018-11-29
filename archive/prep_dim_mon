@@ -1,0 +1,21 @@
+#!/bin/bash
+# Prepare the dimer and monomer .com files
+#
+# WARNING - Very sensitive to the form of the .com file
+# pay close attention to the number of lines in header and footer
+# Usage:
+#	./prep_dim_mon	
+
+
+system=${1}
+comfile='data/com/'"${system}"'.com'
+cat "$comfile" > 'data/com/'"${system}"'_D.com'
+data=$(cat "${comfile}" | sed '1,9d' | tac | sed '1,3d' | tac )
+atoms=$(echo "${data}" | wc -l )
+num=$(("${atoms}"/2))
+for i in {1.."$num"}
+do
+	data
+done
+echo "$data"
+echo "$atoms"

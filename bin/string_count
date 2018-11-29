@@ -1,0 +1,7 @@
+#!/bin/bash 
+# Checks how many files containing keyword are in a directory
+# Usage:
+#	./string_count KEYWORD DIRECTORY
+keyword=${1}
+directory=${2}
+ls "$directory" | grep "$keyword" | wc -l

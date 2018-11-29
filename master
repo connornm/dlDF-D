@@ -1,0 +1,120 @@
+#!/usr/bin/env python
+import sys
+sys.path.append('praxis/')
+from praxis import praxis
+import lib, os
+from numpy import exp, log
+
+tolerance = 0.02
+max_step = 1
+
+os.system('date > output') 
+# List of systems
+global systems
+systems = []
+
+# Read all the input from the input file
+f = open('input', 'r')
+f.seek(0)
+fstr = f.read()
+fvect = fstr.split('\n')
+fvect.pop()
+f.close()
+for elem in fvect:
+	systems += [elem]
+
+# Data from SAPT
+global E_SAPT
+E_SAPT = {}
+SAPTdata = lib.read_bench_mult(systems)
+for system in systems:
+	E_SAPT[system]=SAPTdata[system]['E'] 
+#	lib.write('R for '+system+': '+str(SAPTdata[system]['R']))
+#	lib.write('SAPT energy for '+system+': '+str(E_SAPT[system])+' kcal/mol')
+
+# Prepare the dispersion energies
+global E_DISP
+lib.prep_dispersion(systems)
+E_DISP = lib.mult_disp(systems)
+
+# Keeps track of the number of loops
+global lnum
+lnum = 0
+
+
+# Main loop called by praxis with input parameters to be optimized
+def loop(param, dummy):
+
+	cutoff = 0.04
+	hart = 627.51 #Hartree to kcal/mol conversion factor
+	global systems
+	global E_SAPT
+	global E_DISP
+	global lnum
+
+	paramx=[param[0],1.0,param[1],0.0,0.0,0.0,1.0,param[2],param[3],param[4],param[5]]
+	paramcp= [1.0,param[6],param[7],0.0,0.0,param[8]]
+	paramcap=[1.0,param[9],param[10],0.0,0.0]
+
+	lib.save(paramx, 'data/temp/ParamM05X.dat')
+	lib.save(paramcp, 'data/temp/ParamM05CP.dat')
+	lib.save(paramcap, 'data/temp/ParamM05CAP.dat')
+
+	os.system('./clear')
+
+	lib.wait_mult(systems)
+	lib.mon_dim_run(systems)
+	lib.wait_mult(systems)	
+
+	E_DFT = lib.mon_dim_energy(systems)
+
+	error = 0
+	
+	lnum+=1
+	lib.write('\n')
+	os.system('echo $(date +"%H:%M") >> output') 
+	lib.write('Iteration Number: ' + str(lnum))
+	for system in systems:
+		lib.write(' ')
+		lib.write(system)
+		e_s = E_SAPT[system]
+		e_i = E_DISP[system]
+		e_d = E_DFT[system+'_D']*hart
+		e_a = E_DFT[system+'_A']*hart
+		e_b = E_DFT[system+'_B']*hart
+		if bool(e_s) and bool(e_i) and bool(e_d) and bool(e_a) and bool(e_b):
+			#lib.write('E_D: ' + str(e_d)+' kcal/mol') 
+			#lib.write('E_A: ' + str(e_a)+' kcal/mol')
+			#lib.write('E_B: ' + str(e_b)+' kcal/mol')
+			lib.write('E_D-E_A-E_B: ' + str(e_d-e_a-e_b)+' kcal/mol')
+			lib.write('E_DISP: ' + str(E_DISP[system])+' kcal/mol')
+			lib.write('E_SAPT: ' + str(E_SAPT[system])+' kcal/mol')
+			E = e_d - e_a - e_b + e_i
+			error += ((e_s-E)/e_s)**2
+		else:
+			lib.write(' Convergence failure ')
+			error += 100
+	lib.write('\n')
+	lib.write('Error: ' + str(error))
+	for i in range(len(param)):
+		lib.write('Param '+str(i)+': '+str(param[i]))	
+	lib.write(' ')
+	if error < cutoff:
+		lib.write('\n')
+		lib.write('------------------------------')
+		lib.write('Program Finished Successfully')
+		os.system('date >> output')
+		sys.exit(0) 
+
+	return error
+ 
+
+# Prepares the .com files for the monomer and dimers
+lib.prep_dim_mon(systems)
+# Initial parameters	
+param=[1.18328602E-03, 4.8827323, -0.163757125, -0.188002773, -0.449060892, -0.00823585719, 5.9515308, \
+        -11.1602877, 0.614413, -2.59608972, 2.22337926]
+
+output=praxis(tolerance, max_step, 11, 4, param, loop)
+print(output)
+

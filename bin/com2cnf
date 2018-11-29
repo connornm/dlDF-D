@@ -1,0 +1,92 @@
+#!/usr/bin/env python
+# Takes a .com system file and makes a .cnf file
+# Currently assumes the .com file has two idential monomer interactions.
+# Must be updated for multi-monomer interactions in the future
+# Also the elements must have number, not chemical symbol labels.
+#
+# WARNING: This code is janky and was threw together in a pinch to fit a very
+# specific file format in a not robust way. 
+#
+# Usage:
+#	./com2cnf SYSTEM	
+
+import re, os, sys, pdb
+
+bohr = 0.52917721092 # Angstroms
+
+# End line, usually 4 lines at bottom of Gaussian file
+end=-4
+# Key to signal data is to be collected below
+key = '0 1'
+
+
+# Atomic mass in A.U.
+# Number or symbol on periodic table of elements as input
+# Add more as needed
+mass = {
+	1 : 1.0079, 	#Hydrogen
+	'H' : 1.0079, 
+	6 : 12.0107, 	#Carbon 
+	'C' : 12.0107,
+	7 : 14.0067,	#Nitrogen 
+	'N' : 14.0067, 
+	8 : 15.9994, 	#Oxygen
+	'O' : 15.9994, 
+	14 : 28.0855,	#Silicon
+	'Si' : 28.0855,
+	16 : 32.066,	#Sulfur
+	'S' : 32.066
+}
+
+elem = {
+	1 : 'H',
+	2 : 'He',
+	6 : 'C',
+	7 : 'N',
+	8 : 'O',
+	16 : 'S'
+}
+
+def count(key, fvect):
+	for i in range(len(fvect)):
+		if fvect[i]==key:
+			return i+1
+
+def reorder(strline):
+	strvect = strline.split(' ')
+	num = []
+	for i in range(len(strvect)):
+		try:
+			num += [float(strvect[i])]
+		except:
+			pass
+	if(int(num[0]) == 0):
+		return ''
+	else:
+		order = [num[1]/bohr, num[2]/bohr, num[3]/bohr, int(num[0]), mass[int(num[0])]]
+		outline = ''
+		for i in range(len(order)):
+			outline += str(order[i]) + '	'
+		return outline + '\n'
+
+system=sys.argv[1]
+os.system('touch data/cnf/'+system+'.cnf')
+f = open('data/com/'+system+'.com', 'r')
+f.seek(0)
+fstr = f.read()
+f.close()
+fvect = fstr.split('\n')
+#Start is the number of lines until the data begins
+start = count(key, fvect)
+header = fvect[0:start]
+footer = fvect[end:-1]
+data = fvect[start:end]
+cnftxt =  str(int(len(data)/2)) + '\n'
+for i in range(int(len(data)/2)):
+	cnftxt += reorder(data[i])	
+cnftxt +=  str(int(len(data)/2)) + '\n'
+for i in range(int(len(data)/2)):
+	cnftxt += reorder(data[i+int(len(data)/2)]) 
+fcnf = open('data/cnf/'+system+'.cnf', 'w')
+fcnf.seek(0)
+fcnf.write(cnftxt)

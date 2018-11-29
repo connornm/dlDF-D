@@ -1,0 +1,6 @@
+#!/bin/bash 
+# Checks how many jobs are run for a specific keyword 
+# Usage:
+#	./number_of_runs KEYWORD
+keyword=${1}
+squeue | grep $keyword | wc -l
