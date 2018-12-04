@@ -2,55 +2,26 @@
 import sys
 sys.path.append('praxis/')
 from praxis import praxis
-import lib, os
+import 1lib, os
 from numpy import exp, log
 
 tolerance = 0.02
 max_step = 1
 
-os.system('date > output') 
-# List of systems
-global systems
-systems = []
-
-# Read all the input from the input file
-f = open('input', 'r')
-f.seek(0)
-fstr = f.read()
-fvect = fstr.split('\n')
-fvect.pop()
-f.close()
-for elem in fvect:
-	systems += [elem]
-
-# Data from SAPT
-global E_SAPT
-E_SAPT = {}
-SAPTdata = lib.read_bench_mult(systems)
-for system in systems:
-	E_SAPT[system]=SAPTdata[system]['E'] 
-#	lib.write('R for '+system+': '+str(SAPTdata[system]['R']))
-#	lib.write('SAPT energy for '+system+': '+str(E_SAPT[system])+' kcal/mol')
-
-# Prepare the dispersion energies
-global E_DISP
-lib.prep_dispersion(systems)
-E_DISP = lib.mult_disp(systems)
-
-# Keeps track of the number of loops
-global lnum
-lnum = 0
-
+# All data and filetype markers
+global data
+data = 2lib.data(loadin=True)
+data.energy('ener')
+data.run('cnf')
 
 # Main loop called by praxis with input parameters to be optimized
 def loop(param, dummy):
 
 	cutoff = 0.04
 	hart = 627.51 #Hartree to kcal/mol conversion factor
-	global systems
-	global E_SAPT
-	global E_DISP
-	global lnum
+	global data
+
+	data.
 
 	paramx=[param[0],1.0,param[1],0.0,0.0,0.0,1.0,param[2],param[3],param[4],param[5]]
 	paramcp= [1.0,param[6],param[7],0.0,0.0,param[8]]
@@ -61,12 +32,12 @@ def loop(param, dummy):
 	lib.save(paramcap, 'data/temp/ParamM05CAP.dat')
 
 	os.system('./clear')
+	
+	data.wait()
+	data.run('com')
+	data.wait()
 
-	lib.wait_mult(systems)
-	lib.mon_dim_run(systems)
-	lib.wait_mult(systems)	
-
-	E_DFT = lib.mon_dim_energy(systems)
+	data.energy('log')
 
 	error = 0
 	
