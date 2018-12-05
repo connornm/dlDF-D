@@ -1,23 +1,42 @@
 # dlDF-D
+Connor Dolan
+
+
+# Code organization
 Parameter fitting for dispersionless density functionals with dispersion added in.
 
-This program is for fitting parameters to functionals compared to a benchmark (currently SAPT)
+This program is for running jobs and organizing data with molecular dynamic software.
 The location of directories and programs are mostly self-contained, with
 use of relative paths to data, a python library, and modular executables. 
 
-With proper preparation of the input and output files, the main executable program 'master' is to be submitted to SLURM by the 
-submission script in the directory of it's location as follows: 
+Heavy emphasis on consistency and standardization allows for greater flexibility and
+ease of manipulating data and adapting tasks to new software. 
+A keyword repeatedly used all throughout this software is the variable:
 
-	$ sbatch submit_master
+	$ NAMEKEY
 
-The 'master' program reads searches for a file called 'input' which contains a line separated list
-of all the systems to be analyzed for a run. The scripts and programs here make repeated use of
-the names listed there by always referring to it a specific SYSTEM, and when referencing the 
-SYSTEM's files expects names such as 'SYSTEM.com' or 'SYSTEM.ener', ect ..
+The NAMEKEY variables are listed in the text file called "input", and refere to a specific systems, 
+such as H20_CH4, or MY_AMAZING_MOLECULE. This way instead of having to deal with many different 
+file names we can always refer to the NAMEKEY reference given in input with a file descripter after.
 
-To run, you must have '.ener' files and '.com' files for each SYSTEM included in the input list,
-as well as any parameters for functionals read by Gaussian. 
+The other variable repeatedly used is:
 
+	$ TYPEKEY
+
+TYPEKEY is the variable normally referred to as a file descriptor ('com' for Gaussian), 
+but can also include more specific information. 
+For example, if for every NAMEKEY system you want to move one atom by
+some amount, instead of making all new NAMEKEYs and running into consistency issues with
+other parts of the program, it is recommended that you make a new TYPEKEY (i.e.: 'moved_atom_com')
+and can now easily refer to all the altered molecules with this new type.
+
+Currently this program is set to run with SLURM, and the submit_master and master files
+are not meant to be fundamental and only used as scripts to accomplish your particular task.
+
+The library lib.py is meant to automate all the low level file-conversion and job-running
+so that high level tasks may be accomplished more flexibly and easily. 
+
+# bin
 
 
 

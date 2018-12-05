@@ -1,0 +1,22 @@
+#!/bin/bash 
+# Runs Guassian once for a geometry NAMEKEY.TYPEKEY input file.
+# must be run in it's current directory to function properly
+# Prints an output file and a NAMEKEY.TYPEKEY Gaussian output in appropriate directories
+# Usage:
+# 	bin/run TYPEKEY NAMEKEY
+
+
+# First arguement is the system to be input into Gaussian:
+datatype=${1}
+system=${2}
+
+# Template bash file and temporary file to be ran
+template="run/${datatype}"
+runfile="run/temp/"${system}
+
+# Replace all instances of NAMEKEY with the name arguement
+cat $template | sed -e 's/NAMEKEY/'${system}'/g' > $runfile
+
+# Submit the job  
+sbatch $runfile
+rm -f $runfile
