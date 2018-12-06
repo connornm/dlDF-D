@@ -5,24 +5,28 @@ from praxis import praxis
 import lib, os
 from numpy import exp, log
 
-tolerance = 0.02
+tolerance = 0.03
 max_step = 1
 
 # All data and filetype markers
 global data
+lib.new_list('CH4', 20)
 data = lib.data()
 data.read_input()
+data.convert('xyz', 'com')
+data.convert('com', 'cnf')
+data.convert('com', 'monomerA_com')
+data.convert('com', 'monomerB_com')
+data.energy('cnf')
+data.mult('cnf', -1)
 data.energy('ener')
-data.run('cnf')
-
+os.system('echo $(date) > output')
 # Main loop called by praxis with input parameters to be optimized
 def loop(param, dummy):
 
 	cutoff = 0.04
 	hart = 627.51 #Hartree to kcal/mol conversion factor
 	global data
-
-	data.
 
 	paramx=[param[0],1.0,param[1],0.0,0.0,0.0,1.0,param[2],param[3],param[4],param[5]]
 	paramcp= [1.0,param[6],param[7],0.0,0.0,param[8]]
@@ -33,14 +37,20 @@ def loop(param, dummy):
 	lib.save_array(paramcap, 'data/dat/param/ParamM05CAP.dat')
 	
 	data.wait()
+	data.run('monomerA_com')
+	data.run('monomerB_com')
 	data.run('com')
 	data.wait()
 	data.energy('log')
+	data.energy('monomerA_log')
+	data.energy('monomerB_log')
 	data.mult('log', -1*hart)	
-	data.mult('monomer_log', hart)
-	
-	data.update_error('ener', 'log', 'ener', 'monomer_com', 'cnf')	
+	data.mult('monomerA_log', 2*hart)
+	data.mult('monomerB_log', 2*hart)
+	data.update_error('ener', 'log', 'ener', 'monomerA_log', 'cnf')	
+	data.update_error('ener', 'log', 'ener', 'monomerB_log', 'cnf')	
 	data.write_output()
+	data.iteration += 1
 
 	w = lambda s : os.system("echo '"+s+"' >> output")	
 	for i in range(len(param)):
@@ -49,8 +59,6 @@ def loop(param, dummy):
 	return data.error
  
 
-# Prepares the .com files for the monomer and dimers
-lib.prep_dim_mon(systems)
 # Initial parameters	
 param=[1.18328602E-03, 4.8827323, -0.163757125, -0.188002773, -0.449060892, -0.00823585719, 5.9515308, \
         -11.1602877, 0.614413, -2.59608972, 2.22337926]

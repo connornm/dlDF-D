@@ -1,0 +1,25 @@
+slurmstepd: error: *** JOB 903476 ON chimera-node20 CANCELLED AT 2018-12-06T13:18:52 ***
+Error: software termination
+   rax bf57f1c0b68c8aea, rbx 0000000000000110, rcx ffffffffffffffe5
+   rdx 0000000000000002, rsp 00007ffeda3e9988, rbp 00007ffeda3e9e80
+   rsi 00002b304a2cb960, rdi 00002b304a2da4c8, r8  bf33db360d8fb90c
+   r9  bf6c6776d6a76311, r10 0000000000000001, r11 be36bdd4481e336e
+   r12 00002b304a2ac4f8, r13 00002b304a2d9d48, r14 00002b304a2cb1e0
+   r15 00000000000000d8
+Error: software termination
+   rax fffffffffffffffc, rbx 00007ffd06f61720, rcx ffffffffffffffff
+   rdx 0000000000000000, rsp 00007ffd06f616e8, rbp 0000000000000001
+   rsi 00007ffd06f61720, rdi 0000000000001a8e, r8  00002b5c5ab19700
+   r9  0000000000000000, r10 0000000000000000, r11 0000000000000246
+   r12 00007ffd06f61740, r13 0000000000000076, r14 0000000000000000
+   r15 00007ffd06f68100
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/libpthread.so.0(+0xf370) [0x2b304917c370]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0x144c474]
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/libpthread.so.0(+0xf370) [0x2b5c5a24e370]
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/libc.so.6(waitpid+0x1c) [0x2b5c5a81b27c]
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/libc.so.6(+0x41c72) [0x2b5c5a79ec72]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09() [0x40564a]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09() [0x404a4a]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09() [0x40370b]
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/libc.so.6(__libc_start_main+0xf5) [0x2b5c5a77eb35]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09() [0x403609]

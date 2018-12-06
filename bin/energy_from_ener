@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+# Usage:
+#	bin/energy_from_ener NAMEKEY
+import sys
+array = []
+f = open('data/ener/'+sys.argv[1]+'.ener', 'r')
+f.seek(0)
+fstr = f.read()
+f.close()
+fvect = fstr.split(' ')
+for i in range(len(fvect)):
+	try:
+		array += [float(fvect[i])]
+	except:
+		pass
+#The place in .ener files where the energy is
+print(array[-10])

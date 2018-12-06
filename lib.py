@@ -17,7 +17,7 @@ class data:
 		for NAMEKEY in NAMEKEYS:
 			self.E[NAMEKEY] = {}
 				
-	# run - run all NAMEKEYS of specified input file
+	# run - run all NAMEKEYS of specified TYPEKEY input file
 	def run(self, TYPEKEY): 
 		for NAMEKEY in self.NAMEKEYS:
 			os.system('bin/run '+TYPEKEY+' '+NAMEKEY)
@@ -53,10 +53,11 @@ class data:
 	def update_error(self, DENOM, *TYPEKEYS):
 		self.error=0
 		for NAMEKEY in self.NAMEKEYS:
-			self.error += sum([E[NAMEKEY][TYPEKEY] for TYPEKEY in TYPEKEYS])/E[NAMEKEY][DENOM]
+			self.error += (sum([self.E[NAMEKEY][TYPEKEY] for TYPEKEY in TYPEKEYS])/self.E[NAMEKEY][DENOM])**2
 
 	# read_input - reads NAMEKEYS from input file
 	def read_input(self):
+		self.NAMEKEYS = []
 		f = open('input', 'r')
 		f.seek(0)
 		fstr = f.read()
@@ -69,19 +70,23 @@ class data:
 	
 	# write_output - a preset message to the output file, giving dates and energies, also calculates error
 	def write_output(self):
-		w = lambda s : os.system("echo '"+s+"' >> output")
-		w('\n')
+		def wr(s):
+			os.system("echo '"+s+"' >> output")
+		wr('\n')
 		os.system('echo $(date + "%H:%M) >> output')
-		w('Iteration: '+str(self.iteration))
+		wr('Iteration: '+str(self.iteration))
 		for NAMEKEY in self.NAMEKEYS:
 			for TYPEKEY in self.E[NAMEKEY]:
 				try:
-					w(TYPEKEY+' energy for '+NAMEKEY+' : '+E[NAMEKEY][TYPEKEY])
+					wr(TYPEKEY+' energy for '+NAMEKEY+' : '+str(self.E[NAMEKEY][TYPEKEY]))
 				except: 
 					print('Failed to load '+NAMEKEY+'.'+TYPEKEY+' energy')
-		w('-------------------------')
-		w('Total error : '+self.error)
-		w('-------------------------')	
+			wr('\n')
+		wr('Total error : '+str(self.error))
+
+# new_list - make a new list of inputs
+def new_list(SYSTEM, NUMBER):
+	os.system('bin/new_list '+SYSTEM+' '+str(NUMBER))
 
 # save_array - save an array to a filename, space seperated
 def save_array(array, filename):
@@ -95,7 +100,7 @@ def save_array(array, filename):
         f.close()
 
 # load_array - load an array from a filename, space seperated
-def load(filename):
+def load_array(filename):
         array = []
         f = open(filename, 'r')
         f.seek(0)
@@ -108,3 +113,6 @@ def load(filename):
                 except:
                         pass
         return array	
+
+
+

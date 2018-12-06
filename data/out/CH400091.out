@@ -1,0 +1,38 @@
+slurmstepd: error: *** JOB 902715 ON chimera-node43 CANCELLED AT 2018-12-05T22:31:44 ***
+Error: software termination
+   rax 00002b73c8c1a100, rbx 00002b73c8f838a8, rcx 0000000000002b65
+   rdx 00002b73c8c8b460, rsp 00007ffefd0dada0, rbp 00007ffefd0db140
+   rsi 00000000000041d0, rdi 0000000000007583, r8  000000000000aedf
+   r9  00002b73c9065070, r10 00002b73c8de4d98, r11 00002b73c8f3e6d0
+   r12 00002b73c8fc8a80, r13 00002b73c900dc58, r14 000000000002de8b
+   r15 000000000000086f
+Error: software termination
+   rax fffffffffffffffc, rbx 00007fff8502f8b0, rcx ffffffffffffffff
+   rdx 0000000000000000, rsp 00007fff8502f878, rbp 0000000000000001
+   rsi 00007fff8502f8b0, rdi 000000000000bb88, r8  00002b60d2912700
+   r9  0000000000000000, r10 0000000000000000, r11 0000000000000246
+   r12 00007fff8502f8d0, r13 0000000000000077, r14 0000000000000000
+   r15 00007fff85036290
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/libpthread.so.0(+0xf370) [0x2b73c7995370]
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/libpthread.so.0(+0xf370) [0x2b60d2047370]
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/libc.so.6(waitpid+0x1c) [0x2b60d261427c]
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/libc.so.6(+0x41c72) [0x2b60d2597c72]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09() [0x40564a]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09() [0x404a4a]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09() [0x40370b]
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/libc.so.6(__libc_start_main+0xf5) [0x2b60d2577b35]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09() [0x403609]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0xb7e4dc]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0xb4dcd8]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0x860376]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0x5cf775]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0x4c5783]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0x4d4929]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0x4bd4d6]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0x52788f]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0x41b05a]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0x40f2e4]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0x403830]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0x40376b]
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/libc.so.6(__libc_start_main+0xf5) [0x2b73c7ec5b35]
+  /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe() [0x403669]
