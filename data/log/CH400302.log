@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-3044.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=      3045.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-35541.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     35542.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400302
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916055      4.5853465      4.5853465
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -284,29 +289,24 @@
     X=              0.0001    Y=              0.0010    Z=             -0.0016  Tot=              0.0019
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE41\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.6149601,0.,0.920766\H,0,0.52229195,-0.56999434,-0.79
- 265599\H,0,-0.97912087,-0.4724022,0.2101058\H,0,-0.15813118,1.04239654
- ,-0.33821581\Bq,0,-0.40692812,0.,-0.60928437\Bq,0,-0.34560824,0.377173
- 62,0.5245121\Bq,0,0.64789864,0.31259547,-0.13903009\Bq,0,0.10463772,-0
- .68976908,0.22380236\C,0,0.,0.,3.59555315\H,0,-0.50808327,-0.33758585,
- 2.67150059\H,0,0.87385041,0.62547792,3.32881585\H,0,-0.70537376,0.5936
- 2437,4.20877736\H,0,0.33960661,-0.88151643,4.1731188\Bq,0,0.33620615,0
- .22338551,4.20701228\Bq,0,-0.57823964,-0.41388791,3.77205713\Bq,0,0.46
- 675616,-0.39280995,3.18977369\Bq,0,-0.22472268,0.58331235,3.21336948\\
- Version=AS64L-G09RevD.01\HF=-81.8202858\RMSD=6.075e-09\Dipole=0.000055
- 5,0.0004042,-0.0006229\Quadrupole=0.0753472,0.0782431,-0.1535903,0.000
- 7291,-0.0125899,-0.0070143\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE40\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.6149601,0.,0.920766\H,0,0.52229195,-0.56999434,-0.79265599\H,0,-0.
+ 97912087,-0.4724022,0.2101058\H,0,-0.15813118,1.04239654,-0.33821581\B
+ q,0,-0.40692812,0.,-0.60928437\Bq,0,-0.34560824,0.37717362,0.5245121\B
+ q,0,0.64789864,0.31259547,-0.13903009\Bq,0,0.10463772,-0.68976908,0.22
+ 380236\C,0,0.,0.,3.59555315\H,0,-0.50808327,-0.33758585,2.67150059\H,0
+ ,0.87385041,0.62547792,3.32881585\H,0,-0.70537376,0.59362437,4.2087773
+ 6\H,0,0.33960661,-0.88151643,4.1731188\Bq,0,0.33620615,0.22338551,4.20
+ 701228\Bq,0,-0.57823964,-0.41388791,3.77205713\Bq,0,0.46675616,-0.3928
+ 0995,3.18977369\Bq,0,-0.22472268,0.58331235,3.21336948\\Version=AS64L-
+ G09RevD.01\HF=-81.8202858\RMSD=6.075e-09\Dipole=0.0000555,0.0004042,-0
+ .0006229\Quadrupole=0.0753472,0.0782431,-0.1535903,0.0007291,-0.012589
+ 9,-0.0070143\PG=C01 [X(C2H8)]\\@
 
 
- THERE IS AN OLD, OLD RECIPE IN MAINE FOR STEWING COOT. PLACE THE
- BIRD IN A KETTLE OF WATER WITH A RED BUILDING BRICK FREE OF MORTAR AND
- BLEMISHES. PARBOIL THE COOT AND BRICK TOGETHER FOR THREE HOURS.
- POUR OFF THE WATER, REFILL THE KETTLE, AND AGAIN PARBOIL FOR THREE HOURS.
- ONCE AGAIN POUR OFF THE WATER, FOR THE LAST TIME ADD FRESH WATER,
- AND LET THE COOT AND BRICK SIMMER TOGETHER OVERNIGHT. IN THE MORNING,
- THROW AWAY THE COOT AND EAT THE BRICK.
- Job cpu time:       0 days  0 hours 13 minutes 44.0 seconds.
+ Time has a wonderful way of weeding out the trivial.
+                                -- Richard Ben Sapir
+ Job cpu time:       0 days  0 hours 13 minutes 54.1 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:15:57 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 13:48:31 2018.

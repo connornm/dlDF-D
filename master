@@ -2,13 +2,31 @@
 import sys
 sys.path.append('praxis/')
 from praxis import praxis
-import lib, os
+import lib, os, pdb
 from numpy import exp, log
-
 tolerance = 0.03
 max_step = 1
 
+global hart
+hart = 627.51 #Hartree to kcal/mol conversion factor
+
+
+
+def w(s):
+	os.system("echo '"+s+"' >> output")	
+
+def get_error(dat):
+	error = 0
+	for NAMEKEY in dat.NAMEKEYS:
+		dE = hart*(dat.E[NAMEKEY]['log']-dat.E[NAMEKEY]['monomerA_log']-dat.E[NAMEKEY]['monomerB_log'])-dat.E[NAMEKEY]['cnf']
+		w(' ')
+		w('E_dim-E_A-E_B+E_disp='+str(dE))
+		w('E_SAPT='+str(dat.E[NAMEKEY]['ener']))		
+		error += ((dat.E[NAMEKEY]['ener']-dE)/(dat.E[NAMEKEY]['ener']))**2
+	return error
+
 # All data and filetype markers
+new_stuff = False
 global data
 lib.new_list('CH4', 20)
 data = lib.data()
@@ -17,16 +35,15 @@ data.convert('xyz', 'com')
 data.convert('com', 'cnf')
 data.convert('com', 'monomerA_com')
 data.convert('com', 'monomerB_com')
-data.energy('cnf')
-data.mult('cnf', -1)
-data.energy('ener')
+data.get_energy('cnf')
+data.get_energy('ener')
 os.system('echo $(date) > output')
 # Main loop called by praxis with input parameters to be optimized
 def loop(param, dummy):
 
 	cutoff = 0.04
-	hart = 627.51 #Hartree to kcal/mol conversion factor
 	global data
+	global hart
 
 	paramx=[param[0],1.0,param[1],0.0,0.0,0.0,1.0,param[2],param[3],param[4],param[5]]
 	paramcp= [1.0,param[6],param[7],0.0,0.0,param[8]]
@@ -41,23 +58,18 @@ def loop(param, dummy):
 	data.run('monomerB_com')
 	data.run('com')
 	data.wait()
-	data.energy('log')
-	data.energy('monomerA_log')
-	data.energy('monomerB_log')
-	data.mult('log', -1*hart)	
-	data.mult('monomerA_log', 2*hart)
-	data.mult('monomerB_log', 2*hart)
-	data.update_error('ener', 'log', 'ener', 'monomerA_log', 'cnf')	
-	data.update_error('ener', 'log', 'ener', 'monomerB_log', 'cnf')	
-	data.write_output()
+	data.get_energy('log')
+	data.get_energy('monomerA_log')
+	data.get_energy('monomerB_log')
 	data.iteration += 1
+	error = get_error(data)
 
-	w = lambda s : os.system("echo '"+s+"' >> output")	
+	w(' ')
+	w('Error: '+str(error))
+	w(' ')
 	for i in range(len(param)):
 		w('Parameter '+str(i)+' : '+str(param[i]))
-
-	return data.error
- 
+	return error 
 
 # Initial parameters	
 param=[1.18328602E-03, 4.8827323, -0.163757125, -0.188002773, -0.449060892, -0.00823585719, 5.9515308, \

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Converts an xyz file to a .com file
 # Usage:
-#	./xyz2com SYSTEM
+#	./xyz2com NAMEKEY
 
 system=${1}
 xyz=data/xyz/"${system}".xyz
@@ -9,8 +9,8 @@ file=data/com/"${system}".com
 echo '%Chk='"${system}" > "${file}"
 echo '%Mem=2GB' >> "${file}"
 echo '%NProcShared=16' >> "${file}"
-#echo '#T M05/Gen test Massage SCF=(tight,maxcyc=40)' >> "${file}"
-echo '#T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)' >> "${file}"
+echo '#T M05/Gen test Massage SCF=(tight,maxcyc=40)' >> "${file}"
+#echo '#T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)' >> "${file}"
 echo '' >> "${file}"
 echo 'M05 opt' >> "${file}"
 echo '' >> "${file}"

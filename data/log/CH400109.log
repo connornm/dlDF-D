@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-32055.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     32056.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-40277.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     40278.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 7-Dec-2018 
  ******************************************
  %Chk=CH400109
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916056      4.5155638      4.5155638
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -284,24 +289,25 @@
     X=             -0.0065    Y=              0.0013    Z=             -0.0313  Tot=              0.0320
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE11\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.94404913,0.,0.57858206\H,0,0.22282005,0.17801042,-1.
- 06988292\H,0,-0.50287852,-0.97982404,0.11421032\H,0,-0.66399066,0.8018
- 1362,0.37709054\Bq,0,-0.62469116,0.,-0.38285623\Bq,0,-0.1474433,-0.117
- 79211,0.70795722\Bq,0,0.33276209,0.64836394,-0.07557465\Bq,0,0.4393723
- 6,-0.53057183,-0.24952634\C,0,0.,0.,3.62498195\H,0,-1.052842,0.0158457
- 8,3.28255153\H,0,0.11523031,-0.75218121,4.42930238\H,0,0.66029448,-0.2
- 6330886,2.77606169\H,0,0.27731721,0.9996443,4.01201218\Bq,0,0.696681,-
- 0.01048538,3.85157317\Bq,0,-0.07624959,0.49772934,3.09275132\Bq,0,-0.4
- 3692655,0.17423534,4.18672493\Bq,0,-0.18350486,-0.6614793,3.36887836\\
- Version=AS64L-G09RevD.01\HF=-81.8222283\RMSD=1.232e-09\Dipole=-0.00254
- 11,0.0005136,-0.0123196\Quadrupole=0.0818668,0.0831507,-0.1650174,0.00
- 02914,-0.0002813,0.0017407\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE14\SP\RM05\Gen\C2H8\CONNORNM\07-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.94404913,0.,0.57858206\H,0,0.22282005,0.17801042,-1.06988292\H,0,-
+ 0.50287852,-0.97982404,0.11421032\H,0,-0.66399066,0.80181362,0.3770905
+ 4\Bq,0,-0.62469116,0.,-0.38285623\Bq,0,-0.1474433,-0.11779211,0.707957
+ 22\Bq,0,0.33276209,0.64836394,-0.07557465\Bq,0,0.43937236,-0.53057183,
+ -0.24952634\C,0,0.,0.,3.62498195\H,0,-1.052842,0.01584578,3.28255153\H
+ ,0,0.11523031,-0.75218121,4.42930238\H,0,0.66029448,-0.26330886,2.7760
+ 6169\H,0,0.27731721,0.9996443,4.01201218\Bq,0,0.696681,-0.01048538,3.8
+ 5157317\Bq,0,-0.07624959,0.49772934,3.09275132\Bq,0,-0.43692655,0.1742
+ 3534,4.18672493\Bq,0,-0.18350486,-0.6614793,3.36887836\\Version=AS64L-
+ G09RevD.01\HF=-81.8222283\RMSD=1.232e-09\Dipole=-0.0025411,0.0005136,-
+ 0.0123196\Quadrupole=0.0818668,0.0831507,-0.1650174,0.0002914,-0.00028
+ 13,0.0017407\PG=C01 [X(C2H8)]\\@
 
 
- My opinions may have changed, but not the fact that I am right.
-                       -- Ashleigh Brilliant
- Job cpu time:       0 days  0 hours 16 minutes 25.9 seconds.
+ THOSE WITH THE GOLD MAKE THE RULES.
+
+             -- PETER'S GOLDEN RULE
+ Job cpu time:       0 days  0 hours 15 minutes 14.9 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:16:09 2018.
+ Normal termination of Gaussian 09 at Fri Dec  7 21:16:59 2018.

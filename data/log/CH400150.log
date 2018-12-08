@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-26791.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     26792.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-11437.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     11438.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 6-Dec-2018 
+                 7-Dec-2018 
  ******************************************
  %Chk=CH400150
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,12 +156,17 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916056      7.5813802      7.5813802
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
  Warning:  center   8 has no basis functions!
  Warning:  center   9 has no basis functions!
- Warning:  center  15 has no basis functions!
+ Warning:  center  15 has no bsis functions!
  Warning:  center  16 has no basis functions!
  Warning:  center  17 has no basis functions!
  Warning:  center  18 has no basis functions!
@@ -170,7 +175,7 @@
        nuclear repulsion energy        45.6626510831 Hartrees.
  IMHF & INEx in M05                  614413                  385587
  NAtoms=   18 NActive=   18 NUniq=   18 SFac= 1.00D+00 NAtFMM=   60 NAOKFM=F Big=F
- ExpMin= 2.53D-02 ExpMax= 8.24D+03 ExpMxC= 2.81D+02 IAcc=3 IRadAn=         5 AccDes= 0.00D+00
+  ExpMin= 2.53D-02 ExpMax= 8.24D+03 ExpMxC= 2.81D+02 IAcc=3 IRadAn=         5 AccDes= 0.00D+00
  Harris functional with IExCor= 1009 and IRadAn=       5 diagonalized for initial guess.
  HarFok:  IExCor= 1009 AccDes= 0.00D+00 IRadAn=         5 IDoV= 1 UseB2=F ITyADJ=14
  ICtDFT=  3500011 ScaDFX=  1.000000  1.000000  1.000000  1.000000
@@ -179,29 +184,3 @@
          wScrn=  0.000000 ICntrl=     500 IOpCl=  0 I1Cent=   200000004 NGrid=           0
          NMat0=    1 NMatS0=      1 NMatT0=    0 NMatD0=    1 NMtDS0=    0 NMtDT0=    0
  Symmetry not used in FoFCou.
- EnCoef did    56 forward-backward iterations
- EnCoef did   100 forward-backward iterations
- EnCoef did   100 forward-backward iterations
- EnCoef did    35 forward-backward iterations
- EnCoef did    33 forward-backward iterations
- EnCoef did    61 forward-backward iterations
- EnCoef did     4 forward-backward iterations
- EnCoef did    36 forward-backward iterations
- Rare condition: small coef for last iteration:  0.333D-15
- EnCoef did   100 forward-backward iterations
- EnCoef did    23 forward-backward iterations
- EnCoef did    33 forward-backward iterations
- EnCoef did     2 forward-backward iterations
- EnCoef did     2 forward-backward iterations
- EnCoef did   100 forward-backward iterations
- EnCoef did   100 forward-backward iterations
- Restarting incremental Fock formation.
- EnCoef did    29 forward-backward iterations
- EnCoef did   100 forward-backward iterations
- EnCoef did   100 forward-backward iterations
- EnCoef did     2 forward-backward iterations
- EnCoef did     6 forward-backward iterations
- EnCoef did     7 forward-backward iterations
- Rare condition: small coef for last iteration:  0.333D-15
- EnCoef did   100 forward-backward iterations
- EnCoef did   100 forward-backward iterations

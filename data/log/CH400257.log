@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-44573.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     44574.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-13983.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     13990.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400257
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916054      5.5320767      5.5320767
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -265,7 +270,7 @@
     16  Bq   0.000000
     17  Bq   0.000000
     18  Bq   0.000000
- Sum of Mulliken charges =  -0.00000
+ Sum of Mulliken charges =   0.00000
  Mulliken charges with hydrogens summed into heavy atoms:
                1
      1  C   -1.920703
@@ -284,28 +289,24 @@
     X=             -0.0001    Y=             -0.0020    Z=             -0.0337  Tot=              0.0338
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE54\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.6442264,0.,-0.90053223\H,0,-0.99534192,0.41059314,-0
- .25825123\H,0,-0.11364261,-1.03649085,0.3725024\H,0,0.46475812,0.62589
- 771,0.78628106\Bq,0,-0.42629406,0.,0.59589539\Bq,0,0.65863235,-0.27169
- 55,0.17088863\Bq,0,0.07519898,0.6858612,-0.2464903\Bq,0,-0.30753727,-0
- .41416569,-0.52029371\C,0,0.,0.,3.25190421\H,0,0.16063186,1.09536343,3
- .23286945\H,0,-0.5995896,-0.30046541,2.37088276\H,0,0.97875343,-0.5170
- 6508,3.22599312\H,0,-0.53979568,-0.27783294,4.17787151\Bq,0,-0.1062924
- 6,-0.72481805,3.26449979\Bq,0,0.39675724,0.19882237,3.83488903\Bq,0,-0
- .6476555,0.34214955,3.26904996\Bq,0,0.35719072,0.18384613,2.63917807\\
- Version=AS64L-G09RevD.01\HF=-81.8163336\RMSD=1.415e-09\Dipole=-0.00002
- 38,-0.0007885,-0.0132687\Quadrupole=0.1414229,0.1564664,-0.2978893,-0.
- 0035616,0.0167412,-0.0065682\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE08\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.6442264,0.,-0.90053223\H,0,-0.99534192,0.41059314,-0.25825123\H,0,
+ -0.11364261,-1.03649085,0.3725024\H,0,0.46475812,0.62589771,0.78628106
+ \Bq,0,-0.42629406,0.,0.59589539\Bq,0,0.65863235,-0.2716955,0.17088863\
+ Bq,0,0.07519898,0.6858612,-0.2464903\Bq,0,-0.30753727,-0.41416569,-0.5
+ 2029371\C,0,0.,0.,3.25190421\H,0,0.16063186,1.09536343,3.23286945\H,0,
+ -0.5995896,-0.30046541,2.37088276\H,0,0.97875343,-0.51706508,3.2259931
+ 2\H,0,-0.53979568,-0.27783294,4.17787151\Bq,0,-0.10629246,-0.72481805,
+ 3.26449979\Bq,0,0.39675724,0.19882237,3.83488903\Bq,0,-0.6476555,0.342
+ 14955,3.26904996\Bq,0,0.35719072,0.18384613,2.63917807\\Version=AS64L-
+ G09RevD.01\HF=-81.8163336\RMSD=1.415e-09\Dipole=-0.0000238,-0.0007885,
+ -0.0132687\Quadrupole=0.1414229,0.1564664,-0.2978893,-0.0035616,0.0167
+ 412,-0.0065682\PG=C01 [X(C2H8)]\\@
 
 
- THE WORLD IS MADE UP OF THE WILLS, THE WON'TS, AND THE CANT'S:
- THE WILLS DO EVERYTHING,
- THE WON'TS DO NOTHING,
- THE CAN'TS CAN'T DO ANYTHING.
-
-                               -- FROM WALT DISNEY'S "BLACK HOLE"
- Job cpu time:       0 days  0 hours 15 minutes 54.1 seconds.
+ NATURE REVEALS EVERY SECRET ONCE.
+                    - RALPH WALDO EMERSON
+ Job cpu time:       0 days  0 hours 16 minutes 15.4 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:44:14 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 10:23:34 2018.

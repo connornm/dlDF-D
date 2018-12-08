@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-8328.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=      8329.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-15952.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     15953.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 7-Dec-2018 
  ******************************************
  %Chk=CH400220
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916055      7.7955956      7.7955956
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -284,23 +289,26 @@
     X=              0.0016    Y=             -0.0031    Z=             -0.0115  Tot=              0.0121
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE08\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,1.06486086,0.,0.30340946\H,0,-0.48155146,-0.93612142,0
- .34317755\H,0,-0.51380617,0.86816255,0.45638028\H,0,-0.06950324,0.0679
- 5887,-1.10296729\Bq,0,-0.70463405,0.,-0.20077049\Bq,0,0.31864966,0.619
- 44528,-0.22708562\Bq,0,0.33999308,-0.57447589,-0.30199353\Bq,0,0.04599
- 131,-0.04496938,0.72984964\C,0,0.,0.,2.6954898\H,0,0.59062195,-0.76236
- 902,2.15148139\H,0,0.39167093,1.00827671,2.45893555\H,0,-1.06121569,-0
- .06557706,2.38644794\H,0,0.07892281,-0.18033064,3.78509432\Bq,0,-0.390
- 82321,0.50447076,3.05546814\Bq,0,-0.2591744,-0.66719149,2.85202121\Bq,
- 0,0.70222199,0.0433933,2.89998733\Bq,0,-0.05222438,0.11932743,1.974482
- 51\\Version=AS64L-G09RevD.01\HF=-81.7997915\RMSD=2.578e-09\Dipole=0.00
- 06455,-0.0012079,-0.004541\Quadrupole=0.3087403,0.3120247,-0.6207651,-
- 0.0070937,-0.0088103,0.0154047\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE40\SP\RM05\Gen\C2H8\CONNORNM\07-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,1.06486086,0.,0.30340946\H,0,-0.48155146,-0.93612142,0.34317755\H,0,
+ -0.51380617,0.86816255,0.45638028\H,0,-0.06950324,0.06795887,-1.102967
+ 29\Bq,0,-0.70463405,0.,-0.20077049\Bq,0,0.31864966,0.61944528,-0.22708
+ 562\Bq,0,0.33999308,-0.57447589,-0.30199353\Bq,0,0.04599131,-0.0449693
+ 8,0.72984964\C,0,0.,0.,2.6954898\H,0,0.59062195,-0.76236902,2.15148139
+ \H,0,0.39167093,1.00827671,2.45893555\H,0,-1.06121569,-0.06557706,2.38
+ 644794\H,0,0.07892281,-0.18033064,3.78509432\Bq,0,-0.39082321,0.504470
+ 76,3.05546814\Bq,0,-0.2591744,-0.66719149,2.85202121\Bq,0,0.70222199,0
+ .0433933,2.89998733\Bq,0,-0.05222438,0.11932743,1.97448251\\Version=AS
+ 64L-G09RevD.01\HF=-81.7997915\RMSD=2.578e-09\Dipole=0.0006455,-0.00120
+ 79,-0.004541\Quadrupole=0.3087403,0.3120247,-0.6207651,-0.0070937,-0.0
+ 088103,0.0154047\PG=C01 [X(C2H8)]\\@
 
 
- WHEN IT COMES TO CASH FLOW, IT SEEMS LIKE THE TIDE IS ALWAYS GOING OUT.
- Job cpu time:       0 days  0 hours 16 minutes 57.4 seconds.
+ FIREWORKS ENDED
+ AND SPECTATORS GONE AWAY....
+ AH, HOW VAST AND DARK
+                     SHIKI
+ Job cpu time:       0 days  0 hours 17 minutes  1.9 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:44:12 2018.
+ Normal termination of Gaussian 09 at Fri Dec  7 14:03:49 2018.

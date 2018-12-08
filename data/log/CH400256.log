@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-10742.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     10743.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-39709.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     39710.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400256
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916057      2.5859166      2.5859166
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -265,7 +270,7 @@
     16  Bq   0.000000
     17  Bq   0.000000
     18  Bq   0.000000
- Sum of Mulliken charges =   0.00000
+ Sum of Mulliken charges =  -0.00000
  Mulliken charges with hydrogens summed into heavy atoms:
                1
      1  C   -1.807981
@@ -284,27 +289,27 @@
     X=             -0.0060    Y=             -0.0005    Z=             -0.0001  Tot=              0.0061
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE51\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.81746264,0.,0.74682045\H,0,-0.05262665,0.99172091,-0
- .48959783\H,0,0.1968687,-0.77815675,-0.76269308\H,0,-0.96170469,-0.213
- 56415,0.50547046\Bq,0,-0.54092702,0.,-0.49418204\Bq,0,0.03482382,-0.65
- 623627,0.32397406\Bq,0,-0.1302709,0.51491774,0.5046852\Bq,0,0.6363741,
- 0.14131853,-0.33447722\C,0,0.,0.,4.85382173\H,0,0.75552769,0.15853776,
- 4.06007767\H,0,0.46985807,0.14792125,5.84545607\H,0,-0.82748826,0.7244
- 5907,4.7257273\H,0,-0.3978975,-1.03091808,4.7840259\Bq,0,-0.49994376,-
- 0.10490676,5.37905382\Bq,0,-0.31091197,-0.09788166,4.19764275\Bq,0,0.5
- 4756112,-0.47938519,4.9385837\Bq,0,0.26329461,0.68217361,4.90000666\\V
- ersion=AS64L-G09RevD.01\HF=-81.8243955\RMSD=1.489e-09\Dipole=-0.002379
- 2,-0.0002089,-0.0000257\Quadrupole=0.0030398,0.004225,-0.0072648,-0.00
- 01791,-0.0086005,0.0007392\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE48\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.81746264,0.,0.74682045\H,0,-0.05262665,0.99172091,-0.48959783\H,0,
+ 0.1968687,-0.77815675,-0.76269308\H,0,-0.96170469,-0.21356415,0.505470
+ 46\Bq,0,-0.54092702,0.,-0.49418204\Bq,0,0.03482382,-0.65623627,0.32397
+ 406\Bq,0,-0.1302709,0.51491774,0.5046852\Bq,0,0.6363741,0.14131853,-0.
+ 33447722\C,0,0.,0.,4.85382173\H,0,0.75552769,0.15853776,4.06007767\H,0
+ ,0.46985807,0.14792125,5.84545607\H,0,-0.82748826,0.72445907,4.7257273
+ \H,0,-0.3978975,-1.03091808,4.7840259\Bq,0,-0.49994376,-0.10490676,5.3
+ 7905382\Bq,0,-0.31091197,-0.09788166,4.19764275\Bq,0,0.54756112,-0.479
+ 38519,4.9385837\Bq,0,0.26329461,0.68217361,4.90000666\\Version=AS64L-G
+ 09RevD.01\HF=-81.8243955\RMSD=1.489e-09\Dipole=-0.0023792,-0.0002089,-
+ 0.0000257\Quadrupole=0.0030398,0.004225,-0.0072648,-0.0001791,-0.00860
+ 05,0.0007392\PG=C01 [X(C2H8)]\\@
 
 
- THIS CURIOUS WORLD WHICH WE INHABIT IS MORE WONDERFUL THAN IT IS CONVENIENT;
- MORE BEAUTIFUL THAN IT IS USEFUL;
- IT IS MORE TO BE ADMIRED THAN IT IS TO BE USED.
+ ALL OUR THINKING ABOUT NATURE MUST NECESSARILY MOVE IN CIRCLES OR SPIRALS;
+ FOR WE CAN ONLY UNDERSTAND NATURE IF WE THINK ABOUT HER, AND WE CAN ONLY
+ THINK BECAUSE OUR BRAIN IS BUILT IN ACCORDANCE WITH NATURE'S LAWS.
 
-                                                                 -- THOREAU
- Job cpu time:       0 days  0 hours 11 minutes 16.8 seconds.
+                                             -- TIMOTHY FERRIS, "GALAXIES"
+ Job cpu time:       0 days  0 hours 11 minutes 18.9 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:23:27 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 15:29:51 2018.

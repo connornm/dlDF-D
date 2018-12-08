@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-37198.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     37199.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-2974.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=      2975.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400037
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916056      2.2732156      2.2732156
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -284,26 +289,25 @@
     X=             -0.0037    Y=             -0.0008    Z=              0.0058  Tot=              0.0069
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE59\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,1.0382638,0.,-0.38470018\H,0,0.01494884,0.09982302,1.1
- 0263224\H,0,-0.55664224,0.85000543,-0.44002971\H,0,-0.4965704,-0.94982
- 845,-0.27790235\Bq,0,-0.68703439,0.,0.25456175\Bq,0,-0.00989187,-0.066
- 05436,-0.72962793\Bq,0,0.36833834,-0.56246106,0.29117411\Bq,0,0.328587
- 92,0.62851542,0.18389206\C,0,0.,0.,5.18782279\H,0,0.70274138,-0.095186
- 95,6.03816387\H,0,-0.70426153,-0.85438171,5.19361546\H,0,-0.56705021,0
- .94636622,5.28179612\H,0,0.56857035,0.00320243,4.23771572\Bq,0,-0.4650
- 1428,0.0629866,4.62513963\Bq,0,0.46602018,0.56535691,5.1839897\Bq,0,0.
- 37522544,-0.62622441,5.12563926\Bq,0,-0.37623134,-0.0021191,5.81652258
- \\Version=AS64L-G09RevD.01\HF=-81.8244236\RMSD=1.597e-09\Dipole=-0.001
- 4688,-0.000334,0.0022685\Quadrupole=-0.0134162,-0.0141536,0.0275698,-0
- .0002435,-0.0022411,-0.0029913\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE15\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,1.0382638,0.,-0.38470018\H,0,0.01494884,0.09982302,1.10263224\H,0,-0
+ .55664224,0.85000543,-0.44002971\H,0,-0.4965704,-0.94982845,-0.2779023
+ 5\Bq,0,-0.68703439,0.,0.25456175\Bq,0,-0.00989187,-0.06605436,-0.72962
+ 793\Bq,0,0.36833834,-0.56246106,0.29117411\Bq,0,0.32858792,0.62851542,
+ 0.18389206\C,0,0.,0.,5.18782279\H,0,0.70274138,-0.09518695,6.03816387\
+ H,0,-0.70426153,-0.85438171,5.19361546\H,0,-0.56705021,0.94636622,5.28
+ 179612\H,0,0.56857035,0.00320243,4.23771572\Bq,0,-0.46501428,0.0629866
+ ,4.62513963\Bq,0,0.46602018,0.56535691,5.1839897\Bq,0,0.37522544,-0.62
+ 622441,5.12563926\Bq,0,-0.37623134,-0.0021191,5.81652258\\Version=AS64
+ L-G09RevD.01\HF=-81.8244236\RMSD=1.597e-09\Dipole=-0.0014688,-0.000334
+ ,0.0022685\Quadrupole=-0.0134162,-0.0141536,0.0275698,-0.0002435,-0.00
+ 22411,-0.0029913\PG=C01 [X(C2H8)]\\@
 
 
-  THE LARGE PRINT GIVETH,
-  AND THE SMALL PRINT TAKETH AWAY.
-
-                     -- TOM WAITS
- Job cpu time:       0 days  0 hours 10 minutes 44.3 seconds.
+ THE PROGRESS OF RIVERS TO THE SEA IS NOT AS RAPID
+ AS THAT OF MAN TO ERROR.
+                                              -- VOLTAIRE
+ Job cpu time:       0 days  0 hours 10 minutes 47.4 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:55:20 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 15:30:17 2018.

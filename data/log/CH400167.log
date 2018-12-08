@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-32936.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     32937.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-17379.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     17380.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 6-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400167
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916055      4.6375608      4.6375608
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -265,7 +270,7 @@
     16  Bq   0.000000
     17  Bq   0.000000
     18  Bq   0.000000
- Sum of Mulliken charges =   0.00000
+ Sum of Mulliken charges =  -0.00000
  Mulliken charges with hydrogens summed into heavy atoms:
                1
      1  C   -1.859112
@@ -284,25 +289,24 @@
     X=             -0.0011    Y=             -0.0016    Z=              0.0042  Tot=              0.0046
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE37\SP\RM05\Gen\C2H8\CONNORNM\06-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.49829827,0.,-0.98877944\H,0,-0.83866123,-0.72287339,
- -0.00934633\H,0,0.72923007,-0.29080138,0.78079704\H,0,-0.38886711,1.01
- 367478,0.21732873\Bq,0,-0.32973128,0.,0.65428986\Bq,0,0.55495444,0.478
- 33593,0.0061846\Bq,0,-0.48254223,0.19242754,-0.51666486\Bq,0,0.2573190
- 7,-0.67076347,-0.14380961\C,0,0.,0.,3.57395997\H,0,0.0920915,-0.973379
- 45,3.0543086\H,0,-0.45647888,0.74168221,2.89020528\H,0,-0.63981758,-0.
- 11893433,4.46976913\H,0,1.00420496,0.35063157,3.88155689\Bq,0,-0.06093
- 83,0.64409946,3.91782091\Bq,0,0.30205877,-0.490782,4.02641049\Bq,0,0.4
- 2337668,0.07870059,2.98118992\Bq,0,-0.66449715,-0.23201806,3.37041858\
- \Version=AS64L-G09RevD.01\HF=-81.8221361\RMSD=3.611e-09\Dipole=-0.0004
- 276,-0.0006185,0.0016537\Quadrupole=0.0533874,0.0565566,-0.109944,0.00
- 11013,-0.0026565,0.0046955\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE56\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.49829827,0.,-0.98877944\H,0,-0.83866123,-0.72287339,-0.00934633\H,
+ 0,0.72923007,-0.29080138,0.78079704\H,0,-0.38886711,1.01367478,0.21732
+ 873\Bq,0,-0.32973128,0.,0.65428986\Bq,0,0.55495444,0.47833593,0.006184
+ 6\Bq,0,-0.48254223,0.19242754,-0.51666486\Bq,0,0.25731907,-0.67076347,
+ -0.14380961\C,0,0.,0.,3.57395997\H,0,0.0920915,-0.97337945,3.0543086\H
+ ,0,-0.45647888,0.74168221,2.89020528\H,0,-0.63981758,-0.11893433,4.469
+ 76913\H,0,1.00420496,0.35063157,3.88155689\Bq,0,-0.0609383,0.64409946,
+ 3.91782091\Bq,0,0.30205877,-0.490782,4.02641049\Bq,0,0.42337668,0.0787
+ 0059,2.98118992\Bq,0,-0.66449715,-0.23201806,3.37041858\\Version=AS64L
+ -G09RevD.01\HF=-81.8221361\RMSD=3.611e-09\Dipole=-0.0004276,-0.0006185
+ ,0.0016537\Quadrupole=0.0533874,0.0565566,-0.109944,0.0011013,-0.00265
+ 65,0.0046955\PG=C01 [X(C2H8)]\\@
 
 
- THE MORE ACCURATE THE CALCULATIONS BECOME, THE MORE THE CONCEPTS
- TEND TO VANISH INTO THIN AIR.
-     -- R.S. MULLIKEN, J.C.P. 43,S2(1965)
- Job cpu time:       0 days  0 hours 13 minutes 58.1 seconds.
+ BE LIKE A POSTAGE STAMP.  STICK TO ONE THING UNTIL
+ YOU GET THERE -- JOSH BILLINGS
+ Job cpu time:       0 days  0 hours 13 minutes 44.2 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Thu Dec  6 13:22:10 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 14:04:55 2018.

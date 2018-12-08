@@ -1,7 +1,7 @@
 %Chk=CH400111
 %Mem=2GB
 %NProcShared=16
-#T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
+#T M05/Gen test Massage SCF=(tight,maxcyc=40)
 
 M05 opt
 

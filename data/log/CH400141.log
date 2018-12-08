@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-37981.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     37982.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-39511.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     39512.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 7-Dec-2018 
  ******************************************
  %Chk=CH400141
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916055      5.2094704      5.2094704
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -284,24 +289,28 @@
     X=             -0.0021    Y=              0.0016    Z=              0.0162  Tot=              0.0164
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE38\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.61029983,0.,-0.9238615\H,0,0.23923093,-0.89905661,0.
- 60037633\H,0,0.22488813,0.90898111,0.59090153\H,0,-1.07441889,-0.00992
- 451,-0.26741636\Bq,0,-0.40384435,0.,0.61133271\Bq,0,-0.15830261,0.5949
- 1894,-0.39727782\Bq,0,-0.14881178,-0.60148614,-0.39100821\Bq,0,0.71095
- 874,0.00656719,0.17695333\C,0,0.,0.,3.35866956\H,0,0.23043155,-0.95810
- 691,2.85377512\H,0,0.17666761,-0.10435772,4.44673389\H,0,0.6530346,0.7
- 9710165,2.95350203\H,0,-1.06013377,0.26536299,3.18066721\Bq,0,-0.15247
- 994,0.6339934,3.69276562\Bq,0,-0.11690355,0.06905503,2.63868144\Bq,0,-
- 0.43212257,-0.52745385,3.62677486\Bq,0,0.70150606,-0.17559458,3.476456
- 33\\Version=AS64L-G09RevD.01\HF=-81.8203597\RMSD=1.304e-09\Dipole=-0.0
- 008422,0.0006209,0.006366\Quadrupole=0.0734694,0.0718659,-0.1453353,-0
- .0004479,-0.0035552,0.0032633\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE56\SP\RM05\Gen\C2H8\CONNORNM\07-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.61029983,0.,-0.9238615\H,0,0.23923093,-0.89905661,0.60037633\H,0,0
+ .22488813,0.90898111,0.59090153\H,0,-1.07441889,-0.00992451,-0.2674163
+ 6\Bq,0,-0.40384435,0.,0.61133271\Bq,0,-0.15830261,0.59491894,-0.397277
+ 82\Bq,0,-0.14881178,-0.60148614,-0.39100821\Bq,0,0.71095874,0.00656719
+ ,0.17695333\C,0,0.,0.,3.35866956\H,0,0.23043155,-0.95810691,2.85377512
+ \H,0,0.17666761,-0.10435772,4.44673389\H,0,0.6530346,0.79710165,2.9535
+ 0203\H,0,-1.06013377,0.26536299,3.18066721\Bq,0,-0.15247994,0.6339934,
+ 3.69276562\Bq,0,-0.11690355,0.06905503,2.63868144\Bq,0,-0.43212257,-0.
+ 52745385,3.62677486\Bq,0,0.70150606,-0.17559458,3.47645633\\Version=AS
+ 64L-G09RevD.01\HF=-81.8203597\RMSD=1.304e-09\Dipole=-0.0008422,0.00062
+ 09,0.006366\Quadrupole=0.0734694,0.0718659,-0.1453353,-0.0004479,-0.00
+ 35552,0.0032633\PG=C01 [X(C2H8)]\\@
 
 
- PATIENCE IS THE ABILITY TO IDLE YOUR MOTOR WHEN
- YOU FEEL LIKE STRIPPING YOUR GEARS.
- Job cpu time:       0 days  0 hours 15 minutes 57.1 seconds.
+ MAN IS A SINGULAR CREATURE.  HE HAS A SET OF GIFTS
+ WHICH MAKE HIM UNIQUE AMONG THE ANIMALS: SO THAT, 
+ UNLIKE THEM, HE IS NOT A FIGURE IN THE LANDSCAPE --
+ HE IS A SHAPER OF THE LANDSCAPE.
+
+                       -- JACOB BRONOWSKI
+ Job cpu time:       0 days  0 hours 15 minutes 43.3 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:55:33 2018.
+ Normal termination of Gaussian 09 at Fri Dec  7 22:14:31 2018.

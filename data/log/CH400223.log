@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-19895.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     19896.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-48867.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     48868.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 6-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400223
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916056      2.8616573      2.8616573
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -284,30 +289,26 @@
     X=             -0.0026    Y=             -0.0005    Z=              0.0080  Tot=              0.0084
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE62\SP\RM05\Gen\C2H8\CONNORNM\06-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.62009024,0.,0.91731895\H,0,0.65482841,0.09153907,-0.
- 88814768\H,0,-0.57178211,-0.94634681,-0.05898219\H,0,-0.70313655,0.854
- 80773,0.02981093\Bq,0,-0.41032281,0.,-0.6070034\Bq,0,-0.43330957,-0.06
- 057275,0.58770035\Bq,0,0.37835661,0.62621156,0.03902938\Bq,0,0.4652757
- 7,-0.56563882,-0.01972633\C,0,0.,0.,4.60545746\H,0,0.32045528,-1.02427
- 257,4.333134\H,0,0.83266672,0.70731366,4.42557009\H,0,-0.87132982,0.29
- 074727,3.98720482\H,0,-0.28179218,0.02621164,5.67592095\Bq,0,-0.212049
- 96,0.67777618,4.7856579\Bq,0,-0.55098778,-0.46803983,4.72449158\Bq,0,0
- .57657172,-0.19239173,5.01456431\Bq,0,0.18646602,-0.01734463,3.8971160
- 7\\Version=AS64L-G09RevD.01\HF=-81.8244025\RMSD=2.124e-09\Dipole=-0.00
- 10273,-0.0002067,0.0031455\Quadrupole=-0.0003756,-0.0020728,0.0024484,
- -0.000196,-0.0149099,-0.0001148\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE62\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.62009024,0.,0.91731895\H,0,0.65482841,0.09153907,-0.88814768\H,0,-
+ 0.57178211,-0.94634681,-0.05898219\H,0,-0.70313655,0.85480773,0.029810
+ 93\Bq,0,-0.41032281,0.,-0.6070034\Bq,0,-0.43330957,-0.06057275,0.58770
+ 035\Bq,0,0.37835661,0.62621156,0.03902938\Bq,0,0.46527577,-0.56563882,
+ -0.01972633\C,0,0.,0.,4.60545746\H,0,0.32045528,-1.02427257,4.333134\H
+ ,0,0.83266672,0.70731366,4.42557009\H,0,-0.87132982,0.29074727,3.98720
+ 482\H,0,-0.28179218,0.02621164,5.67592095\Bq,0,-0.21204996,0.67777618,
+ 4.7856579\Bq,0,-0.55098778,-0.46803983,4.72449158\Bq,0,0.57657172,-0.1
+ 9239173,5.01456431\Bq,0,0.18646602,-0.01734463,3.89711607\\Version=AS6
+ 4L-G09RevD.01\HF=-81.8244025\RMSD=2.124e-09\Dipole=-0.0010273,-0.00020
+ 67,0.0031455\Quadrupole=-0.0003756,-0.0020728,0.0024484,-0.000196,-0.0
+ 149099,-0.0001148\PG=C01 [X(C2H8)]\\@
 
 
-     ON THE SURVIVAL OF THE FITTEST -
- "STRONG REPRESENTATIVES FROM EACH PAST ERA THRIVE TODAY,
- SUCH AS PROGRAMMING IN THE THIRTY YEAR OLD LANGUAGE KNOWN
- AS FORTRAN, AND EVEN IN THE ANCIENT SCRIPT KNOWN AS DIRECT
- MACHINE CODE. SOME PEOPLE MIGHT LOOK ON SUCH RELICS AS LIVING
- FOSSILS; OTHERS WOULD POINT OUT THAT EVEN A VERY OLD SPECIES
- MIGHT STILL BE FILLING A PARTICULAR ECOLOGICAL NICHE."
-     -- ALAN KAY, SCI.AM. SEPTEMBER 1984
- Job cpu time:       0 days  0 hours 11 minutes 52.2 seconds.
+ THE ONLY EXISTING THINGS ARE ATOMS AND EMPTY SPACE;
+ ALL ELSE IS MERE OPINION. -- DEMOCRITUS OF ABDERA D. 370 B.C.
+ EXPERIMENTS ARE THE ONLY MEANS OF KNOWLEDGE AT OUR DISPOSAL
+ THE REST IS POETRY, IMAGINATION. -- MAX PLANCK
+ Job cpu time:       0 days  0 hours 11 minutes 43.6 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Thu Dec  6 13:21:32 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 10:22:48 2018.

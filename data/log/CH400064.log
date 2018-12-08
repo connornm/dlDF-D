@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-25829.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     25830.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-45913.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     45914.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 7-Dec-2018 
  ******************************************
  %Chk=CH400064
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916052      2.7095623      2.7095623
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -265,7 +270,7 @@
     16  Bq   0.000000
     17  Bq   0.000000
     18  Bq   0.000000
- Sum of Mulliken charges =  -0.00000
+ Sum of Mulliken charges =   0.00000
  Mulliken charges with hydrogens summed into heavy atoms:
                1
      1  C   -1.813300
@@ -284,26 +289,25 @@
     X=             -0.0006    Y=             -0.0024    Z=              0.0005  Tot=              0.0025
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE24\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.57395925,0.,-0.9468668\H,0,0.33143109,-0.84621959,0.
- 63249648\H,0,0.17400505,0.95250405,0.53707004\H,0,-1.07939539,-0.10628
- 446,-0.22269973\Bq,0,-0.37979725,0.,0.62655565\Bq,0,-0.21931281,0.5599
- 5591,-0.4185322\Bq,0,-0.1151417,-0.6302859,-0.35538713\Bq,0,0.71425176
- ,0.07032999,0.14736368\C,0,0.,0.,4.73782371\H,0,1.01648958,-0.43192864
- ,4.81638926\H,0,0.02627468,0.88767993,4.07652201\H,0,-0.69024284,-0.75
- 525374,4.31457133\H,0,-0.35252142,0.29950245,5.74381222\Bq,0,-0.672626
- 06,0.28581352,4.68583573\Bq,0,-0.01738634,-0.58739083,5.17541674\Bq,0,
- 0.45674381,0.49976248,5.01789601\Bq,0,0.23326859,-0.19818516,4.0721463
- 5\\Version=AS64L-G09RevD.01\HF=-81.8243993\RMSD=1.792e-09\Dipole=-0.00
- 02356,-0.0009503,0.0001884\Quadrupole=0.0071263,0.0063004,-0.0134267,-
- 0.00024,-0.0040386,-0.0006352\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE48\SP\RM05\Gen\C2H8\CONNORNM\07-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.57395925,0.,-0.9468668\H,0,0.33143109,-0.84621959,0.63249648\H,0,0
+ .17400505,0.95250405,0.53707004\H,0,-1.07939539,-0.10628446,-0.2226997
+ 3\Bq,0,-0.37979725,0.,0.62655565\Bq,0,-0.21931281,0.55995591,-0.418532
+ 2\Bq,0,-0.1151417,-0.6302859,-0.35538713\Bq,0,0.71425176,0.07032999,0.
+ 14736368\C,0,0.,0.,4.73782371\H,0,1.01648958,-0.43192864,4.81638926\H,
+ 0,0.02627468,0.88767993,4.07652201\H,0,-0.69024284,-0.75525374,4.31457
+ 133\H,0,-0.35252142,0.29950245,5.74381222\Bq,0,-0.67262606,0.28581352,
+ 4.68583573\Bq,0,-0.01738634,-0.58739083,5.17541674\Bq,0,0.45674381,0.4
+ 9976248,5.01789601\Bq,0,0.23326859,-0.19818516,4.07214635\\Version=AS6
+ 4L-G09RevD.01\HF=-81.8243993\RMSD=1.792e-09\Dipole=-0.0002356,-0.00095
+ 03,0.0001884\Quadrupole=0.0071263,0.0063004,-0.0134267,-0.00024,-0.004
+ 0386,-0.0006352\PG=C01 [X(C2H8)]\\@
 
 
- ALMOST ANYTHING IS EASIER TO GET INTO THAN OUT OF.
+ CURIOUSER AND CURIOUSER
 
-                         -- AGNES ALLEN'S LAW FROM
-                PAUL DICKSON'S "THE OFFICIAL RULES"
- Job cpu time:       0 days  0 hours 11 minutes 35.5 seconds.
+                  -- ALICE, IN WONDERLAND
+ Job cpu time:       0 days  0 hours 11 minutes 27.8 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:23:28 2018.
+ Normal termination of Gaussian 09 at Fri Dec  7 21:13:44 2018.

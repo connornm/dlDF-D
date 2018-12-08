@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-6082.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=      6083.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-37128.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     37129.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 6-Dec-2018 
+                 7-Dec-2018 
  ******************************************
  %Chk=CH400153
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916054      3.7542219      3.7542219
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -279,30 +284,32 @@
     17  Bq   0.950902
     18  Bq   0.460908
  Electronic spatial extent (au):  <R**2>=            643.5298
- Charge=              0.0000 electrons
+ Charge=             -0.0000 electrons
  Dipole moment (field-independent basis, Debye):
     X=             -0.0022    Y=             -0.0001    Z=              0.0010  Tot=              0.0024
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE27\SP\RM05\Gen\C2H8\CONNORNM\06-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.30714614,0.,-1.06378908\H,0,0.41645469,0.8933828,0.5
- 0439927\H,0,-1.10512928,0.02098836,0.06507474\H,0,0.38152845,-0.914371
- 16,0.49431507\Bq,0,-0.2032431,0.,0.70392484\Bq,0,-0.27557418,-0.591164
- 5,-0.3337684\Bq,0,0.73128025,-0.01388831,-0.04306091\Bq,0,-0.25246297,
- 0.60505281,-0.32709553\C,0,0.,0.,3.99650562\H,0,-0.45678316,0.95516195
- ,3.67246744\H,0,1.00677975,-0.09906499,3.5464316\H,0,0.08634884,-0.012
- 08652,5.10030984\H,0,-0.63634543,-0.84401044,3.6668136\Bq,0,0.30226012
- ,-0.63204468,4.21092644\Bq,0,-0.66620093,0.06555276,4.2943262\Bq,0,-0.
- 05713829,0.00799783,3.26610218\Bq,0,0.4210791,0.55849409,4.21466767\\V
- ersion=AS64L-G09RevD.01\HF=-81.8241435\RMSD=5.024e-09\Dipole=-0.000879
- 8,-0.000036,0.0003755\Quadrupole=0.0223984,0.0220376,-0.044436,0.00015
- 76,-0.0043644,-0.0003825\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE56\SP\RM05\Gen\C2H8\CONNORNM\07-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.30714614,0.,-1.06378908\H,0,0.41645469,0.8933828,0.50439927\H,0,-1
+ .10512928,0.02098836,0.06507474\H,0,0.38152845,-0.91437116,0.49431507\
+ Bq,0,-0.2032431,0.,0.70392484\Bq,0,-0.27557418,-0.5911645,-0.3337684\B
+ q,0,0.73128025,-0.01388831,-0.04306091\Bq,0,-0.25246297,0.60505281,-0.
+ 32709553\C,0,0.,0.,3.99650562\H,0,-0.45678316,0.95516195,3.67246744\H,
+ 0,1.00677975,-0.09906499,3.5464316\H,0,0.08634884,-0.01208652,5.100309
+ 84\H,0,-0.63634543,-0.84401044,3.6668136\Bq,0,0.30226012,-0.63204468,4
+ .21092644\Bq,0,-0.66620093,0.06555276,4.2943262\Bq,0,-0.05713829,0.007
+ 99783,3.26610218\Bq,0,0.4210791,0.55849409,4.21466767\\Version=AS64L-G
+ 09RevD.01\HF=-81.8241435\RMSD=5.024e-09\Dipole=-0.0008798,-0.000036,0.
+ 0003755\Quadrupole=0.0223984,0.0220376,-0.044436,0.0001576,-0.0043644,
+ -0.0003825\PG=C01 [X(C2H8)]\\@
 
 
- THE MORE ACCURATE THE CALCULATIONS BECOME, THE MORE THE CONCEPTS
- TEND TO VANISH INTO THIN AIR.
-     -- R.S. MULLIKEN, J.C.P. 43,S2(1965)
- Job cpu time:       0 days  0 hours 12 minutes 54.8 seconds.
+ IT IS IMPOSSIBLE TO MEDITATE ON TIME AND THE MYSTERY 
+ OF NATURE WITHOUT AN OVERWHELMING EMOTION AT THE
+ LIMITATIONS OF HUMAN INTELLIGENCE.
+
+                                         -- ALFRED NORTH WHITEHEAD
+ Job cpu time:       0 days  0 hours 12 minutes 59.3 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Thu Dec  6 13:22:10 2018.
+ Normal termination of Gaussian 09 at Fri Dec  7 21:16:20 2018.

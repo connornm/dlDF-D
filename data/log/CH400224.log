@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-15684.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     15685.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-32027.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     32028.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400224
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916054      3.5331871      3.5331871
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -265,7 +270,7 @@
     16  Bq   0.000000
     17  Bq   0.000000
     18  Bq   0.000000
- Sum of Mulliken charges =  -0.00000
+ Sum of Mulliken charges =   0.00000
  Mulliken charges with hydrogens summed into heavy atoms:
                1
      1  C   -1.875256
@@ -279,29 +284,42 @@
     17  Bq   0.000000
     18  Bq   0.420211
  Electronic spatial extent (au):  <R**2>=            680.9763
- Charge=             -0.0000 electrons
+ Charge=              0.0000 electrons
  Dipole moment (field-independent basis, Debye):
     X=             -0.0049    Y=              0.0007    Z=              0.0190  Tot=              0.0196
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE53\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.54684026,0.,0.9627833\H,0,0.54810279,0.61984871,-0.7
- 3576957\H,0,-0.08070238,-1.0373614,-0.37862172\H,0,-1.01424067,0.41751
- 269,0.15160799\Bq,0,-0.36185222,0.,-0.63708783\Bq,0,-0.36268766,-0.410
- 16299,0.48686952\Bq,0,0.05340195,0.68643725,0.25053955\Bq,0,0.67113793
- ,-0.27627427,-0.10032123\C,0,0.,0.,4.12585674\H,0,-0.26900754,-0.80851
- 21,3.4188001\H,0,-0.84307486,0.1778101,4.82126619\H,0,0.89746764,-0.29
- 720398,4.70223126\H,0,0.21461477,0.92790597,3.56112941\Bq,0,0.17800624
- ,0.53500431,4.59372649\Bq,0,0.557875,-0.11765955,3.66569411\Bq,0,-0.59
- 38675,0.19666423,3.74446126\Bq,0,-0.14201374,-0.61400899,4.4995451\\Ve
- rsion=AS64L-G09RevD.01\HF=-81.8239053\RMSD=7.106e-09\Dipole=-0.0019288
- ,0.0002855,0.0074645\Quadrupole=0.001265,0.0010021,-0.0022671,0.000069
- 7,-0.0176426,-0.0010674\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE14\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.54684026,0.,0.9627833\H,0,0.54810279,0.61984871,-0.73576957\H,0,-0
+ .08070238,-1.0373614,-0.37862172\H,0,-1.01424067,0.41751269,0.15160799
+ \Bq,0,-0.36185222,0.,-0.63708783\Bq,0,-0.36268766,-0.41016299,0.486869
+ 52\Bq,0,0.05340195,0.68643725,0.25053955\Bq,0,0.67113793,-0.27627427,-
+ 0.10032123\C,0,0.,0.,4.12585674\H,0,-0.26900754,-0.8085121,3.4188001\H
+ ,0,-0.84307486,0.1778101,4.82126619\H,0,0.89746764,-0.29720398,4.70223
+ 126\H,0,0.21461477,0.92790597,3.56112941\Bq,0,0.17800624,0.53500431,4.
+ 59372649\Bq,0,0.557875,-0.11765955,3.66569411\Bq,0,-0.5938675,0.196664
+ 23,3.74446126\Bq,0,-0.14201374,-0.61400899,4.4995451\\Version=AS64L-G0
+ 9RevD.01\HF=-81.8239053\RMSD=7.106e-09\Dipole=-0.0019288,0.0002855,0.0
+ 074645\Quadrupole=0.001265,0.0010021,-0.0022671,0.0000697,-0.0176426,-
+ 0.0010674\PG=C01 [X(C2H8)]\\@
 
 
-  DISAPPOINTMENT IS THE NURSE OF WISDOM.               
-                              SIR BOYLE ROCHE                 
- Job cpu time:       0 days  0 hours 12 minutes 41.9 seconds.
+            THE IRISH PIG
+ 'TWAS AN EVENING IN NOVEMBER,
+ AS I VERY WELL REMEMBER
+ I WAS STROLLING DOWN THE STREET IN DRUNKEN PRIDE,
+ BUT MY KNEES WERE ALL A'FLUTTER
+ SO I LANDED IN THE GUTTER,
+ AND A PIG CAME UP AND LAY DOWN BY MY SIDE.
+
+ YES, I LAY THERE IN THE GUTTER
+ THINKING THOUGHTS I COULD NOT UTTER
+ WHEN A COLLEEN PASSING BY DID SOFTLY SAY,
+ 'YE CAN TELL A MAN THAT BOOZES
+ BY THE COMPANY THAT HE CHOOSES.' -
+ AT THAT, THE PIG GOT UP AND WALKED AWAY!
+     -- THE ECONOMIST, AUGUST 23, 1986
+ Job cpu time:       0 days  0 hours 12 minutes 49.5 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:31:14 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 15:28:23 2018.

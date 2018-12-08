@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-18020.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     18021.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-23583.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     23584.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400269
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916056      3.2104062      3.2104062
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -265,7 +270,7 @@
     16  Bq   0.000000
     17  Bq   0.000000
     18  Bq   0.000000
- Sum of Mulliken charges =   0.00000
+ Sum of Mulliken charges =  -0.00000
  Mulliken charges with hydrogens summed into heavy atoms:
                1
      1  C   -1.890236
@@ -284,29 +289,26 @@
     X=              0.0002    Y=             -0.0017    Z=             -0.0315  Tot=              0.0316
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE21\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.02528397,0.,-1.10695378\H,0,1.00648361,-0.24327421,0
- .39216623\H,0,-0.30525708,1.00080559,0.36220471\H,0,-0.7265105,-0.7575
- 3137,0.35258285\Bq,0,-0.01673077,0.,0.73248756\Bq,0,-0.66600497,0.1609
- 7812,-0.25950214\Bq,0,0.20199309,-0.66224774,-0.23967617\Bq,0,0.480742
- 66,0.50126962,-0.23330924\C,0,0.,0.,4.33783902\H,0,-0.02252677,0.10485
- 358,3.23580262\H,0,0.05628758,-1.07294656,4.60542702\H,0,0.8860045,0.5
- 2784907,4.74077492\H,0,-0.91976531,0.44024391,4.76935152\Bq,0,0.014906
- 3,-0.06938315,5.06707267\Bq,0,-0.03724632,0.70998448,4.16077212\Bq,0,-
- 0.58628217,-0.34928547,4.07121043\Bq,0,0.6086222,-0.29131585,4.0523008
- 7\\Version=AS64L-G09RevD.01\HF=-81.8242674\RMSD=8.956e-09\Dipole=0.000
- 086,-0.000683,-0.0124068\Quadrupole=0.0417225,0.0412637,-0.0829861,0.0
- 000739,-0.000451,-0.0002719\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE48\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.02528397,0.,-1.10695378\H,0,1.00648361,-0.24327421,0.39216623\H,0,
+ -0.30525708,1.00080559,0.36220471\H,0,-0.7265105,-0.75753137,0.3525828
+ 5\Bq,0,-0.01673077,0.,0.73248756\Bq,0,-0.66600497,0.16097812,-0.259502
+ 14\Bq,0,0.20199309,-0.66224774,-0.23967617\Bq,0,0.48074266,0.50126962,
+ -0.23330924\C,0,0.,0.,4.33783902\H,0,-0.02252677,0.10485358,3.23580262
+ \H,0,0.05628758,-1.07294656,4.60542702\H,0,0.8860045,0.52784907,4.7407
+ 7492\H,0,-0.91976531,0.44024391,4.76935152\Bq,0,0.0149063,-0.06938315,
+ 5.06707267\Bq,0,-0.03724632,0.70998448,4.16077212\Bq,0,-0.58628217,-0.
+ 34928547,4.07121043\Bq,0,0.6086222,-0.29131585,4.05230087\\Version=AS6
+ 4L-G09RevD.01\HF=-81.8242674\RMSD=8.956e-09\Dipole=0.000086,-0.000683,
+ -0.0124068\Quadrupole=0.0417225,0.0412637,-0.0829861,0.0000739,-0.0004
+ 51,-0.0002719\PG=C01 [X(C2H8)]\\@
 
 
- YE HAVE SOWN MUCH, AND BRING IN LITTLE.
- YE EAT, BUT YE HAVE NOT ENOUGH.
- YE DRINK, BUT YE ARE NOT FILLED WITH DRINK.
- YE CLOTHE YOU, BUT THERE IS NONE WARM.
- AND HE THAT EARNETH WAGES EARNETH WAGES TO PUT
- IT INTO A BAG WITH HOLES.
-                                     HAGGAI I,6
- Job cpu time:       0 days  0 hours 12 minutes 24.2 seconds.
+ THERE IS NOTHING NOBLE IN BEING SUPERIOR TO SOME OTHER MAN.
+ TRUE NOBILITY IS BEING SUPERIOR TO YOUR FORMER SELF.
+
+                                                   -- HINDU PROVERB
+ Job cpu time:       0 days  0 hours 12 minutes 23.1 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:23:30 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 13:47:58 2018.

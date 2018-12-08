@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-3266.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=      3267.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-33498.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     33499.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400160
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916058      6.4319045      6.4319045
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -284,24 +289,24 @@
     X=              0.0214    Y=             -0.0259    Z=              0.0472  Tot=              0.0579
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE41\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.43134461,0.,1.01976849\H,0,0.69527236,-0.50970186,-0
- .69482826\H,0,-0.96985074,-0.53412117,0.0094903\H,0,-0.15676623,1.0438
- 2303,-0.33443053\Bq,0,-0.28542706,0.,-0.67479577\Bq,0,-0.46007192,0.33
- 72772,0.45977805\Bq,0,0.64176446,0.35343581,-0.00627987\Bq,0,0.1037345
- 1,-0.69071301,0.22129759\C,0,0.,0.,2.99673724\H,0,-0.84465987,0.711279
- 19,3.07808565\H,0,-0.0292405,-0.4961064,2.00728821\H,0,0.95583924,0.54
- 795103,3.10676895\H,0,-0.08193887,-0.76312382,3.79480617\Bq,0,0.558923
- 83,-0.47066388,2.94290781\Bq,0,0.01934887,0.32828088,3.65147018\Bq,0,-
- 0.63249285,-0.36258723,2.92392765\Bq,0,0.05422015,0.50497023,2.4686433
- 3\\Version=AS64L-G09RevD.01\HF=-81.7822246\RMSD=3.508e-09\Dipole=0.008
- 4004,-0.0101874,0.0185824\Quadrupole=0.2713361,0.2584181,-0.5297541,-0
- .0020442,0.0431978,0.0017909\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE15\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.43134461,0.,1.01976849\H,0,0.69527236,-0.50970186,-0.69482826\H,0,
+ -0.96985074,-0.53412117,0.0094903\H,0,-0.15676623,1.04382303,-0.334430
+ 53\Bq,0,-0.28542706,0.,-0.67479577\Bq,0,-0.46007192,0.3372772,0.459778
+ 05\Bq,0,0.64176446,0.35343581,-0.00627987\Bq,0,0.10373451,-0.69071301,
+ 0.22129759\C,0,0.,0.,2.99673724\H,0,-0.84465987,0.71127919,3.07808565\
+ H,0,-0.0292405,-0.4961064,2.00728821\H,0,0.95583924,0.54795103,3.10676
+ 895\H,0,-0.08193887,-0.76312382,3.79480617\Bq,0,0.55892383,-0.47066388
+ ,2.94290781\Bq,0,0.01934887,0.32828088,3.65147018\Bq,0,-0.63249285,-0.
+ 36258723,2.92392765\Bq,0,0.05422015,0.50497023,2.46864333\\Version=AS6
+ 4L-G09RevD.01\HF=-81.7822246\RMSD=3.508e-09\Dipole=0.0084004,-0.010187
+ 4,0.0185824\Quadrupole=0.2713361,0.2584181,-0.5297541,-0.0020442,0.043
+ 1978,0.0017909\PG=C01 [X(C2H8)]\\@
 
 
- ONE THORN OF EXPERIENCE IS WORTH A WHOLE WILDERNESS OF
- WARNING....  LOWELL - AMONG MY BOOKS
- Job cpu time:       0 days  0 hours 16 minutes 23.6 seconds.
+ Luck is a matter of preparation meeting opportunity.
+                                    -- Oprah Winfrey
+ Job cpu time:       0 days  0 hours 16 minutes 31.5 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:23:45 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 10:22:15 2018.

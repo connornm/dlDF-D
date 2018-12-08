@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-5941.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=      5942.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-41048.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     41049.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 6-Dec-2018 
+                 7-Dec-2018 
  ******************************************
  %Chk=CH400008
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916057      6.6447958      6.6447958
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -284,26 +289,27 @@
     X=              0.0013    Y=             -0.0193    Z=              0.2579  Tot=              0.2586
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE61\SP\RM05\Gen\C2H8\CONNORNM\06-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,1.06003836,0.,-0.31985095\H,0,-0.0849826,-0.47614378,0
- .99601758\H,0,-0.36841091,1.0426148,0.05668981\H,0,-0.60664485,-0.5664
- 7102,-0.73285644\Bq,0,-0.70144293,0.,0.21165007\Bq,0,0.05623423,0.3150
- 7132,-0.65907944\Bq,0,0.2437829,-0.68991351,-0.03751248\Bq,0,0.4014258
- ,0.37484218,0.48494185\C,0,0.,0.,2.94387027\H,0,0.10834846,0.77395019,
- 2.15949303\H,0,0.77954514,0.14591697,3.71653034\H,0,-1.0011902,0.08379
- 405,3.40925474\H,0,0.1132966,-1.00366121,2.49020299\Bq,0,-0.07169577,-
- 0.5121342,3.4629042\Bq,0,-0.51583645,-0.0965554,2.43258978\Bq,0,0.6625
- 0224,-0.05544775,2.63591855\Bq,0,-0.07497002,0.66413735,3.24406857\\Ve
- rsion=AS64L-G09RevD.01\HF=-81.7935406\RMSD=2.734e-09\Dipole=0.000521,-
- 0.007607,0.1014641\Quadrupole=0.0411539,0.0928669,-0.1340208,-0.015297
- 2,-0.0442812,-0.0324518\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE56\SP\RM05\Gen\C2H8\CONNORNM\07-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,1.06003836,0.,-0.31985095\H,0,-0.0849826,-0.47614378,0.99601758\H,0,
+ -0.36841091,1.0426148,0.05668981\H,0,-0.60664485,-0.56647102,-0.732856
+ 44\Bq,0,-0.70144293,0.,0.21165007\Bq,0,0.05623423,0.31507132,-0.659079
+ 44\Bq,0,0.2437829,-0.68991351,-0.03751248\Bq,0,0.4014258,0.37484218,0.
+ 48494185\C,0,0.,0.,2.94387027\H,0,0.10834846,0.77395019,2.15949303\H,0
+ ,0.77954514,0.14591697,3.71653034\H,0,-1.0011902,0.08379405,3.40925474
+ \H,0,0.1132966,-1.00366121,2.49020299\Bq,0,-0.07169577,-0.5121342,3.46
+ 29042\Bq,0,-0.51583645,-0.0965554,2.43258978\Bq,0,0.66250224,-0.055447
+ 75,2.63591855\Bq,0,-0.07497002,0.66413735,3.24406857\\Version=AS64L-G0
+ 9RevD.01\HF=-81.7935406\RMSD=2.734e-09\Dipole=0.000521,-0.007607,0.101
+ 4641\Quadrupole=0.0411539,0.0928669,-0.1340208,-0.0152972,-0.0442812,-
+ 0.0324518\PG=C01 [X(C2H8)]\\@
 
 
- WHAT THE SLIME CONTAINS, THE GLOWING REVEALS
- BY THE FLAME'S BRIGHT HUE WHEN YOU IGNITE IT.
-   --  LEONARD THURNEYSSER, 1531-1596
- DESCRIBING HIS FLAME PHOTOLYSIS ANALYTIC METHOD
- Job cpu time:       0 days  0 hours 16 minutes 40.0 seconds.
+ THE RARE EARTHS PERPLEX US IN OUR RESEARCHES,
+ BAFFLE US IN OUR SPECULATIONS, AND HAUNT US IN OUR
+ VERY DREAMS.  THEY STRETCH LIKE AN UNKNOWN BEFORE US,
+ MOCKING, MYSTIFYING, AND MURMURING STRANGE REVELATIONS
+ AND POSSIBILITIES.  -- SIR WILLIAM CROOKE, 1832-1919
+ Job cpu time:       0 days  0 hours 16 minutes 29.0 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Thu Dec  6 13:22:24 2018.
+ Normal termination of Gaussian 09 at Fri Dec  7 14:03:51 2018.

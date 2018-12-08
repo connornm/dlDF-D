@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-16354.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     16355.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-20502.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     20503.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400098
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916057      8.6523741      8.6523741
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -279,32 +284,34 @@
     17  Bq   0.380809
     18  Bq   0.511739
  Electronic spatial extent (au):  <R**2>=            304.7718
- Charge=             -0.0000 electrons
+ Charge=              0.0000 electrons
  Dipole moment (field-independent basis, Debye):
     X=              0.0283    Y=             -0.0004    Z=              0.0826  Tot=              0.0873
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE50\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.86368773,0.,0.69284158\H,0,-0.12569086,1.01122146,-0
- .43315\H,0,0.17898585,-0.73010425,-0.81295622\H,0,-0.91698272,-0.28111
- 722,0.55326464\Bq,0,-0.57151484,0.,-0.45846344\Bq,0,0.08317149,-0.6691
- 4007,0.28662171\Bq,0,-0.11843756,0.48312069,0.53794505\Bq,0,0.60678092
- ,0.18601939,-0.36610333\C,0,0.,0.,2.54259602\H,0,-0.53599417,0.9688552
- 9,2.53864237\H,0,-0.65657245,-0.7867422,2.12314961\H,0,0.91656695,0.08
- 275585,1.92693179\H,0,0.27599967,-0.26486894,3.5816603\Bq,0,0.35467521
- ,-0.64110576,2.5452122\Bq,0,0.43446362,0.52059885,2.82014985\Bq,0,-0.6
- 065058,-0.05476076,2.94999007\Bq,0,-0.18263303,0.17526766,1.85503194\\
- Version=AS64L-G09RevD.01\HF=-81.75654\RMSD=6.346e-09\Dipole=0.0111272,
- -0.0001527,0.0324912\Quadrupole=0.4813617,0.3494909,-0.8308526,0.03230
- 13,-0.0193956,0.0304215\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE23\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.86368773,0.,0.69284158\H,0,-0.12569086,1.01122146,-0.43315\H,0,0.1
+ 7898585,-0.73010425,-0.81295622\H,0,-0.91698272,-0.28111722,0.55326464
+ \Bq,0,-0.57151484,0.,-0.45846344\Bq,0,0.08317149,-0.66914007,0.2866217
+ 1\Bq,0,-0.11843756,0.48312069,0.53794505\Bq,0,0.60678092,0.18601939,-0
+ .36610333\C,0,0.,0.,2.54259602\H,0,-0.53599417,0.96885529,2.53864237\H
+ ,0,-0.65657245,-0.7867422,2.12314961\H,0,0.91656695,0.08275585,1.92693
+ 179\H,0,0.27599967,-0.26486894,3.5816603\Bq,0,0.35467521,-0.64110576,2
+ .5452122\Bq,0,0.43446362,0.52059885,2.82014985\Bq,0,-0.6065058,-0.0547
+ 6076,2.94999007\Bq,0,-0.18263303,0.17526766,1.85503194\\Version=AS64L-
+ G09RevD.01\HF=-81.75654\RMSD=6.346e-09\Dipole=0.0111272,-0.0001527,0.0
+ 324912\Quadrupole=0.4813617,0.3494909,-0.8308526,0.0323013,-0.0193956,
+ 0.0304215\PG=C01 [X(C2H8)]\\@
 
 
- "TIGER, TIGER BURNING BRIGHT
- IN THE FOREST OF THE NIGHT.
- WHAT IMMORTAL HAND OR EYE
- CAN FRAME THY FEARFUL SYMMETRYE?"
-                     - WILLIAM BLAKE
- Job cpu time:       0 days  0 hours 17 minutes 21.9 seconds.
+      TO SUSPECT YOUR OWN MORTALITY IS TO KNOW THE BEGINNING OF TERROR.
+      TO LEARN IRREFUTABLY THAT YOU ARE MORTAL IS TO KNOW THE END
+      OF TERROR.
+
+                                                  -- JESSICA
+                                                     CHILDREN OF DUNE
+                                                     BY FRANK HERBERT
+ Job cpu time:       0 days  0 hours 17 minutes  3.8 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:44:11 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 15:29:53 2018.

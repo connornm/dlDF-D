@@ -1,0 +1,247 @@
+ Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
+ AtFile(1): aug-cc-pVTZ.gbs
+ Initial command:
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-32078.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     32079.
+  
+ Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
+            Gaussian, Inc.  All Rights Reserved.
+  
+ This is part of the Gaussian(R) 09 program.  It is based on
+ the Gaussian(R) 03 system (copyright 2003, Gaussian, Inc.),
+ the Gaussian(R) 98 system (copyright 1998, Gaussian, Inc.),
+ the Gaussian(R) 94 system (copyright 1995, Gaussian, Inc.),
+ the Gaussian 92(TM) system (copyright 1992, Gaussian, Inc.),
+ the Gaussian 90(TM) system (copyright 1990, Gaussian, Inc.),
+ the Gaussian 88(TM) system (copyright 1988, Gaussian, Inc.),
+ the Gaussian 86(TM) system (copyright 1986, Carnegie Mellon
+ University), and the Gaussian 82(TM) system (copyright 1983,
+ Carnegie Mellon University). Gaussian is a federally registered
+ trademark of Gaussian, Inc.
+  
+ This software contains proprietary and confidential information,
+ including trade secrets, belonging to Gaussian, Inc.
+  
+ This software is provided under written license and may be
+ used, copied, transmitted, or stored only in accord with that
+ written license.
+  
+ The following legend is applicable only to US Government
+ contracts under FAR:
+  
+                    RESTRICTED RIGHTS LEGEND
+  
+ Use, reproduction and disclosure by the US Government is
+ subject to restrictions as set forth in subparagraphs (a)
+ and (c) of the Commercial Computer Software - Restricted
+ Rights clause in FAR 52.227-19.
+  
+ Gaussian, Inc.
+ 340 Quinnipiac St., Bldg. 40, Wallingford CT 06492
+  
+  
+ ---------------------------------------------------------------
+ Warning -- This program may not be used in any manner that
+ competes with the business of Gaussian, Inc. or will provide
+ assistance to any competitor of Gaussian, Inc.  The licensee
+ of this program is prohibited from giving any competitor of
+ Gaussian, Inc. access to this program.  By using this program,
+ the user acknowledges that Gaussian, Inc. is engaged in the
+ business of creating and licensing software in the field of
+ computational chemistry and represents and warrants to the
+ licensee that it is not a competitor of Gaussian, Inc. and that
+ it will not use this program in any manner prohibited above.
+ ---------------------------------------------------------------
+  
+
+ Cite this work as:
+ Gaussian 09, Revision D.01,
+ M. J. Frisch, G. W. Trucks, H. B. Schlegel, G. E. Scuseria, 
+ M. A. Robb, J. R. Cheeseman, G. Scalmani, V. Barone, B. Mennucci, 
+ G. A. Petersson, H. Nakatsuji, M. Caricato, X. Li, H. P. Hratchian, 
+ A. F. Izmaylov, J. Bloino, G. Zheng, J. L. Sonnenberg, M. Hada, 
+ M. Ehara, K. Toyota, R. Fukuda, J. Hasegawa, M. Ishida, T. Nakajima, 
+ Y. Honda, O. Kitao, H. Nakai, T. Vreven, J. A. Montgomery, Jr., 
+ J. E. Peralta, F. Ogliaro, M. Bearpark, J. J. Heyd, E. Brothers, 
+ K. N. Kudin, V. N. Staroverov, T. Keith, R. Kobayashi, J. Normand, 
+ K. Raghavachari, A. Rendell, J. C. Burant, S. S. Iyengar, J. Tomasi, 
+ M. Cossi, N. Rega, J. M. Millam, M. Klene, J. E. Knox, J. B. Cross, 
+ V. Bakken, C. Adamo, J. Jaramillo, R. Gomperts, R. E. Stratmann, 
+ O. Yazyev, A. J. Austin, R. Cammi, C. Pomelli, J. W. Ochterski, 
+ R. L. Martin, K. Morokuma, V. G. Zakrzewski, G. A. Voth, 
+ P. Salvador, J. J. Dannenberg, S. Dapprich, A. D. Daniels, 
+ O. Farkas, J. B. Foresman, J. V. Ortiz, J. Cioslowski, 
+ and D. J. Fox, Gaussian, Inc., Wallingford CT, 2013.
+ 
+ ******************************************
+ Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
+                 8-Dec-2018 
+ ******************************************
+ %Chk=CH400152
+ %Mem=2GB
+ %NProcShared=16
+ Will use up to   16 processors via shared memory.
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
+ -------
+ M05 opt
+ -------
+ Symbolic Z-matrix:
+ Charge =  0 Multiplicity = 1
+ 6-Bq                  0.        0.        0. 
+ 1-Bq                  0.6907    0.       -0.8654 
+ 1-Bq                 -0.31236  -1.03862   0.22292 
+ 1-Bq                  0.51383   0.42831   0.88233 
+ 1-Bq                 -0.89218   0.6103   -0.23986 
+ 6                     0.        0.        4.43773 
+ 1                    -0.25557  -0.89645   5.03526 
+ 1                     0.55251   0.72065   5.07128 
+ 1                     0.63255  -0.29696   3.57884 
+ 1                    -0.92949   0.47276   4.06553 
+ 
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  H    1.107243   0.000000
+     3  H    1.107243   1.808119   0.000000
+     4  H    1.107243   1.808119   1.808119   0.000000
+     5  H    1.107243   1.808119   1.808119   1.808119   0.000000
+     6  C    4.437730   5.347919   4.352116   3.617780   4.800860
+     7  H    5.120822   6.042918   4.814776   4.426490   5.522903
+     8  H    5.151941   5.981855   5.229685   4.199315   5.505222
+     9  H    3.646427   4.454533   3.564425   2.794869   4.210747
+    10  H    4.197142   5.211775   4.175018   3.495413   4.307745
+                    6          7          8          9         10
+     6  C    0.000000
+     7  H    1.107243   0.000000
+     8  H    1.107243   1.808119   0.000000
+     9  H    1.107243   1.808119   1.808119   0.000000
+    10  H    1.107243   1.808119   1.808119   1.808119   0.000000
+ Symmetry turned off by external request.
+ This structure is nearly, but not quite of a higher symmetry.
+ Consider Symm=Loose if the higher symmetry is desired.
+ Framework group  C1[X(C2H8)]
+ Deg. of freedom    24
+ Rotational constants (GHZ):     76.6916052      3.0732298      3.0732298
+   276 basis functions,   360 primitive gaussians,   310 cartesian basis functions
+     5 alpha electrons        5 beta electrons
+       nuclear repulsion energy        13.2261669657 Hartrees.
+ IMHF & INEx in M05                  614413                  385587
+ NAtoms=   10 NActive=   10 NUniq=   10 SFac= 1.00D+00 NAtFMM=   60 NAOKFM=F Big=F
+ ExpMin= 2.53D-02 ExpMax= 8.24D+03 ExpMxC= 2.81D+02 IAcc=3 IRadAn=         5 AccDes= 0.00D+00
+ Harris functional with IExCor= 1009 and IRadAn=       5 diagonalized for initial guess.
+ HarFok:  IExCor= 1009 AccDes= 0.00D+00 IRadAn=         5 IDoV= 1 UseB2=F ITyADJ=14
+ ICtDFT=  3500011 ScaDFX=  1.000000  1.000000  1.000000  1.000000
+ FoFCou: FMM=F IPFlag=           0 FMFlag=      100000 FMFlg1=           0
+         NFxFlg=           0 DoJE=T BraDBF=F KetDBF=T FulRan=T
+         wScrn=  0.000000 ICntrl=     500 IOpCl=  0 I1Cent=   200000004 NGrid=           0
+         NMat0=    1 NMatS0=      1 NMatT0=    0 NMatD0=    1 NMtDS0=    0 NMtDT0=    0
+ Symmetry not used in FoFCou.
+ SCF Done:  E(RM05) =  -45.8795873768     A.U. after   10 cycles
+            NFock= 10  Conv=0.23D-08     -V/T= 2.0336
+
+ **********************************************************************
+
+            Population analysis using the SCF density.
+
+ **********************************************************************
+
+ Alpha  occ. eigenvalues --  -12.05203  -0.99431  -0.71141  -0.71140  -0.71139
+ Alpha virt. eigenvalues --   -0.08968  -0.01740  -0.01735  -0.01731  -0.00453
+ Alpha virt. eigenvalues --   -0.00384  -0.00286   0.02841   0.04163   0.04712
+ Alpha virt. eigenvalues --    0.05078   0.05643   0.06252   0.07159   0.07769
+ Alpha virt. eigenvalues --    0.08054   0.09260   0.10585   0.11611   0.12176
+ Alpha virt. eigenvalues --    0.14885   0.16938   0.18962   0.19571   0.20233
+ Alpha virt. eigenvalues --    0.20550   0.21062   0.21316   0.22521   0.23321
+ Alpha virt. eigenvalues --    0.23782   0.24606   0.24712   0.25348   0.25832
+ Alpha virt. eigenvalues --    0.26408   0.27273   0.27710   0.29000   0.29878
+ Alpha virt. eigenvalues --    0.31223   0.32087   0.33481   0.34305   0.35107
+ Alpha virt. eigenvalues --    0.35775   0.36336   0.36888   0.40275   0.40690
+ Alpha virt. eigenvalues --    0.41272   0.41988   0.43708   0.45546   0.46776
+ Alpha virt. eigenvalues --    0.46873   0.48241   0.50022   0.51446   0.54812
+ Alpha virt. eigenvalues --    0.56192   0.56537   0.57473   0.57508   0.58403
+ Alpha virt. eigenvalues --    0.60275   0.63926   0.64325   0.65734   0.65764
+ Alpha virt. eigenvalues --    0.66583   0.67415   0.70363   0.70721   0.71643
+ Alpha virt. eigenvalues --    0.72526   0.73606   0.76525   0.77205   0.78081
+ Alpha virt. eigenvalues --    0.78300   0.81318   0.81790   0.85452   0.86509
+ Alpha virt. eigenvalues --    0.88600   0.90362   0.90974   0.92049   0.92804
+ Alpha virt. eigenvalues --    0.94142   0.95459   0.95780   0.96385   0.97714
+ Alpha virt. eigenvalues --    0.99580   1.01177   1.02511   1.03911   1.04466
+ Alpha virt. eigenvalues --    1.05741   1.06295   1.07499   1.09010   1.10220
+ Alpha virt. eigenvalues --    1.11877   1.12162   1.14551   1.15256   1.17615
+ Alpha virt. eigenvalues --    1.19351   1.21078   1.22790   1.23439   1.24575
+ Alpha virt. eigenvalues --    1.24979   1.25691   1.27092   1.27721   1.27986
+ Alpha virt. eigenvalues --    1.30053   1.31211   1.33188   1.36777   1.37319
+ Alpha virt. eigenvalues --    1.38185   1.38730   1.39569   1.40681   1.43361
+ Alpha virt. eigenvalues --    1.47486   1.47706   1.48277   1.49616   1.54700
+ Alpha virt. eigenvalues --    1.55754   1.59304   1.63185   1.69853   1.71066
+ Alpha virt. eigenvalues --    1.72109   1.74686   1.75635   1.76771   1.84240
+ Alpha virt. eigenvalues --    1.84976   1.88257   1.89714   1.91776   1.97187
+ Alpha virt. eigenvalues --    2.01663   2.02602   2.03548   2.04921   2.06645
+ Alpha virt. eigenvalues --    2.08218   2.16050   2.25298   2.28036   2.29506
+ Alpha virt. eigenvalues --    2.32767   2.43754   2.47333   2.48152   2.49586
+ Alpha virt. eigenvalues --    2.51571   2.67978   2.69363   2.70692   2.81030
+ Alpha virt. eigenvalues --    2.97707   2.98238   2.98913   2.99839   3.03961
+ Alpha virt. eigenvalues --    3.04462   3.06094   3.14215   3.22094   3.22573
+ Alpha virt. eigenvalues --    3.23548   3.43822   3.45040   3.45993   3.46378
+ Alpha virt. eigenvalues --    3.48235   3.49278   3.51258   3.54524   3.56732
+ Alpha virt. eigenvalues --    3.67811   3.89883   3.90687   3.92528   3.99370
+ Alpha virt. eigenvalues --    4.00028   4.00697   4.01131   4.02640   4.03216
+ Alpha virt. eigenvalues --    4.03682   4.04341   4.05515   4.07483   4.10629
+ Alpha virt. eigenvalues --    4.16569   4.17938   4.18158   4.18696   4.26182
+ Alpha virt. eigenvalues --    4.27973   4.36265   4.37669   4.38640   4.42617
+ Alpha virt. eigenvalues --    4.43565   4.46496   4.46758   4.47242   4.48898
+ Alpha virt. eigenvalues --    4.52976   4.56866   4.60254   4.60899   4.63719
+ Alpha virt. eigenvalues --    4.75779   4.81159   4.88746   4.89595   4.90226
+ Alpha virt. eigenvalues --    4.92375   4.93376   4.93909   5.02349   5.02825
+ Alpha virt. eigenvalues --    5.15107   5.15186   5.15602   5.16101   5.16579
+ Alpha virt. eigenvalues --    5.17063   5.29949   5.30629   5.31337   5.41389
+ Alpha virt. eigenvalues --    5.44119   5.47882   5.48663   5.49579   5.51607
+ Alpha virt. eigenvalues --    5.61475   5.62500   5.63234   6.14289   6.14903
+ Alpha virt. eigenvalues --    6.16310   6.24576   6.24628   6.80566   6.81302
+ Alpha virt. eigenvalues --    6.84161   6.96997   7.65843   7.66583   7.67877
+ Alpha virt. eigenvalues --    8.03231   8.04231   8.08871  10.28591  14.88425
+ Alpha virt. eigenvalues --   52.21297
+          Condensed to atoms (all electrons):
+ Mulliken charges:
+               1
+     1  C    0.005495
+     2  H    0.000801
+     3  H   -0.000854
+     4  H   -0.000436
+     5  H    0.001049
+     6  C    0.392313
+     7  H   -0.214422
+     8  H   -0.164176
+     9  H    0.106318
+    10  H   -0.126088
+ Sum of Mulliken charges =   0.00000
+ Mulliken charges with hydrogens summed into heavy atoms:
+               1
+     1  C    0.006056
+     6  C   -0.006056
+ Electronic spatial extent (au):  <R**2>=            738.8507
+ Charge=              0.0000 electrons
+ Dipole moment (field-independent basis, Debye):
+    X=              0.0001    Y=             -0.0001    Z=              0.0008  Tot=              0.0008
+
+ Test job not archived.
+ 1\1\GINC-CHIMERA-NODE31\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.6907041,0.,-0.86539806\H,0,-0.31235745,-1.03861687,0.22292101\H,0,
+ 0.51383291,0.42831271,0.88233209\H,0,-0.89217955,0.61030416,-0.2398550
+ 4\C,0,0.,0.,4.43773029\H,0,-0.25556813,-0.89645157,5.03526311\H,0,0.55
+ 250873,0.7206478,5.07128124\H,0,0.63254831,-0.29695899,3.57884499\H,0,
+ -0.92948891,0.47276276,4.06553181\\Version=AS64L-G09RevD.01\HF=-45.879
+ 5874\RMSD=2.288e-09\Dipole=0.0000443,-0.0000425,0.0003186\Quadrupole=-
+ 0.0021071,-0.0012586,0.0033657,0.0000305,0.0003055,-0.0008219\PG=C01 [
+ X(C2H8)]\\@
+
+
+ ONLY THE DAY DAWNS TO WHICH YOU ARE AWAKE.
+
+                                 -- THOREAU
+ Job cpu time:       0 days  0 hours 14 minutes 47.4 seconds.
+ File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
+ Normal termination of Gaussian 09 at Sat Dec  8 15:34:38 2018.

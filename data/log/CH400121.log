@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-32267.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     32268.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-30479.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     30480.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400121
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916056      6.7938288      6.7938288
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -284,24 +289,26 @@
     X=              0.0018    Y=              0.0054    Z=              0.5888  Tot=              0.5889
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE48\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,1.06439789,0.,-0.30502966\H,0,-0.48165046,-0.93687712,
- -0.34096928\H,0,-0.06785567,0.06966555,1.10296341\H,0,-0.51489176,0.86
- 721157,-0.45696446\Bq,0,-0.70432769,0.,0.2018426\Bq,0,0.31871517,0.619
- 94533,0.22562438\Bq,0,0.04490109,-0.04609871,-0.72984706\Bq,0,0.340711
- 43,-0.57384662,0.30238009\C,0,0.,0.,2.90830327\H,0,0.81095322,0.172732
- 66,3.64213176\H,0,0.29101461,-0.81925689,2.22265423\H,0,-0.92857282,-0
- .27866509,3.4431717\H,0,-0.17339501,0.92518932,2.32525538\Bq,0,-0.5366
- 1964,-0.11429973,2.42271819\Bq,0,-0.19256863,0.5421143,3.36200729\Bq,0
- ,0.61445026,0.18439678,2.55437298\Bq,0,0.11473802,-0.61221135,3.294114
- 61\\Version=AS64L-G09RevD.01\HF=-81.7804588\RMSD=3.109e-09\Dipole=0.00
- 07184,0.0021197,0.231667\Quadrupole=-0.1408545,-0.0711477,0.2120022,-0
- .0178145,-0.0284528,0.0090651\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE56\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,1.06439789,0.,-0.30502966\H,0,-0.48165046,-0.93687712,-0.34096928\H,
+ 0,-0.06785567,0.06966555,1.10296341\H,0,-0.51489176,0.86721157,-0.4569
+ 6446\Bq,0,-0.70432769,0.,0.2018426\Bq,0,0.31871517,0.61994533,0.225624
+ 38\Bq,0,0.04490109,-0.04609871,-0.72984706\Bq,0,0.34071143,-0.57384662
+ ,0.30238009\C,0,0.,0.,2.90830327\H,0,0.81095322,0.17273266,3.64213176\
+ H,0,0.29101461,-0.81925689,2.22265423\H,0,-0.92857282,-0.27866509,3.44
+ 31717\H,0,-0.17339501,0.92518932,2.32525538\Bq,0,-0.53661964,-0.114299
+ 73,2.42271819\Bq,0,-0.19256863,0.5421143,3.36200729\Bq,0,0.61445026,0.
+ 18439678,2.55437298\Bq,0,0.11473802,-0.61221135,3.29411461\\Version=AS
+ 64L-G09RevD.01\HF=-81.7804588\RMSD=3.109e-09\Dipole=0.0007184,0.002119
+ 7,0.231667\Quadrupole=-0.1408545,-0.0711477,0.2120022,-0.0178145,-0.02
+ 84528,0.0090651\PG=C01 [X(C2H8)]\\@
 
 
- My opinions may have changed, but not the fact that I am right.
-                       -- Ashleigh Brilliant
- Job cpu time:       0 days  0 hours 16 minutes 38.7 seconds.
+ EVANS BOLDLY PUT 50 ATM. OF ETHYLENE IN A CELL WITH 25 ATM. OF OXYGEN.
+ THE APPARATUS SUBSEQUENTLY BLEW UP, BUT LUCKILY NOT BEFORE HE
+ OBTAINED THE SPECTRA SHOWN IN FIGURE 8.
+ A.J.MERER AND R.S.MULLIKEN, CHEM.REV. 69, 645 (1969)
+ Job cpu time:       0 days  0 hours 16 minutes 29.9 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:16:09 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 15:28:15 2018.

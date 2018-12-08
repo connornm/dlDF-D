@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-28191.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     28192.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-38007.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     38008.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400061
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916056      8.7692395      8.7692395
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -179,8 +184,8 @@
          wScrn=  0.000000 ICntrl=     500 IOpCl=  0 I1Cent=   200000004 NGrid=           0
          NMat0=    1 NMatS0=      1 NMatT0=    0 NMatD0=    1 NMtDS0=    0 NMtDT0=    0
  Symmetry not used in FoFCou.
- SCF Done:  E(RM05) =  -89.7810639528     A.U. after   13 cycles
-            NFock= 13  Conv=0.69D-08     -V/T= 2.0229
+ SCF Done:  E(RM05) =  -81.7586015731     A.U. after    9 cycles
+            NFock=  9  Conv=0.44D-08     -V/T= 2.0085
 
  **********************************************************************
 
@@ -188,79 +193,79 @@
 
  **********************************************************************
 
- Alpha  occ. eigenvalues --  -11.78368 -11.77941  -0.98322  -0.92700  -0.70501
- Alpha  occ. eigenvalues --   -0.68991  -0.66101  -0.64548  -0.61673  -0.59812
- Alpha virt. eigenvalues --   -0.08892  -0.04059  -0.02243  -0.02067  -0.01023
- Alpha virt. eigenvalues --   -0.00635  -0.00401   0.01200   0.01503   0.02632
- Alpha virt. eigenvalues --    0.04008   0.04555   0.05533   0.06762   0.07094
- Alpha virt. eigenvalues --    0.07131   0.07938   0.08315   0.08695   0.09092
- Alpha virt. eigenvalues --    0.10425   0.10967   0.15556   0.16165   0.16928
- Alpha virt. eigenvalues --    0.17571   0.17636   0.18876   0.19147   0.20505
- Alpha virt. eigenvalues --    0.21496   0.22829   0.23308   0.23659   0.23992
- Alpha virt. eigenvalues --    0.24534   0.24890   0.25256   0.26347   0.27182
- Alpha virt. eigenvalues --    0.27304   0.28115   0.29639   0.31580   0.32636
- Alpha virt. eigenvalues --    0.33381   0.33941   0.34729   0.35298   0.36067
- Alpha virt. eigenvalues --    0.36855   0.38463   0.39528   0.40757   0.42158
- Alpha virt. eigenvalues --    0.42423   0.43364   0.48194   0.48928   0.50315
- Alpha virt. eigenvalues --    0.50877   0.52244   0.54173   0.56882   0.57461
- Alpha virt. eigenvalues --    0.59064   0.59674   0.60333   0.61226   0.61644
- Alpha virt. eigenvalues --    0.62717   0.63231   0.67058   0.68047   0.68800
- Alpha virt. eigenvalues --    0.69902   0.70753   0.71580   0.72145   0.72724
- Alpha virt. eigenvalues --    0.73949   0.74794   0.77103   0.78127   0.78733
- Alpha virt. eigenvalues --    0.80388   0.80813   0.82773   0.82930   0.83981
- Alpha virt. eigenvalues --    0.85149   0.87695   0.88052   0.89227   0.90708
- Alpha virt. eigenvalues --    0.92142   0.92309   0.94017   0.94676   0.95857
- Alpha virt. eigenvalues --    0.96673   0.99192   1.01435   1.05258   1.06188
- Alpha virt. eigenvalues --    1.08170   1.09828   1.11326   1.12056   1.13509
- Alpha virt. eigenvalues --    1.15692   1.19135   1.20838   1.22141   1.22970
- Alpha virt. eigenvalues --    1.25369   1.28410   1.29562   1.30891   1.31695
- Alpha virt. eigenvalues --    1.33963   1.36139   1.36417   1.36830   1.39432
- Alpha virt. eigenvalues --    1.41863   1.43378   1.43939   1.45748   1.49226
- Alpha virt. eigenvalues --    1.50137   1.50787   1.52599   1.55081   1.55536
- Alpha virt. eigenvalues --    1.56674   1.58564   1.61966   1.62645   1.63783
- Alpha virt. eigenvalues --    1.65259   1.69726   1.70990   1.75403   1.76518
- Alpha virt. eigenvalues --    1.77145   1.78192   1.82399   1.84565   1.84901
- Alpha virt. eigenvalues --    1.85773   1.88067   1.91310   1.92149   1.93688
- Alpha virt. eigenvalues --    1.94559   1.98356   2.05851   2.07494   2.13843
- Alpha virt. eigenvalues --    2.32545   2.36746   2.61394   2.61670   2.64802
- Alpha virt. eigenvalues --    2.65496   2.66889   2.72911   2.80847   2.91502
- Alpha virt. eigenvalues --    3.02570   3.05610   3.08449   3.09773   3.10960
- Alpha virt. eigenvalues --    3.12525   3.13893   3.15424   3.19565   3.22010
- Alpha virt. eigenvalues --    3.24838   3.25295   3.26175   3.26369   3.27269
- Alpha virt. eigenvalues --    3.31601   3.33384   3.34731   3.36051   3.37362
- Alpha virt. eigenvalues --    3.41394   3.47941   3.53918   3.54543   3.55598
- Alpha virt. eigenvalues --    3.57366   3.59468   3.60595   3.61610   3.62755
- Alpha virt. eigenvalues --    3.63373   3.67601   3.69502   3.70641   3.73200
- Alpha virt. eigenvalues --    3.77312   3.79346   3.79953   3.94718   3.97351
- Alpha virt. eigenvalues --    3.99627   4.01260   4.04523   4.09477   4.10807
- Alpha virt. eigenvalues --    4.12162   4.14240   4.15735   4.18873   4.19153
- Alpha virt. eigenvalues --    4.20445   4.24497   4.25663   4.27710   4.30362
- Alpha virt. eigenvalues --    4.31842   4.36800   4.40546   4.46711   4.51227
- Alpha virt. eigenvalues --    4.52974   4.57927   4.58759   4.63611   4.67325
- Alpha virt. eigenvalues --    4.72171   4.74734   4.80243   4.81379   4.84334
- Alpha virt. eigenvalues --    4.95100   4.97286   5.00319   5.01833   5.04583
- Alpha virt. eigenvalues --    5.05674   5.12623   5.14884   5.22317   5.23221
- Alpha virt. eigenvalues --    5.26746   5.29527   5.30732   5.35563   5.38335
- Alpha virt. eigenvalues --    5.44075   5.49929   5.65707   5.75323   5.80365
- Alpha virt. eigenvalues --    5.83934   5.86573   5.87958   5.97493  16.04369
- Alpha virt. eigenvalues --   16.23639
+ Alpha  occ. eigenvalues --  -10.73593 -10.73204  -0.86508  -0.79876  -0.54424
+ Alpha  occ. eigenvalues --   -0.53052  -0.49741  -0.47352  -0.44579  -0.41350
+ Alpha virt. eigenvalues --   -0.00440   0.01817   0.02405   0.02468   0.04115
+ Alpha virt. eigenvalues --    0.04740   0.04937   0.06392   0.07378   0.09012
+ Alpha virt. eigenvalues --    0.09310   0.10414   0.11156   0.11363   0.11848
+ Alpha virt. eigenvalues --    0.12875   0.13969   0.14515   0.15338   0.16923
+ Alpha virt. eigenvalues --    0.18717   0.19374   0.24061   0.24131   0.24694
+ Alpha virt. eigenvalues --    0.25627   0.26098   0.26329   0.27899   0.28369
+ Alpha virt. eigenvalues --    0.29574   0.30465   0.30697   0.31216   0.31595
+ Alpha virt. eigenvalues --    0.32415   0.33392   0.33629   0.33884   0.35098
+ Alpha virt. eigenvalues --    0.35680   0.36414   0.38533   0.39157   0.40349
+ Alpha virt. eigenvalues --    0.41037   0.41879   0.42496   0.43126   0.44439
+ Alpha virt. eigenvalues --    0.45520   0.46605   0.48432   0.49372   0.50119
+ Alpha virt. eigenvalues --    0.51180   0.54134   0.58625   0.60228   0.60900
+ Alpha virt. eigenvalues --    0.62963   0.64573   0.65123   0.68792   0.69528
+ Alpha virt. eigenvalues --    0.71340   0.71980   0.72992   0.74340   0.74885
+ Alpha virt. eigenvalues --    0.75396   0.76401   0.78911   0.79481   0.81306
+ Alpha virt. eigenvalues --    0.82535   0.82858   0.83837   0.84626   0.85387
+ Alpha virt. eigenvalues --    0.86902   0.87576   0.90030   0.91838   0.92236
+ Alpha virt. eigenvalues --    0.93627   0.94142   0.95547   0.96573   0.97703
+ Alpha virt. eigenvalues --    0.98678   1.01185   1.02531   1.04439   1.06187
+ Alpha virt. eigenvalues --    1.06365   1.07305   1.07838   1.09109   1.10666
+ Alpha virt. eigenvalues --    1.11250   1.12744   1.16635   1.20899   1.22104
+ Alpha virt. eigenvalues --    1.23438   1.25419   1.26240   1.28068   1.29989
+ Alpha virt. eigenvalues --    1.31444   1.34657   1.35571   1.37580   1.37770
+ Alpha virt. eigenvalues --    1.41056   1.43565   1.45254   1.46332   1.46573
+ Alpha virt. eigenvalues --    1.49107   1.50301   1.51617   1.53514   1.54307
+ Alpha virt. eigenvalues --    1.56547   1.57707   1.59236   1.59491   1.61528
+ Alpha virt. eigenvalues --    1.66186   1.67887   1.68439   1.70585   1.71625
+ Alpha virt. eigenvalues --    1.72128   1.74165   1.75794   1.76992   1.78956
+ Alpha virt. eigenvalues --    1.80957   1.85703   1.87219   1.90581   1.91708
+ Alpha virt. eigenvalues --    1.91875   1.94035   1.98234   2.00055   2.01264
+ Alpha virt. eigenvalues --    2.01803   2.04080   2.05884   2.08315   2.09384
+ Alpha virt. eigenvalues --    2.09981   2.12265   2.22085   2.22555   2.30029
+ Alpha virt. eigenvalues --    2.53050   2.57993   2.90638   2.92507   2.93794
+ Alpha virt. eigenvalues --    2.96329   2.98275   3.02885   3.09646   3.17330
+ Alpha virt. eigenvalues --    3.20766   3.23178   3.25515   3.26443   3.29839
+ Alpha virt. eigenvalues --    3.31068   3.31930   3.33520   3.39509   3.42542
+ Alpha virt. eigenvalues --    3.43301   3.44159   3.45088   3.47206   3.50472
+ Alpha virt. eigenvalues --    3.56893   3.58059   3.58665   3.60540   3.62216
+ Alpha virt. eigenvalues --    3.67280   3.68863   3.74546   3.74950   3.77490
+ Alpha virt. eigenvalues --    3.79113   3.80021   3.81173   3.82545   3.83488
+ Alpha virt. eigenvalues --    3.85398   3.87490   3.89088   3.91065   3.95124
+ Alpha virt. eigenvalues --    3.97772   4.01242   4.04885   4.13871   4.17850
+ Alpha virt. eigenvalues --    4.19871   4.23716   4.25028   4.32644   4.35999
+ Alpha virt. eigenvalues --    4.36607   4.38316   4.41126   4.42866   4.43833
+ Alpha virt. eigenvalues --    4.44788   4.47573   4.50727   4.52344   4.54277
+ Alpha virt. eigenvalues --    4.56227   4.61702   4.65326   4.70977   4.80173
+ Alpha virt. eigenvalues --    4.81875   4.84038   4.84556   4.88959   4.95720
+ Alpha virt. eigenvalues --    4.97498   5.02302   5.05564   5.07986   5.09389
+ Alpha virt. eigenvalues --    5.15186   5.17902   5.23830   5.25415   5.26903
+ Alpha virt. eigenvalues --    5.29627   5.35995   5.38994   5.46488   5.50012
+ Alpha virt. eigenvalues --    5.53549   5.58940   5.62740   5.67059   5.69722
+ Alpha virt. eigenvalues --    5.77327   5.80251   5.94707   6.08419   6.14123
+ Alpha virt. eigenvalues --    6.17353   6.19887   6.22160   6.30573  17.49325
+ Alpha virt. eigenvalues --   17.70444
           Condensed to atoms (all electrons):
  Mulliken charges:
                1
-     1  C   -0.479842
-     2  H   -0.435826
-     3  H    0.065364
-     4  H    0.387805
-     5  H    0.494314
+     1  C   -2.051716
+     2  H    0.385611
+     3  H    0.497895
+     4  H    0.574636
+     5  H    0.588318
      6  Bq   0.000000
      7  Bq   0.000000
      8  Bq   0.000000
      9  Bq   0.000000
-    10  C   -0.435315
-    11  H    0.320567
-    12  H    0.025962
-    13  H   -0.514779
-    14  H    0.571749
+    10  C   -2.055306
+    11  H    0.538474
+    12  H    0.496819
+    13  H    0.362048
+    14  H    0.663220
     15  Bq   0.000000
     16  Bq   0.000000
     17  Bq   0.000000
@@ -268,41 +273,42 @@
  Sum of Mulliken charges =  -0.00000
  Mulliken charges with hydrogens summed into heavy atoms:
                1
-     1  C   -0.479842
+     1  C   -2.051716
      6  Bq   0.000000
-     7  Bq   0.494314
-     8  Bq  -0.435826
-     9  Bq   0.453169
-    10  C   -0.435315
-    15  Bq   0.025962
-    16  Bq   0.571749
-    17  Bq   0.320567
-    18  Bq  -0.514779
- Electronic spatial extent (au):  <R**2>=            300.7267
+     7  Bq   0.588318
+     8  Bq   0.385611
+     9  Bq   1.072531
+    10  C   -2.055306
+    15  Bq   0.496819
+    16  Bq   0.663220
+    17  Bq   0.538474
+    18  Bq   0.362048
+ Electronic spatial extent (au):  <R**2>=            301.6135
  Charge=             -0.0000 electrons
  Dipole moment (field-independent basis, Debye):
-    X=              0.0332    Y=              0.0834    Z=             -0.0792  Tot=              0.1197
+    X=             -0.0008    Y=              0.0172    Z=             -0.0803  Tot=              0.0821
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE24\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.5491814,0.,-0.96144982\H,0,-1.04526531,-0.32220986,-
- 0.17200927\H,0,0.49034191,-0.69881343,0.70513159\H,0,0.00574201,1.0210
- 2328,0.42832749\Bq,0,-0.36340139,0.,0.63620545\Bq,0,0.69166739,0.21321
- 099,0.11382106\Bq,0,-0.32446643,0.46241509,-0.46659592\Bq,0,-0.0037995
- 7,-0.67562608,-0.28343058\C,0,0.,0.,2.523427\H,0,0.94148608,-0.4994805
- 3,2.2232452\H,0,-0.80787672,-0.75290477,2.60377353\H,0,0.14135556,0.49
- 568003,3.50337897\H,0,-0.27496491,0.75670527,1.7633103\Bq,0,-0.6229951
- 5,0.33051359,2.7220617\Bq,0,0.53458388,0.49820813,2.47026052\Bq,0,-0.0
- 9353704,-0.32799875,1.87497841\Bq,0,0.18194832,-0.50072297,3.02640737\
- \Version=AS64L-G09RevD.01\HF=-89.781064\RMSD=6.885e-09\Dipole=0.01306,
- 0.0327974,-0.0311762\Quadrupole=0.4087987,0.5408729,-0.9496716,-0.0729
- 067,0.0891345,0.0066556\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE47\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.5491814,0.,-0.96144982\H,0,-1.04526531,-0.32220986,-0.17200927\H,0
+ ,0.49034191,-0.69881343,0.70513159\H,0,0.00574201,1.02102328,0.4283274
+ 9\Bq,0,-0.36340139,0.,0.63620545\Bq,0,0.69166739,0.21321099,0.11382106
+ \Bq,0,-0.32446643,0.46241509,-0.46659592\Bq,0,-0.00379957,-0.67562608,
+ -0.28343058\C,0,0.,0.,2.523427\H,0,0.94148608,-0.49948053,2.2232452\H,
+ 0,-0.80787672,-0.75290477,2.60377353\H,0,0.14135556,0.49568003,3.50337
+ 897\H,0,-0.27496491,0.75670527,1.7633103\Bq,0,-0.62299515,0.33051359,2
+ .7220617\Bq,0,0.53458388,0.49820813,2.47026052\Bq,0,-0.09353704,-0.327
+ 99875,1.87497841\Bq,0,0.18194832,-0.50072297,3.02640737\\Version=AS64L
+ -G09RevD.01\HF=-81.7586016\RMSD=4.425e-09\Dipole=-0.0003115,0.0067544,
+ -0.0315994\Quadrupole=0.4879134,0.548137,-1.0360504,-0.0321427,0.03999
+ 52,-0.026889\PG=C01 [X(C2H8)]\\@
 
 
- I DON'T PRETEND TO UNDERSTAND THE UNIVERSE --
- IT'S A GREAT DEAL BIGGER THAN I AM.
-       -- ATTR. TO WILLIAM ALLINGHAM (1828-89)
- Job cpu time:       0 days  0 hours 24 minutes 22.4 seconds.
+ The theorems and results in mathematical physics are
+ not theorems and results about Nature, but about our
+ description of it.
+                   --Gerard 't Hooft
+ Job cpu time:       0 days  0 hours 17 minutes 23.4 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 22:06:32 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 14:05:09 2018.

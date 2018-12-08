@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-9234.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=      9235.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-2816.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=      2817.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 6-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400071
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916053      6.3532644      6.3532644
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -179,3 +184,48 @@
          wScrn=  0.000000 ICntrl=     500 IOpCl=  0 I1Cent=   200000004 NGrid=           0
          NMat0=    1 NMatS0=      1 NMatT0=    0 NMatD0=    1 NMtDS0=    0 NMtDT0=    0
  Symmetry not used in FoFCou.
+ EnCoef did     2 forward-backward iterations
+ EnCoef did     2 forward-backward iterations
+ EnCoef did    50 forward-backward iterations
+ EnCoef did    99 forward-backward iterations
+ Rare condition: small coef for last iteration:  0.888D-15
+ EnCoef did    37 forward-backward iterations
+ Rare condition: small coef for last iteration:  0.000D+00
+ EnCoef did    58 forward-backward iterations
+ EnCoef did    23 forward-backward iterations
+ EnCoef did    37 forward-backward iterations
+ EnCoef did   100 forward-backward iterations
+ EnCoef did   100 forward-backward iterations
+ EnCoef did     6 forward-backward iterations
+ EnCoef did    54 forward-backward iterations
+ Rare condition: small coef for last iteration:  0.111D-14
+ EnCoef did    49 forward-backward iterations
+ EnCoef did     3 forward-backward iterations
+ Restarting incremental Fock formation.
+ EnCoef did     3 forward-backward iterations
+ EnCoef did     3 forward-backward iterations
+ EnCoef did     3 forward-backward iterations
+ Rare condition: small coef for last iteration: -0.444D-15
+ EnCoef did     3 forward-backward iterations
+ Rare condition: small coef for last iteration:  0.666D-15
+ EnCoef did     3 forward-backward iterations
+ Rare condition: small coef for last iteration:  0.000D+00
+ EnCoef did   100 forward-backward iterations
+ EnCoef did     3 forward-backward iterations
+ EnCoef did     3 forward-backward iterations
+ Rare condition: small coef for last iteration:  0.000D+00
+ EnCoef did     3 forward-backward iterations
+ Rare condition: small coef for last iteration:  0.000D+00
+ EnCoef did     3 forward-backward iterations
+ Rare condition: small coef for last iteration:  0.111D-15
+ EnCoef did   100 forward-backward iterations
+ EnCoef did   100 forward-backward iterations
+ EnCoef did     3 forward-backward iterations
+ EnCoef did   100 forward-backward iterations
+ >>>>>>>>>> Convergence criterion not met.
+ SCF Done:  E(RM05) =   55.9589942328     A.U. after   41 cycles
+            NFock= 40  Conv=0.24D+01     -V/T= 0.4331
+ Convergence failure -- run terminated.
+ Error termination via Lnk1e in /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe at Sat Dec  8 12:03:40 2018.
+ Job cpu time:       0 days  1 hours 12 minutes 19.0 seconds.
+ File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      2 Scr=      1

@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-48990.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     48991.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-47083.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     47084.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400260
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916057      4.3155346      4.3155346
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -284,29 +289,80 @@
     X=             -0.0015    Y=              0.0025    Z=             -0.0069  Tot=              0.0075
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE60\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.68175711,0.,0.87246387\H,0,-1.03343542,0.20731437,0.
- 33914294\H,0,0.31730928,0.7823956,-0.71635041\H,0,0.03436903,-0.989709
- 97,-0.4952564\Bq,0,-0.45112868,0.,-0.57732214\Bq,0,0.68383938,-0.13718
- 296,-0.22441586\Bq,0,-0.20996821,-0.51772264,0.47401957\Bq,0,-0.022742
- 49,0.6549056,0.32771843\C,0,0.,0.,3.71317576\H,0,-0.32777287,-0.527230
- 81,2.79634504\H,0,-0.10629777,-0.67451231,4.58479487\H,0,1.06015601,0.
- 30119216,3.60669354\H,0,-0.62608538,0.90055096,3.8648696\Bq,0,0.216892
- 11,0.34887636,4.3198561\Bq,0,0.07033879,0.44633469,3.13641261\Bq,0,-0.
- 70152079,-0.19930327,3.78363661\Bq,0,0.41428988,-0.59590778,3.61279772
- \\Version=AS64L-G09RevD.01\HF=-81.8220014\RMSD=4.079e-09\Dipole=-0.000
- 5765,0.0009779,-0.0027341\Quadrupole=0.0619456,0.0613751,-0.1233207,-0
- .0015991,-0.0138372,-0.0001392\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE31\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.68175711,0.,0.87246387\H,0,-1.03343542,0.20731437,0.33914294\H,0,0
+ .31730928,0.7823956,-0.71635041\H,0,0.03436903,-0.98970997,-0.4952564\
+ Bq,0,-0.45112868,0.,-0.57732214\Bq,0,0.68383938,-0.13718296,-0.2244158
+ 6\Bq,0,-0.20996821,-0.51772264,0.47401957\Bq,0,-0.02274249,0.6549056,0
+ .32771843\C,0,0.,0.,3.71317576\H,0,-0.32777287,-0.52723081,2.79634504\
+ H,0,-0.10629777,-0.67451231,4.58479487\H,0,1.06015601,0.30119216,3.606
+ 69354\H,0,-0.62608538,0.90055096,3.8648696\Bq,0,0.21689211,0.34887636,
+ 4.3198561\Bq,0,0.07033879,0.44633469,3.13641261\Bq,0,-0.70152079,-0.19
+ 930327,3.78363661\Bq,0,0.41428988,-0.59590778,3.61279772\\Version=AS64
+ L-G09RevD.01\HF=-81.8220014\RMSD=4.079e-09\Dipole=-0.0005765,0.0009779
+ ,-0.0027341\Quadrupole=0.0619456,0.0613751,-0.1233207,-0.0015991,-0.01
+ 38372,-0.0001392\PG=C01 [X(C2H8)]\\@
 
 
- THERE IS AN OLD, OLD RECIPE IN MAINE FOR STEWING COOT. PLACE THE
- BIRD IN A KETTLE OF WATER WITH A RED BUILDING BRICK FREE OF MORTAR AND
- BLEMISHES. PARBOIL THE COOT AND BRICK TOGETHER FOR THREE HOURS.
- POUR OFF THE WATER, REFILL THE KETTLE, AND AGAIN PARBOIL FOR THREE HOURS.
- ONCE AGAIN POUR OFF THE WATER, FOR THE LAST TIME ADD FRESH WATER,
- AND LET THE COOT AND BRICK SIMMER TOGETHER OVERNIGHT. IN THE MORNING,
- THROW AWAY THE COOT AND EAT THE BRICK.
- Job cpu time:       0 days  0 hours 13 minutes 46.2 seconds.
+ "THE ACADEMIC HIERARCHY"
+
+
+ THE PRESIDENT:
+   LEAPS TALL BUILDINGS IN A SINGLE BOUND,
+     IS MORE POWERFUL THAN A LOCOMOTIVE,
+       IS FASTER THAN A SPEEDING BULLET,
+         WALKS ON WATER,
+           GIVES POLICY TO GOD.
+
+ THE VICE PRESIDENT FOR ACADEMIC AFFAIRS:
+   LEAPS SHORT BUILDINGS IN A SINGLE BOUND,
+     IS MORE POWERFUL THAN A SWITCH ENGINE,
+       IS JUST AS FAST AS A SPEEDING BULLET,
+         WALKS ON WATER IF SEA IS CALM,
+           TALKS WITH GOD.
+
+ PROFESSOR:
+   LEAPS SHORT BUILDINGS WITH A RUNNING START AND FAVORABLE WINDS,
+     IS ALMOST AS POWERFUL AS A SWITCH ENGINE,
+       CAN FIRE A SPEEDING BULLET,
+         WALKS ON WATER IN AN INDOOR SWIMMING POOL,
+          TALKS WITH GOD IF SPECIAL REQUEST IS APPROVED.
+
+ ASSOCIATE PROFESSOR:
+   BARELY CLEARS A QUONSET HUT,
+     LOSES TUG OF WAR WITH LOCOMOTIVE,
+       MISFIRES FREQUENTLY,
+         SWIMS WELL,
+           IS OCCASIONALLY ADDRESSED BY GOD.
+
+ ASSISTANT PROFESSOR:
+   MAKES HIGH MARKS ON WALLS WHEN TRYING TO LEAP TALL BUILDINGS,
+     IS RUN OVER BY LOCOMOTIVES,
+       CAN SOMETIMES HANDLE A GUN WITHOUT INFLICTING SELF INJURY,
+         DOG PADDLES,
+           TALKS TO ANIMALS.
+
+ GRADUATE STUDENT:
+   RUNS INTO BUILDINGS,
+     RECOGNIZES LOCOMOTIVES TWO OUT OF THREE TIMES,
+       IS NOT ISSUED AMMUNITION,
+         CAN STAY AFLOAT WITH A LIFE JACKET,
+           TALKS TO WALLS.
+
+ UNDERGRADUATE AND WORK STUDY STUDENT:
+   FALLS OVER DOORSTEP WHEN TRYING TO ENTER BUILDINGS,
+     SAYS, "LOOK AT THE CHOO-CHOO,"
+       WETS HIMSELF WITH A WATER PISTOL,
+        PLAYS IN MUD PUDDLES,
+          MUMBLES TO HIMSELF.
+
+ DEPARTMENT SECRETARY:
+   LIFTS TALL BUILDINGS AND WALKS UNDER THEM,
+     KICKS LOCOMOTIVES OFF THE TRACKS,
+       CATCHES SPEEDING BULLETS IN HER TEETH AND EATS THEM,
+         FREEZES WATER WITH A SINGLE GLANCE,
+           IS GOD.
+ Job cpu time:       0 days  0 hours 13 minutes 46.7 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:15:57 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 10:22:05 2018.

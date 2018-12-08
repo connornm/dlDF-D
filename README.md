@@ -36,8 +36,16 @@ are not meant to be fundamental and only used as scripts to accomplish your part
 The library lib.py is meant to automate all the low level file-conversion and job-running
 so that high level tasks may be accomplished more flexibly and easily. 
 
-# bin
+# bin/
 
+Folder of exectuables, mainly for file type conversion and variable retrival. 
 
+# data/
+
+Folder containing all data organized by file type and optionally subcategories within each file type.
+
+# run/
+
+Templates for job submission based on type being submitted
 
 

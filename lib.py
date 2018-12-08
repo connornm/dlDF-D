@@ -28,8 +28,8 @@ class data:
 			while bool(int(check_output(['bin/number_of_runs', NAMEKEY]))):
                         	pass
 
-	# energy - get energies from specified file type
-	def energy(self, TYPEKEY):
+	# get_energy - get energies from specified file type
+	def get_energy(self, TYPEKEY):
 		for NAMEKEY in self.NAMEKEYS:
 			try:
 				self.E[NAMEKEY][TYPEKEY]=float(check_output(['bin/energy_from_'+TYPEKEY, NAMEKEY]))
@@ -82,7 +82,6 @@ class data:
 				except: 
 					print('Failed to load '+NAMEKEY+'.'+TYPEKEY+' energy')
 			wr('\n')
-		wr('Total error : '+str(self.error))
 
 # new_list - make a new list of inputs
 def new_list(SYSTEM, NUMBER):

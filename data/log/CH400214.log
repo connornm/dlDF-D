@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-5182.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=      5183.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-19495.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     19496.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400214
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916055      2.8307037      2.8307037
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -284,25 +289,24 @@
     X=             -0.0047    Y=             -0.0024    Z=              0.0051  Tot=              0.0073
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE14\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.59940581,0.,-0.9309665\H,0,-0.80125171,0.76030551,-0
- .07692322\H,0,-0.45269489,-0.99964902,0.14749622\H,0,0.65454079,0.2393
- 435,0.86039351\Bq,0,-0.39663562,0.,0.61603419\Bq,0,0.53020001,-0.50310
- 531,0.05090123\Bq,0,0.29955485,0.66148242,-0.09760041\Bq,0,-0.43311924
- ,-0.15837711,-0.56933501\C,0,0.,0.,4.63153988\H,0,0.41174577,0.2569998
- 2,5.62672955\H,0,0.67505779,-0.71819,4.12707376\H,0,-1.00102573,-0.457
- 31987,4.75316217\H,0,-0.08577783,0.91851004,4.01919405\Bq,0,-0.2724582
- 1,-0.17006055,3.97300828\Bq,0,-0.44669564,0.47523685,4.96535251\Bq,0,0
- .66239341,0.30261527,4.55106063\Bq,0,0.05676045,-0.60779157,5.0367381\
- \Version=AS64L-G09RevD.01\HF=-81.8243844\RMSD=2.075e-09\Dipole=-0.0018
- 348,-0.0009273,0.0020077\Quadrupole=0.0017883,0.0010927,-0.002881,0.00
- 02918,-0.012923,-0.0039938\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE53\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.59940581,0.,-0.9309665\H,0,-0.80125171,0.76030551,-0.07692322\H,0,
+ -0.45269489,-0.99964902,0.14749622\H,0,0.65454079,0.2393435,0.86039351
+ \Bq,0,-0.39663562,0.,0.61603419\Bq,0,0.53020001,-0.50310531,0.05090123
+ \Bq,0,0.29955485,0.66148242,-0.09760041\Bq,0,-0.43311924,-0.15837711,-
+ 0.56933501\C,0,0.,0.,4.63153988\H,0,0.41174577,0.25699982,5.62672955\H
+ ,0,0.67505779,-0.71819,4.12707376\H,0,-1.00102573,-0.45731987,4.753162
+ 17\H,0,-0.08577783,0.91851004,4.01919405\Bq,0,-0.27245821,-0.17006055,
+ 3.97300828\Bq,0,-0.44669564,0.47523685,4.96535251\Bq,0,0.66239341,0.30
+ 261527,4.55106063\Bq,0,0.05676045,-0.60779157,5.0367381\\Version=AS64L
+ -G09RevD.01\HF=-81.8243844\RMSD=2.075e-09\Dipole=-0.0018348,-0.0009273
+ ,0.0020077\Quadrupole=0.0017883,0.0010927,-0.002881,0.0002918,-0.01292
+ 3,-0.0039938\PG=C01 [X(C2H8)]\\@
 
 
- A COMPLEXITY IS MERELY A DISARRANGEMENT OF SIMPLICITIES.
-
-                                    -- G. O. ABELL IN "EXPLORATION OF THE UNIVERSE"
- Job cpu time:       0 days  0 hours 11 minutes 47.0 seconds.
+ THE MOST INCOMPREHENSIBLE THING ABOUT THE WORLD
+ IS THAT IT IS COMPREHENSIBLE. -- A. EINSTEIN
+ Job cpu time:       0 days  0 hours 11 minutes 48.2 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:43:58 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 13:49:21 2018.

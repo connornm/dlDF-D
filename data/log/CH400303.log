@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-13824.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     13825.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-30837.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     30838.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 6-Dec-2018 
+                 8-Dec-2018 
  ******************************************
  %Chk=CH400303
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916054      5.5048654      5.5048654
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -284,29 +289,25 @@
     X=              0.0079    Y=              0.0037    Z=              0.1004  Tot=              0.1007
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE15\SP\RM05\Gen\C2H8\CONNORNM\06-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,0.59431975,0.,0.9342216\H,0,0.26659399,-0.88680528,-0.
- 60703377\H,0,-1.07844352,-0.03357353,0.24863298\H,0,0.21752978,0.92037
- 881,-0.5758208\Bq,0,-0.3932701,0.,-0.61818813\Bq,0,-0.17640915,0.58681
- 206,0.40168315\Bq,0,0.71362189,0.0222161,-0.16452409\Bq,0,-0.14394264,
- -0.60902816,0.38102907\C,0,0.,0.,3.26055484\H,0,-1.08018875,0.23872989
- ,3.21379731\H,0,0.15474612,-1.06368164,2.9948088\H,0,0.55124199,0.6426
- 5477,2.54703325\H,0,0.37420064,0.18229698,4.28658001\Bq,0,0.71477674,-
- 0.15797107,3.29149499\Bq,0,-0.10239778,0.70385375,3.4364029\Bq,0,-0.36
- 476491,-0.42525409,3.73270255\Bq,0,-0.24761405,-0.12062859,2.58161894\
- \Version=AS64L-G09RevD.01\HF=-81.8141161\RMSD=1.898e-09\Dipole=0.00310
- 41,0.0014676,0.0394816\Quadrupole=0.0642726,0.0541136,-0.1183861,0.001
- 1743,-0.0074659,-0.0048807\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE56\SP\RM05\Gen\C2H8\CONNORNM\08-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,0.59431975,0.,0.9342216\H,0,0.26659399,-0.88680528,-0.60703377\H,0,-
+ 1.07844352,-0.03357353,0.24863298\H,0,0.21752978,0.92037881,-0.5758208
+ \Bq,0,-0.3932701,0.,-0.61818813\Bq,0,-0.17640915,0.58681206,0.40168315
+ \Bq,0,0.71362189,0.0222161,-0.16452409\Bq,0,-0.14394264,-0.60902816,0.
+ 38102907\C,0,0.,0.,3.26055484\H,0,-1.08018875,0.23872989,3.21379731\H,
+ 0,0.15474612,-1.06368164,2.9948088\H,0,0.55124199,0.64265477,2.5470332
+ 5\H,0,0.37420064,0.18229698,4.28658001\Bq,0,0.71477674,-0.15797107,3.2
+ 9149499\Bq,0,-0.10239778,0.70385375,3.4364029\Bq,0,-0.36476491,-0.4252
+ 5409,3.73270255\Bq,0,-0.24761405,-0.12062859,2.58161894\\Version=AS64L
+ -G09RevD.01\HF=-81.8141161\RMSD=1.898e-09\Dipole=0.0031041,0.0014676,0
+ .0394816\Quadrupole=0.0642726,0.0541136,-0.1183861,0.0011743,-0.007465
+ 9,-0.0048807\PG=C01 [X(C2H8)]\\@
 
 
- GOD GAVE US TWO ENDS... ONE TO SIT ON...    
- AND THE OTHER TO THINK WITH...              
- YOUR SUCCESS DEPENDS UPON WHICH END YOU     
- USE THE MOST...                             
-                                             
- IT'S A CASE OF HEADS YOU WIN TAILS YOU LOSE.
-          SOURCE UNKNOWN(IT'S JUST AS WELL.) 
- Job cpu time:       0 days  0 hours 15 minutes 56.4 seconds.
+ We're simply so accustomed to the marvels of everyday thought
+ that we never wonder about it.
+ -- Marvin Minsky in "Why people think computers are smart"
+ Job cpu time:       0 days  0 hours 15 minutes 59.2 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Thu Dec  6 13:21:43 2018.
+ Normal termination of Gaussian 09 at Sat Dec  8 15:30:13 2018.

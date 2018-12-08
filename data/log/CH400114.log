@@ -1,8 +1,8 @@
  Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
  AtFile(1): aug-cc-pVTZ.gbs
  Initial command:
- /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-39139.inp" -scrdir="/scratch/local/"
- Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     39140.
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-26370.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     26371.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -75,15 +75,15 @@
  
  ******************************************
  Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
-                 5-Dec-2018 
+                 7-Dec-2018 
  ******************************************
  %Chk=CH400114
  %Mem=2GB
  %NProcShared=16
  Will use up to   16 processors via shared memory.
- -----------------------------------------------------------
- #T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
- -----------------------------------------------------------
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(tight,maxcyc=40)
+ ---------------------------------------------
  -------
  M05 opt
  -------
@@ -156,6 +156,11 @@
     17  Bq   1.196459   0.000000
     18  Bq   1.196459   1.196459   0.000000
  Symmetry turned off by external request.
+ Symmetry turned off:
+ Cannot cope with ghost atoms or with translation vectors.
+ Framework group  C1[X(C2H8)]
+ NUMDOF-- NAT=    10 NAtoms=    18
+ Deg. of freedom     0
  Rotational constants (GHZ):     76.6916057      4.1569257      4.1569257
  Warning:  center   6 has no basis functions!
  Warning:  center   7 has no basis functions!
@@ -284,25 +289,26 @@
     X=              0.0062    Y=              0.0036    Z=             -0.0104  Tot=              0.0126
 
  Test job not archived.
- 1\1\GINC-CHIMERA-NODE61\SP\RM05\Gen\C2H8\CONNORNM\05-Dec-2018\0\\#T M0
- 5/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)\\M05 opt\\0,1\C
- ,0,0.,0.,0.\H,0,1.10668604,0.,0.03509941\H,0,-0.33854502,-0.41604855,-
- 0.9686469\H,0,-0.39549223,-0.62113293,0.82690128\H,0,-0.37264878,1.037
- 18148,0.10664621\Bq,0,-0.73231038,0.,-0.0232258\Bq,0,0.22402021,0.2753
- 0543,0.64096787\Bq,0,0.26170301,0.41101277,-0.54717271\Bq,0,0.24658717
- ,-0.6863182,-0.07056936\C,0,0.,0.,3.78749465\H,0,1.0385309,0.20282684,
- 3.46145662\H,0,-0.32045204,0.77979396,4.50528141\H,0,-0.67176405,0.010
- 01722,2.90737042\H,0,-0.04631481,-0.99263802,4.27587017\Bq,0,-0.687211
- 13,-0.13421349,4.00323881\Bq,0,0.21204782,-0.5160011,3.31252463\Bq,0,0
- .44451613,-0.00662854,4.36988577\Bq,0,0.03064719,0.65684314,3.46432941
- \\Version=AS64L-G09RevD.01\HF=-81.8225521\RMSD=1.118e-09\Dipole=0.0024
- 198,0.0014027,-0.004089\Quadrupole=0.0549245,0.0538165,-0.108741,-0.00
- 10848,0.0044502,0.0083776\PG=Unknown\\@
+ 1\1\GINC-CHIMERA-NODE48\SP\RM05\Gen\C2H8\CONNORNM\07-Dec-2018\0\\#T M0
+ 5/Gen test Massage SCF=(tight,maxcyc=40)\\M05 opt\\0,1\C,0,0.,0.,0.\H,
+ 0,1.10668604,0.,0.03509941\H,0,-0.33854502,-0.41604855,-0.9686469\H,0,
+ -0.39549223,-0.62113293,0.82690128\H,0,-0.37264878,1.03718148,0.106646
+ 21\Bq,0,-0.73231038,0.,-0.0232258\Bq,0,0.22402021,0.27530543,0.6409678
+ 7\Bq,0,0.26170301,0.41101277,-0.54717271\Bq,0,0.24658717,-0.6863182,-0
+ .07056936\C,0,0.,0.,3.78749465\H,0,1.0385309,0.20282684,3.46145662\H,0
+ ,-0.32045204,0.77979396,4.50528141\H,0,-0.67176405,0.01001722,2.907370
+ 42\H,0,-0.04631481,-0.99263802,4.27587017\Bq,0,-0.68721113,-0.13421349
+ ,4.00323881\Bq,0,0.21204782,-0.5160011,3.31252463\Bq,0,0.44451613,-0.0
+ 0662854,4.36988577\Bq,0,0.03064719,0.65684314,3.46432941\\Version=AS64
+ L-G09RevD.01\HF=-81.8225521\RMSD=1.118e-09\Dipole=0.0024198,0.0014027,
+ -0.004089\Quadrupole=0.0549245,0.0538165,-0.108741,-0.0010848,0.004450
+ 2,0.0083776\PG=C01 [X(C2H8)]\\@
 
 
- MORNING PEOPLE ARE USUALLY ADMIRED AS EARLY BIRDS.
- RECALL BEN FRANKLIN'S APHORISM THAT THE EARLY BIRD GETS THE WORM.
- I IDENTIFY WITH THE WORM. --  CRAIG JAGGER, MINNEAPOLIS, KS.
- Job cpu time:       0 days  0 hours 15 minutes  0.6 seconds.
+ I WANT TO KNOW HOW GOD CREATED THE WORLD.  I AM NOT INTERESTED IN
+ THIS OR THAT PHENOMENON, IN THE SPECTRUM OF THIS OR THAT ELEMENT.
+ I WANT TO KNOW HIS THOUGHTS, THE REST ARE DETAILS.
+     -- ALBERT EINSTEIN
+ Job cpu time:       0 days  0 hours 14 minutes 43.8 seconds.
  File lengths (MBytes):  RWF=     41 Int=      0 D2E=      0 Chk=      4 Scr=      1
- Normal termination of Gaussian 09 at Wed Dec  5 21:16:05 2018.
+ Normal termination of Gaussian 09 at Fri Dec  7 14:03:43 2018.
