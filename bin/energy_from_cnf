@@ -1,4 +1,4 @@
 #!/bin/bash
 # Usage:
 #	bin/energy_from_cnf NAMEKEY
-bin/disp4dldf data/cnf/"${1}".cnf 2
+bin/disp4dldf data/cnf/"${1}".cnf 1 | sed s/'Fitted dispersion energy (JPCL2010):'// 

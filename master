@@ -10,25 +10,46 @@ max_step = 1
 global hart
 hart = 627.51 #Hartree to kcal/mol conversion factor
 
-
-
+# Write to the output
 def w(s):
 	os.system("echo '"+s+"' >> output")	
 
 def get_error(dat):
 	error = 0
+	verbose = False
 	for NAMEKEY in dat.NAMEKEYS:
-		dE = hart*(dat.E[NAMEKEY]['log']-dat.E[NAMEKEY]['monomerA_log']-dat.E[NAMEKEY]['monomerB_log'])-dat.E[NAMEKEY]['cnf']
+		E_dim = hart*dat.E[NAMEKEY]['log']
+		E_A = hart*dat.E[NAMEKEY]['monomerA_log']
+		E_B = hart*dat.E[NAMEKEY]['monomerB_log']
+		E_disp = dat.E[NAMEKEY]['cnf']
+		E_sapt = dat.E[NAMEKEY]['ener']
+		dE = E_dim-E_A-E_B+E_disp
+		er = ((E_sapt-dE)/(E_sapt))**2
+		w('All energies in kcal/mol')
+		w('E_dim='+str(E_dim))
+		w('E_A='+str(E_A))
+		w('E_B='+str(E_B))
+		w('E_disp='+str(E_disp))		
+		w('E_sapt='+str(E_sapt))	
+		w('E_dim-E_A-E_B='+str(dE))
+		w('er='+str(er))
 		w(' ')
-		w('E_dim-E_A-E_B+E_disp='+str(dE))
-		w('E_SAPT='+str(dat.E[NAMEKEY]['ener']))		
-		error += ((dat.E[NAMEKEY]['ener']-dE)/(dat.E[NAMEKEY]['ener']))**2
+		error += er
 	return error
+
+def print_param(param, error):
+	w(' ')
+	w('Total Error: '+str(error))
+	w('Parameters:')
+	for i in range(len(param)):
+		w(str(param[i])+',')
+	w('--------------------------------------------')
+	w(' ')
 
 # All data and filetype markers
 new_stuff = False
 global data
-lib.new_list('CH4', 20)
+#lib.new_list('CH4', 100)
 data = lib.data()
 data.read_input()
 data.convert('xyz', 'com')
@@ -37,6 +58,7 @@ data.convert('com', 'monomerA_com')
 data.convert('com', 'monomerB_com')
 data.get_energy('cnf')
 data.get_energy('ener')
+data.get_distance('ener')
 os.system('echo $(date) > output')
 # Main loop called by praxis with input parameters to be optimized
 def loop(param, dummy):
@@ -54,26 +76,40 @@ def loop(param, dummy):
 	lib.save_array(paramcap, 'data/dat/param/ParamM05CAP.dat')
 	
 	data.wait()
-	data.run('monomerA_com')
-	data.run('monomerB_com')
-	data.run('com')
+#	data.run('monomerA_com')
+#	data.run('monomerB_com')
+#	data.run('com')
 	data.wait()
 	data.get_energy('log')
 	data.get_energy('monomerA_log')
 	data.get_energy('monomerB_log')
 	data.iteration += 1
 	error = get_error(data)
-
-	w(' ')
-	w('Error: '+str(error))
-	w(' ')
-	for i in range(len(param)):
-		w('Parameter '+str(i)+' : '+str(param[i]))
+	print_param(parm, error)	
+	if True:
+		sys.exit()
+	
 	return error 
 
-# Initial parameters	
-param=[1.18328602E-03, 4.8827323, -0.163757125, -0.188002773, -0.449060892, -0.00823585719, 5.9515308, \
-        -11.1602877, 0.614413, -2.59608972, 2.22337926]
+# Initial parameters
+paradict = {
+ 0 : 0.00118328602,
+ 1 : 4.58671865512,
+ 2 : -0.143287030854,
+ 3 : -0.0470989967546,
+ 4 : -0.405760074055,
+ 5 : 0.0648415072706,
+ 6 : 4.32613300189,
+ 7 : -10.7515744045,
+ 8 : 0.599485542764,
+ 9 : -2.40178165311,
+ 10 : 1.92115316339
+}	
+
+param = []
+
+for i in range(11):
+	param += [paradict[i]]
 
 output=praxis(tolerance, max_step, 11, 4, param, loop)
 print(output)

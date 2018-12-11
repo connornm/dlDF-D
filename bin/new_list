@@ -9,7 +9,7 @@ from subprocess import check_output
 sysname = sys.argv[1]
 N = int(sys.argv[2])
 # Can write a script to replace this MAX V
-Max =  int(check_output(['bin/string_count', sysname+'.', 'data/xyz/']))
+Max =  int(check_output(['bin/string_count', sysname+'.', 'data/xyz/']))-1
 os.system('rm -f input')
 os.system('touch input')
 nums = []
@@ -18,5 +18,4 @@ for i in range(N):
 for num in nums:
 	num = str(num).zfill(5)
 	os.system('echo ' + sysname + str(num) + ' >> input') 
-	os.system('bin/xyz2com '+sysname+num) 	
 

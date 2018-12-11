@@ -9,14 +9,17 @@ class data:
 
 	# NAMEKEYS - list of NAMEKEYS used
 	def __init__(self, NAMEKEYS=[]):
+		self.Hartree = 627.5095 #kcal/mol
+		self.kcalpmol = 1/self.Hartree #Hartrees
 		self.iteration = 0
+		self.error = 0	
 		self.NAMEKEYS = NAMEKEYS	
 		self.E = {}
-		self.error = 0
-	
+		self.R = {}	
 		for NAMEKEY in NAMEKEYS:
 			self.E[NAMEKEY] = {}
-				
+			self.R[NAMEKEY] = {}	
+
 	# run - run all NAMEKEYS of specified TYPEKEY input file
 	def run(self, TYPEKEY): 
 		for NAMEKEY in self.NAMEKEYS:
@@ -28,6 +31,16 @@ class data:
 			while bool(int(check_output(['bin/number_of_runs', NAMEKEY]))):
                         	pass
 
+	# get_distance - get COM-COM distances
+	def get_distance(self, TYPEKEY):
+		for NAMEKEY in self.NAMEKEYS:
+			try:
+				self.R[NAMEKEY][TYPEKEY]=float(check_output(['bin/distance_from_'+TYPEKEY, NAMEKEY]))
+			except:
+				print('Could not get '+TYPEKEY+' distance for '+NAMEKEY)
+				self.R[NAMEKEY][TYPEKEY]=False		
+
+
 	# get_energy - get energies from specified file type
 	def get_energy(self, TYPEKEY):
 		for NAMEKEY in self.NAMEKEYS:
@@ -37,24 +50,22 @@ class data:
 				print('Could not get '+TYPEKEY+' energy for '+NAMEKEY)
 				self.E[NAMEKEY][TYPEKEY]=False		
 
+        #multiplys - multiplies all data of a certain type by a constant x
+        # useful for unit conversion and flipping signs
+	def multiply(self, TYPEKEY, x):
+		for NAMEKEY in self.NAMEKEYS:
+			self.E[NAMEKEY][TYPEKEY] = x*self.E[NAMEKEY][TYPEKEY]
+
+	# add - makes a new type by adding other energies together
+	def add(self, NEWTYPEKEY, *TYPEKEYS):
+		for NAMEKEY in self.NAMEKEYS:
+			self.E[NAMEKEY][NEWTYPEKEY]=sum([self.E[NAMEKEY][TYPE] for TYPE in TYPEKEYS])
+
 	# convert - converts file TYPEKEY_IN to file TYPEKEY_OUT
 	def convert(self, TYPEKEY_IN, TYPEKEY_OUT):
 		for NAMEKEY in self.NAMEKEYS:
 			os.system('bin/'+TYPEKEY_IN+'2'+TYPEKEY_OUT+' '+NAMEKEY)
-
-	#mult - multiplies all data of a certain type by a constant x
-	# useful for unit conversion and flipping signs
-	def mult(self, TYPEKEY, x):
-		for NAMEKEY in self.NAMEKEYS:
-			self.E[NAMEKEY][TYPEKEY] = x*self.E[NAMEKEY][TYPEKEY]
-
-	# update_error - add up all energies in TYPEKEYS, and divide by DENOM. 
-	# be sure to change the signs beforehand by using the times function
-	def update_error(self, DENOM, *TYPEKEYS):
-		self.error=0
-		for NAMEKEY in self.NAMEKEYS:
-			self.error += (sum([self.E[NAMEKEY][TYPEKEY] for TYPEKEY in TYPEKEYS])/self.E[NAMEKEY][DENOM])**2
-
+	
 	# read_input - reads NAMEKEYS from input file
 	def read_input(self):
 		self.NAMEKEYS = []
@@ -66,22 +77,18 @@ class data:
 		f.close()
 		for NAMEKEY in fvect:
 			self.E[NAMEKEY] = {}
+			self.R[NAMEKEY] = {}
 			self.NAMEKEYS += [NAMEKEY]
 	
-	# write_output - a preset message to the output file, giving dates and energies, also calculates error
-	def write_output(self):
+	# write_output - writes the energies in types in order given
+	def write_output(self, DTYPE, *TYPEKEYS):
 		def wr(s):
 			os.system("echo '"+s+"' >> output")
-		wr('\n')
-		os.system('echo $(date + "%H:%M) >> output')
-		wr('Iteration: '+str(self.iteration))
 		for NAMEKEY in self.NAMEKEYS:
-			for TYPEKEY in self.E[NAMEKEY]:
-				try:
-					wr(TYPEKEY+' energy for '+NAMEKEY+' : '+str(self.E[NAMEKEY][TYPEKEY]))
-				except: 
-					print('Failed to load '+NAMEKEY+'.'+TYPEKEY+' energy')
-			wr('\n')
+			out=str(self.R[NAMEKEY][DTYPE])
+			for i in range(len(TYPEKEYS)):
+				out += ' '+str(self.E[NAMEKEY][TYPEKEYS[i]])	
+			wr(out)
 
 # new_list - make a new list of inputs
 def new_list(SYSTEM, NUMBER):
