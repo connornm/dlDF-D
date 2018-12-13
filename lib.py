@@ -32,7 +32,7 @@ class data:
 	# get - get all of quantity from certain type
 	def get(self, QUANKEY, TYPEKEY):
 		if TYPEKEY not in self.TYPEKEYS:
-			self.TYPEKEYS += [TYPEKEYS]
+			self.TYPEKEYS += [TYPEKEY]
 		if QUANKEY not in self.QUANKEYS:
 			self.QUANKEYS += [QUANKEY]
 		for NAMEKEY in self.NAMEKEYS:

@@ -1,7 +1,7 @@
 %Chk=BLIND00420
 %Mem=2GB
 %NProcShared=16
-#T M05/Gen test Massage Symmetry=None SCF=(tight,maxcyc=60)
+#T M05/Gen test Massage SCF=(fermi,maxcyc=60)
 
 M05 opt
 
