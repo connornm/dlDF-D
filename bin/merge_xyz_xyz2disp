@@ -1,0 +1,73 @@
+#!/usr/bin/env python
+# Takes a .com system file and makes a .cnf file
+# Currently assumes the .com file has two idential monomer interactions.
+# Must be updated for multi-monomer interactions in the future
+# Also the elements must have number, not chemical symbol labels.
+#
+# WARNING: This code is janky and was threw together in a pinch to fit a very
+# specific file format in a not robust way. 
+#
+# Usage:
+#	./merge_xyz_xyz2disp system_in1 system_in2 system_out
+import re, os, sys
+bohr = 0.52917721092 # Angstroms
+mass = {
+	1 : 1.0079, 	#Hydrogen
+	'H' : 1.0079, 
+	6 : 12.0107, 	#Carbon 
+	'C' : 12.0107,
+	7 : 14.0067,	#Nitrogen 
+	'N' : 14.0067, 
+	8 : 15.9994, 	#Oxygen
+	'O' : 15.9994, 
+	14 : 28.0855,	#Silicon
+	'Si' : 28.0855,
+	16 : 32.066,	#Sulfur
+	'S' : 32.066
+}
+elem = {
+	1 : 'H',
+	2 : 'He',
+	6 : 'C',
+	7 : 'N',
+	8 : 'O',
+	16 : 'S'
+}
+def reorder(strline):
+	strvect = strline.split(' ')
+	num = []
+	for i in range(len(strvect)):
+		try:
+			num += [float(strvect[i])]
+		except:
+			pass
+	if(int(num[0]) == 0):
+		return ''
+	else:
+		order = [num[1]/bohr, num[2]/bohr, num[3]/bohr, int(num[0]), mass[int(num[0])]]
+		outline = ''
+		for i in range(len(order)):
+			outline += str(order[i]) + '	'
+		return outline + '\n'
+def wr(system):
+	f = open('data/xyz/'+system+'.xyz', 'r')
+	f.seek(0)
+	fstr = f.read()
+	f.close()
+	fvect = fstr.split('\n')
+	data = fvect[2:-1]
+	cnftxt =  str(int(len(data))) + '\n'
+	for i in range(int(len(data))):
+		cnftxt += reorder(data[i])	
+	return cnftxt
+
+system1=sys.argv[1]
+system2=sys.argv[2]
+system_out=sys.argv[3]
+os.system('touch data/disp/'+system_out+'.cnf')
+cnf=wr(system1)
+cnf+=wr(system2)
+fcnf = open('data/disp/'+system_out+'.cnf', 'w')
+fcnf.seek(0)
+fcnf.write(cnf)
+fcnf.close()

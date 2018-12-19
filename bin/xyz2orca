@@ -1,0 +1,18 @@
+#!/bin/bash
+# Converts an xyz file to a .com file
+# Usage:
+#	./xyz2com NAMEKEY
+
+system=${1}
+xyz=data/xyz/"${system}".xyz
+file=data/orca/"${system}".inp
+echo '! HF def2-TZVP' > "${file}"
+echo '' >> "${file}"
+echo '%scf' >> "${file}"
+echo '  convergence tight' >> "${file}"
+echo 'end' >> "${file}"
+echo '' >> "${file}"
+echo '*xyz 0 1' >> "${file}"
+cat "${xyz}" | sed -e '1,2d' >> "${file}"
+echo '*' >> "${file}"
+echo '' >> "${file}"

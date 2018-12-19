@@ -1,0 +1,5 @@
+#!/bin/bash
+# Energy from the disp4dldf.py python script
+# Usage:
+#	bin/energy_from_cnf NAMEKEY
+bin/disp4dldf data/disp/"${1}".cnf 2 | sed s/'Fitted dispersion energy (JPCL2010):'// 

@@ -1,0 +1,16 @@
+#!/bin/bash
+# Merges an xyz file in to two files
+# Usage:
+#	./merge_xyz_xyz2xyz in_system1 in_system2 out_system
+
+
+in1=data/xyz/"${1}".xyz
+in2=data/xyz/"${2}".xyz
+out=data/xyz/"${3}".xyz
+n1=$(($(wc -l ${in1} | sed s!${in1}!!)-2))
+n2=$(($(wc -l ${in2} | sed s!${in2}!!)-2))
+echo $((${n1}+${n2})) > "${out}"
+echo "${3}" >> "${out}"
+cat "${in1}" | sed '1,2d'  >> "${out}"
+cat "${in2}" | sed '1,2d'  >> "${out}"
+

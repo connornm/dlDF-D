@@ -1,0 +1,14 @@
+#!/bin/bash
+# Reads the energy from an orca NAMEKEY.out file.
+# Looks for the line with linkey variable, and reads off the number
+# inbetween the startkey and endkey variables
+# Usage:
+#	./energy_from_orca NAMEKEY
+
+pathtoout="data/orca/"
+system=${1}
+linekey="FINAL SINGLE POINT ENERGY"
+startkey="FINAL SINGLE POINT ENERGY"
+endkey=""
+
+cat ${pathtoout}${system}".out" | grep "$linekey" | sed s/"$startkey"// | sed s/" "//g

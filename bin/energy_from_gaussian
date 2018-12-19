@@ -1,0 +1,14 @@
+#!/bin/bash
+# Reads the energy from a Gaussian SYSTEM.log file.
+# Looks for the line with linkey variable, and reads off the number
+# inbetween the startkey and endkey variables
+# Usage:
+#	./energy_from_gaussian SYSTEM
+
+pathtolog="data/gaussian/"
+system=${1}
+linekey="SCF Done:"
+startkey="E(RM05)="
+endkey="A"
+
+cat ${pathtolog}${system}".log" | grep "$linekey" | sed s/'\ '//g | sed s/'.*'"$startkey"// | sed s/"$endkey"'.*'//
