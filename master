@@ -47,14 +47,15 @@ global data
 #lib.new_list('CH4', 100)
 data = lib.data()
 data.meta['dimer']={'CH4_dimer00100'}
+data.meta['system'].add('CH4_monomer')
 for dim in data.meta['dimer']:
 	data.meta['system'].add(dim)
 data.split('xyz', 'xyz', 9, 'CH4_dimer00100', 'mon', 'mon')
 data.convert('xyz', 'gaussian')
-data.convert('gaussian', 'disp_dimer')
-data.get('energy', 'disp')
-data.get('energy', 'sapt')
-data.get('distance', 'sapt')
+data.convert('gaussian', 'disp_dimer', key='dimer')
+data.get('energy', 'disp', key='dimer')
+data.get('energy', 'sapt', key='dimer')
+data.get('distance', 'sapt', key='dimer')
 os.system('echo $(date) > output')
 # Main loop called by praxis with input parameters to be optimized
 def loop(param, dummy):
@@ -71,14 +72,14 @@ def loop(param, dummy):
 	lib.save_array(paramcp, 'data/dat/param/ParamM05CP.dat')
 	lib.save_array(paramcap, 'data/dat/param/ParamM05CAP.dat')
 	
-	data.wait()
+	data.wait('CH4')
 	data.run('gaussian')
-	data.wait()
+	data.wait('CH4')
 	data.get('energy', 'gaussian')
 	data.iteration += 1
 	error = get_error(data)
-	print_param(parm, error)	
-	if True:
+	print_param(param, error)	
+	if False:
 		sys.exit()
 	
 	return error 
