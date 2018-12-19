@@ -3,10 +3,9 @@ import sys
 sys.path.append('praxis/')
 from praxis import praxis
 import lib, os, pdb
-from numpy import exp, log
 tolerance = 0.03
 max_step = 1
-
+from numpy import log, exp
 global hart
 hart = 627.51 #Hartree to kcal/mol conversion factor
 
@@ -17,18 +16,16 @@ def w(s):
 def get_error(dat):
 	error = 0
 	verbose = False
-	for NAMEKEY in dat.NAMEKEYS:
-		E_dim = hart*dat.E[NAMEKEY]['log']
-		E_A = hart*dat.E[NAMEKEY]['monomerA_log']
-		E_B = hart*dat.E[NAMEKEY]['monomerB_log']
-		E_disp = dat.E[NAMEKEY]['cnf']
-		E_sapt = dat.E[NAMEKEY]['ener']
-		dE = E_dim-E_A-E_B+E_disp
+	E_mon = hart*dat.vals['mon']['gaussian']['energy']
+	for system in dat.meta['dimer']:
+		E_dim = hart*dat.vals[system]['gaussian']['energy']
+		E_disp = dat.vals[system]['disp']['energy']
+		E_sapt = dat.vals[system]['sapt']['energy']
+		dE = E_dim-2*E_mon+E_disp
 		er = ((E_sapt-dE)/(E_sapt))**2
 		w('All energies in kcal/mol')
 		w('E_dim='+str(E_dim))
-		w('E_A='+str(E_A))
-		w('E_B='+str(E_B))
+		w('E_mon='+str(E_mon))
 		w('E_disp='+str(E_disp))		
 		w('E_sapt='+str(E_sapt))	
 		w('E_dim-E_A-E_B='+str(dE))
@@ -46,19 +43,18 @@ def print_param(param, error):
 	w('--------------------------------------------')
 	w(' ')
 
-# All data and filetype markers
-new_stuff = False
 global data
 #lib.new_list('CH4', 100)
 data = lib.data()
-data.read_input()
-data.convert('xyz', 'com')
-data.convert('com', 'cnf')
-data.convert('com', 'monomerA_com')
-data.convert('com', 'monomerB_com')
-data.get_energy('cnf')
-data.get_energy('ener')
-data.get_distance('ener')
+data.meta['dimer']={'CH4_dimer00100'}
+for dim in data.meta['dimer']:
+	data.meta['system'].add(dim)
+data.split('xyz', 'xyz', 9, 'CH4_dimer00100', 'mon', 'mon')
+data.convert('xyz', 'gaussian')
+data.convert('gaussian', 'disp_dimer')
+data.get('energy', 'disp')
+data.get('energy', 'sapt')
+data.get('distance', 'sapt')
 os.system('echo $(date) > output')
 # Main loop called by praxis with input parameters to be optimized
 def loop(param, dummy):
@@ -76,13 +72,9 @@ def loop(param, dummy):
 	lib.save_array(paramcap, 'data/dat/param/ParamM05CAP.dat')
 	
 	data.wait()
-#	data.run('monomerA_com')
-#	data.run('monomerB_com')
-#	data.run('com')
+	data.run('gaussian')
 	data.wait()
-	data.get_energy('log')
-	data.get_energy('monomerA_log')
-	data.get_energy('monomerB_log')
+	data.get('energy', 'gaussian')
 	data.iteration += 1
 	error = get_error(data)
 	print_param(parm, error)	
