@@ -15,8 +15,7 @@ def w(s):
 
 def get_error(dat):
 	error = 0
-	verbose = False
-	E_mon = hart*dat.vals['CH4_monomer']['gaussian']['energy']
+	E_mon = hart*dat.vals['monomer']['gaussian']['energy']
 	for system in dat.meta['dimer']:
 		E_dim = hart*dat.vals[system]['gaussian']['energy']
 		E_disp = dat.vals[system]['disp']['energy']
@@ -28,14 +27,16 @@ def get_error(dat):
 		w('E_mon='+str(E_mon))
 		w('E_disp='+str(E_disp))		
 		w('E_sapt='+str(E_sapt))	
-		w('E_dim-E_A-E_B='+str(dE))
+		w('E_dim-2*E_mon+E_disp='+str(dE))
 		w('er='+str(er))
 		w(' ')
 		error += er
 	return error
 
-def print_param(param, error):
+def print_param(param, error, iteration):
 	w(' ')
+	os.system('echo $(date) >> output')
+	w('Iteration '+str(iteration))
 	w('Total Error: '+str(error))
 	w('Parameters:')
 	for i in range(len(param)):
@@ -45,12 +46,12 @@ def print_param(param, error):
 
 global data
 data = lib.data()
-data.meta['dimer']={'CH4_diemr'+str(random.randint(1,300)) for i in range(20)}
-data.meta['dimer']={'CH4_dimer00100'}
-data.meta['system'].add('CH4_monomer')
+data.meta['dimer']={'CH4_dimer'+(str(random.randint(1,300)).zfill(5)) for i in range(1)}
+data.meta['dimer'].add('CH4_dimer00100')
+data.meta['system'].add('monomer')
 for dim in data.meta['dimer']:
 	data.meta['system'].add(dim)
-data.split('xyz', 'xyz', 9, 'CH4_dimer00100', 'mon', 'mon')
+data.split('xyz', 'xyz', 5, 'CH4_dimer00100', 'monomer', 'extra')
 data.convert('xyz', 'gaussian')
 data.convert('gaussian', 'disp_dimer', key='dimer')
 data.get('energy', 'disp', key='dimer')
@@ -68,17 +69,19 @@ def loop(param, dummy):
 	paramcp= [1.0,param[6],param[7],0.0,0.0,param[8]]
 	paramcap=[1.0,param[9],param[10],0.0,0.0]
 
-	lib.save_array(paramx, 'data/dat/param/ParamM05X.dat')
-	lib.save_array(paramcp, 'data/dat/param/ParamM05CP.dat')
-	lib.save_array(paramcap, 'data/dat/param/ParamM05CAP.dat')
+	lib.save_array(paramx, 'data/gaussian/ParamM05X.dat')
+	lib.save_array(paramcp, 'data/gaussian/ParamM05CP.dat')
+	lib.save_array(paramcap, 'data/gaussian/ParamM05CAP.dat')
 	
 	data.wait('CH4')
+	data.wait('monomer')
 	data.run('gaussian')
 	data.wait('CH4')
+	data.wait('monomer')
 	data.get('energy', 'gaussian')
 	data.iteration += 1
 	error = get_error(data)
-	print_param(param, error)	
+	print_param(param, error, data.iteration)	
 	if False:
 		sys.exit()
 	
