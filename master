@@ -16,21 +16,24 @@ def w(s):
 def get_error(dat):
 	error = 0
 	E_mon = hart*dat.vals['monomer']['gaussian']['energy']
-	for system in dat.meta['dimer']:
+	for system in dat.meta['dimer']:	
 		E_dim = hart*dat.vals[system]['gaussian']['energy']
 		E_disp = dat.vals[system]['disp']['energy']
 		E_sapt = dat.vals[system]['sapt']['energy']
-		dE = E_dim-2*E_mon+E_disp
-		er = ((E_sapt-dE)/(E_sapt))**2
-		w('All energies in kcal/mol')
-		w('E_dim='+str(E_dim))
-		w('E_mon='+str(E_mon))
-		w('E_disp='+str(E_disp))		
-		w('E_sapt='+str(E_sapt))	
-		w('E_dim-2*E_mon+E_disp='+str(dE))
-		w('er='+str(er))
-		w(' ')
-		error += er
+		if E_dim and E_mon and E_disp and E_sapt:
+			dE = E_dim-2*E_mon+E_disp
+			er = ((E_sapt-dE)/(E_sapt))**2
+			w('All energies in kcal/mol')
+			w('E_dim='+str(E_dim))
+			w('E_mon='+str(E_mon))
+			w('E_disp='+str(E_disp))		
+			w('E_sapt='+str(E_sapt))	
+			w('E_dim-2*E_mon+E_disp='+str(dE))
+			w('er='+str(er))
+			w(' ')
+			error += er
+		else:
+			error += 1000000
 	return error
 
 def print_param(param, error, iteration):
@@ -46,13 +49,15 @@ def print_param(param, error, iteration):
 
 global data
 data = lib.data()
-data.meta['dimer']={'CH4_dimer'+(str(random.randint(1,300)).zfill(5)) for i in range(1)}
-data.meta['dimer'].add('CH4_dimer00100')
+data.meta['dimer']={'BLIND_dimer'+(str(random.randint(1,2680)).zfill(5)) for i in range(200)}
+data.meta['dimer'].add('BLIND_dimer00100')
 data.meta['system'].add('monomer')
 for dim in data.meta['dimer']:
 	data.meta['system'].add(dim)
-data.split('xyz', 'xyz', 5, 'CH4_dimer00100', 'monomer', 'extra')
+data.split('xyz', 'xyz', 15, 'BLIND_dimer00100', 'monomer', 'extra')
+data.meta['system'].remove('extra')
 data.convert('xyz', 'gaussian')
+data.convert('xyz', 'gaussian', key='dimer')
 data.convert('gaussian', 'disp_dimer', key='dimer')
 data.get('energy', 'disp', key='dimer')
 data.get('energy', 'sapt', key='dimer')
@@ -69,14 +74,14 @@ def loop(param, dummy):
 	paramcp= [1.0,param[6],param[7],0.0,0.0,param[8]]
 	paramcap=[1.0,param[9],param[10],0.0,0.0]
 
-	lib.save_array(paramx, 'data/gaussian/ParamM05X.dat')
-	lib.save_array(paramcp, 'data/gaussian/ParamM05CP.dat')
-	lib.save_array(paramcap, 'data/gaussian/ParamM05CAP.dat')
+#	lib.save_array(paramx, 'data/orca/ParamM05X.dat')
+#	lib.save_array(paramcp, 'data/orca/ParamM05CP.dat')
+#	lib.save_array(paramcap, 'data/orca/ParamM05CAP.dat')
 	
-	data.wait('CH4')
+	data.wait('BLIND')
 	data.wait('monomer')
 	data.run('gaussian')
-	data.wait('CH4')
+	data.wait('BLIND')
 	data.wait('monomer')
 	data.get('energy', 'gaussian')
 	data.iteration += 1
