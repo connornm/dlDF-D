@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+import os
+
+def w(x, f):
+	os.system('echo "'+x+'" >> '+f)
+
+def make(n):
+	f='data/xyz/qqq'+(str(n).zfill(5))+'.xyz'
+	os.system('touch '+f)
+	w(str(n), f)
+	line='1		0.001	0.001	'	
+	inc=1.5
+	w('test', f)	
+	for k in range(n):
+		w(line+str(k*inc+0.001)[0:5], f)
+
+
+os.system('rm -f data/xyz/qqq*')
+for i in range(1, 15):
+	make(i*2)
+	

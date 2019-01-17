@@ -6,7 +6,8 @@
 system=${1}
 xyz=data/xyz/"${system}".xyz
 file=data/orca/"${system}".inp
-echo '! HF def2-TZVP' > "${file}"
+#echo '! HF def2-TZVP' > "${file}"
+echo '! DFT M062X def2-TZVP' > "${file}"
 echo '' >> "${file}"
 echo '%scf' >> "${file}"
 echo '  convergence tight' >> "${file}"

@@ -16,15 +16,14 @@ mkdir -p $wrkdir
 cd $wrkdir
 
 # Copy basis functions for calculating to work 
-cp ${srcdir}data/gaussian/* .
-# Copy parameters for M05 functional
-cp ${srcdir}data/gaussian/ParamM05* .
+cp ${srcdir}/data/gaussian/*gbs .
 #cp ${srcdir}/data/temp/ParamrPW86.dat .
+cp ${srcdir}/data/gaussian/ParamM05* .
 # Copy Gaussian input file 
-cp ${srcdir}data/gaussian/CH4_monomer.com .
+cp ${srcdir}/data/gaussian/CH4_monomer.com .
 
 # Run Gaussian
-${g09root}/g09/g09 < CH4_monomer.com > ${srcdir}data/gaussian/CH4_monomer.log
+${g09root}/g09/g09 < CH4_monomer.com > ${srcdir}/data/gaussian/CH4_monomer.log
 
 # Remove scratch
 rm -rf $wrkdir

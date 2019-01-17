@@ -1,21 +1,23 @@
 #!/bin/bash
 # Converts an xyz file to a .com file
 # Usage:
-#	./xyz2gaussian NAMEKEY
+#	./xyz2gaussian SYSTEM
 
 system=${1}
 xyz=data/xyz/"${system}".xyz
 file=data/gaussian/"${system}".com
 echo '%Chk='"${system}" > "${file}"
-echo '%Mem=2GB' >> "${file}"
+echo '%Mem=16GB' >> "${file}"
 echo '%NProcShared=16' >> "${file}"
-echo '#T M05/Gen test Massage SCF=(fermi,maxcyc=60)' >> "${file}"
-#echo '#T M05/Gen test Massage SCF=(tight,maxcyc=20)' >> "${file}"
+echo '#T M05/aug-cc-pvdz test Massage SCF=(fermi,maxcyc=60)' >> "${file}"
+#echo '#T M05/Gen test Massage SCF=(fermi,maxcyc=60)' >> "${file}"
+#echo '#T M05/Gen test Massage SCF=(fermi,maxcyc=130)' >> "${file}"
 echo '' >> "${file}"
 echo 'M05 opt' >> "${file}"
 echo '' >> "${file}"
 echo '0 1' >> "${file}"
 cat "${xyz}" | sed -e '1,2d' >> "${file}"
-echo '' >> "${file}"
-echo '@aug-cc-pVTZ.gbs/N' >> "${file}"
+#echo '' >> "${file}"
+#echo '@aug-cc-pVTZ.gbs/N' >> "${file}"
+#echo '@augment.gbs/N' >> "${file}"
 echo '' >> "${file}"
