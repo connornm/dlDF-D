@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+
+import re, lib
+
+paradict = {
+ 0 : 0.00118328602,
+ 1 : 4.58671865512,
+ 2 : -0.143287030854,
+ 3 : -0.0470989967546,
+ 4 : -0.405760074055,
+ 5 : 0.0648415072706,
+ 6 : 4.32613300189,
+ 7 : -10.7515744045,
+ 8 : 0.599485542764,
+ 9 : -2.40178165311,
+ 10 : 1.92115316339
+}
+
+param = []
+
+for i in range(11):
+        param += [paradict[i]]
+
+paramx=[param[0],1.0,param[1],0.0,0.0,0.0,1.0,param[2],param[3],param[4],param[5]]
+paramcp= [1.0,param[6],param[7],0.0,0.0,param[8]]
+paramcap=[1.0,param[9],param[10],0.0,0.0]
+
+lib.save_array(paramx, 'data/orca/ParamM05X.dat')
+lib.save_array(paramcp, 'data/orca/ParamM05CP.dat')
+lib.save_array(paramcap, 'data/orca/ParamM05CAP.dat')

@@ -15,19 +15,22 @@ def w(s):
 
 def get_error(dat):
 	error = 0
+	E_mon = dat.vals['BLIND_monomer']['gaussian']['energy']	
 	for system in dat.meta['dimer']:	
-		E_monA = dat.vals[system+'_mA']['gaussian']['energy']
-		E_monB = dat.vals[system+'_mB']['gaussian']['energy']
+#		E_monA = dat.vals[system+'_mA']['gaussian']['energy']
+#		E_monB = dat.vals[system+'_mB']['gaussian']['energy']
 		E_dim = dat.vals[system]['gaussian']['energy']
 		E_disp = dat.vals[system]['disp']['energy']
 		E_sapt = dat.vals[system]['sapt']['energy']
-		if E_dim and E_monA and E_monB and E_disp and E_sapt:
-			dE = hart*(E_dim-E_monA-E_monB)+E_disp
+		if E_dim and E_mon and E_disp and E_sapt:
+#			dE = hart*(E_dim-E_monA-E_monB)+E_disp
+			dE = hart*(E_dim-2*E_mon) + E_disp
 			er = ((E_sapt-dE)/(E_sapt))**2
 			w('All energies in kcal/mol')
 			w('E_dim='+str(E_dim))
-			w('E_monA='+str(E_monA))
-			w('E_monB='+str(E_monB))
+#			w('E_monA='+str(E_monA))
+#			w('E_monB='+str(E_monB))
+			w('E_mon='+str(E_mon))
 			w('E_disp='+str(E_disp))		
 			w('E_sapt='+str(E_sapt))	
 			w('E_dim-2*E_mon+E_disp='+str(dE))
@@ -50,15 +53,16 @@ def print_param(param, error, iteration):
 	w(' ')
 
 global data
+global N
+N=50
 data = lib.data()
-data.meta['dimer']={'BLIND'+(str(random.randint(1,2680)).zfill(5)) for i in range(50)}
+data.meta['dimer']={'BLIND'+(str(random.randint(1,2680)).zfill(5)) for i in range(N)}
+data.meta['dimer'].add('BLIND_dimer00001')
+data.split('xyz','xyz',15,'BLIND_dimer00001','BLIND_monomer','extra')
+data.meta['system'].add('BLIND_monomer')
 for s in data.meta['dimer']:
-	data.meta['system'].add(s+'_mA')
-	data.meta['system'].add(s+'_mB')
 	data.meta['system'].add(s)	
-	data.split('xyz', 'xyz', 15, s, s+'_mA', s+'_mB')
 data.convert('xyz', 'gaussian')
-#data.convert('xyz', 'gaussian', key='dimer')
 data.convert('gaussian', 'disp_dimer', key='dimer')
 data.get('energy', 'disp', key='dimer')
 data.get('energy', 'sapt', key='dimer')
@@ -70,14 +74,15 @@ def loop(param, dummy):
 	cutoff = 0.04
 	global data
 	global hart
+	global N
 
 	paramx=[param[0],1.0,param[1],0.0,0.0,0.0,1.0,param[2],param[3],param[4],param[5]]
 	paramcp= [1.0,param[6],param[7],0.0,0.0,param[8]]
 	paramcap=[1.0,param[9],param[10],0.0,0.0]
 
-#	lib.save_array(paramx, 'data/orca/ParamM05X.dat')
-#	lib.save_array(paramcp, 'data/orca/ParamM05CP.dat')
-#	lib.save_array(paramcap, 'data/orca/ParamM05CAP.dat')
+	lib.save_array(paramx, 'data/gaussian/ParamM05X.dat')
+	lib.save_array(paramcp, 'data/gaussian/ParamM05CP.dat')
+	lib.save_array(paramcap, 'data/gaussian/ParamM05CAP.dat')
 	
 	data.wait('BLIND')
 	data.run('gaussian')
@@ -86,7 +91,7 @@ def loop(param, dummy):
 	data.iteration += 1
 	error = get_error(data)
 	print_param(param, error, data.iteration)	
-	if False:
+	if error < 0.02*N:
 		sys.exit()
 	
 	return error 

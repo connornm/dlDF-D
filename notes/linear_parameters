@@ -1,0 +1,12 @@
+Krzysztof - 
+- choose a starting set of all parameters, linear and nonlinear
+- solve KS equations
+- express E(\rho) as a function of linear parameters
+- construct and solve least-square equations for {a_i,c_i}
+- solve again KS equations using {a_i,c_i} from lsq solution
+- iterate to convergence, keeping all nonlinear parameters fixed all the
+   time
+- feed the final energy to the nonlinear minimization program, get new
+   values of nonlinear parameters, and repeat te process using as the
+   starting set in KS equations the linear parameters from the previous
+   step of the nonlinear process.

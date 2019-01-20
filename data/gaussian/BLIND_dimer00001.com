@@ -1,7 +1,7 @@
 %Chk=BLIND_dimer00001
-%Mem=16GB
-%NProcShared=16
-#T M05/aug-cc-pvdz test Massage SCF=(fermi,maxcyc=60)
+%Mem=1GB
+%NProcShared=48
+#T M05/Gen test Massage SCF=(fermi,maxcyc=60)
 
 M05 opt
 
@@ -36,4 +36,6 @@ M05 opt
   7         3.23841250        2.55426425        8.32795427
   6        -2.49368274       -1.18979059        4.32360324
   7        -3.51819570       -1.03493590        3.79683087
+
+@blind-aug.gbs/N
 

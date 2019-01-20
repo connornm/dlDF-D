@@ -1,7 +1,7 @@
 %Chk=CH4_dimer00001
-%Mem=16GB
-%NProcShared=16
-#T M05/aug-cc-pvdz test Massage SCF=(fermi,maxcyc=60)
+%Mem=1GB
+%NProcShared=48
+#T M05/Gen test Massage SCF=(fermi,maxcyc=60)
 
 M05 opt
 
@@ -24,4 +24,6 @@ M05 opt
   0        -0.23553146        0.69093150        3.37181534
   0        -0.26214528       -0.39894636        2.87889298
   0         0.73242960       -0.01074270        3.41892373
+
+@blind-aug.gbs/N
 

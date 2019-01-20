@@ -1,0 +1,262 @@
+ Entering Gaussian System, Link 0=/data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/g09
+ AtFile(1): blind-aug.gbs
+ Initial command:
+ /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe "/scratch/local/Gau-28903.inp" -scrdir="/scratch/local/"
+ Entering Link 1 = /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l1.exe PID=     28904.
+  
+ Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
+            Gaussian, Inc.  All Rights Reserved.
+  
+ This is part of the Gaussian(R) 09 program.  It is based on
+ the Gaussian(R) 03 system (copyright 2003, Gaussian, Inc.),
+ the Gaussian(R) 98 system (copyright 1998, Gaussian, Inc.),
+ the Gaussian(R) 94 system (copyright 1995, Gaussian, Inc.),
+ the Gaussian 92(TM) system (copyright 1992, Gaussian, Inc.),
+ the Gaussian 90(TM) system (copyright 1990, Gaussian, Inc.),
+ the Gaussian 88(TM) system (copyright 1988, Gaussian, Inc.),
+ the Gaussian 86(TM) system (copyright 1986, Carnegie Mellon
+ University), and the Gaussian 82(TM) system (copyright 1983,
+ Carnegie Mellon University). Gaussian is a federally registered
+ trademark of Gaussian, Inc.
+  
+ This software contains proprietary and confidential information,
+ including trade secrets, belonging to Gaussian, Inc.
+  
+ This software is provided under written license and may be
+ used, copied, transmitted, or stored only in accord with that
+ written license.
+  
+ The following legend is applicable only to US Government
+ contracts under FAR:
+  
+                    RESTRICTED RIGHTS LEGEND
+  
+ Use, reproduction and disclosure by the US Government is
+ subject to restrictions as set forth in subparagraphs (a)
+ and (c) of the Commercial Computer Software - Restricted
+ Rights clause in FAR 52.227-19.
+  
+ Gaussian, Inc.
+ 340 Quinnipiac St., Bldg. 40, Wallingford CT 06492
+  
+  
+ ---------------------------------------------------------------
+ Warning -- This program may not be used in any manner that
+ competes with the business of Gaussian, Inc. or will provide
+ assistance to any competitor of Gaussian, Inc.  The licensee
+ of this program is prohibited from giving any competitor of
+ Gaussian, Inc. access to this program.  By using this program,
+ the user acknowledges that Gaussian, Inc. is engaged in the
+ business of creating and licensing software in the field of
+ computational chemistry and represents and warrants to the
+ licensee that it is not a competitor of Gaussian, Inc. and that
+ it will not use this program in any manner prohibited above.
+ ---------------------------------------------------------------
+  
+
+ Cite this work as:
+ Gaussian 09, Revision D.01,
+ M. J. Frisch, G. W. Trucks, H. B. Schlegel, G. E. Scuseria, 
+ M. A. Robb, J. R. Cheeseman, G. Scalmani, V. Barone, B. Mennucci, 
+ G. A. Petersson, H. Nakatsuji, M. Caricato, X. Li, H. P. Hratchian, 
+ A. F. Izmaylov, J. Bloino, G. Zheng, J. L. Sonnenberg, M. Hada, 
+ M. Ehara, K. Toyota, R. Fukuda, J. Hasegawa, M. Ishida, T. Nakajima, 
+ Y. Honda, O. Kitao, H. Nakai, T. Vreven, J. A. Montgomery, Jr., 
+ J. E. Peralta, F. Ogliaro, M. Bearpark, J. J. Heyd, E. Brothers, 
+ K. N. Kudin, V. N. Staroverov, T. Keith, R. Kobayashi, J. Normand, 
+ K. Raghavachari, A. Rendell, J. C. Burant, S. S. Iyengar, J. Tomasi, 
+ M. Cossi, N. Rega, J. M. Millam, M. Klene, J. E. Knox, J. B. Cross, 
+ V. Bakken, C. Adamo, J. Jaramillo, R. Gomperts, R. E. Stratmann, 
+ O. Yazyev, A. J. Austin, R. Cammi, C. Pomelli, J. W. Ochterski, 
+ R. L. Martin, K. Morokuma, V. G. Zakrzewski, G. A. Voth, 
+ P. Salvador, J. J. Dannenberg, S. Dapprich, A. D. Daniels, 
+ O. Farkas, J. B. Foresman, J. V. Ortiz, J. Cioslowski, 
+ and D. J. Fox, Gaussian, Inc., Wallingford CT, 2013.
+ 
+ ******************************************
+ Gaussian 09:  AS64L-G09RevD.01 24-Apr-2013
+                19-Jan-2019 
+ ******************************************
+ %Chk=BLIND01084
+ %Mem=1GB
+ %NProcShared=48
+ Will use up to   48 processors via shared memory.
+ ---------------------------------------------
+ #T M05/Gen test Massage SCF=(fermi,maxcyc=60)
+ ---------------------------------------------
+ -------
+ M05 opt
+ -------
+ Symbolic Z-matrix:
+ Charge =  0 Multiplicity = 1
+ 6                     0.61615   0.55079   0.59842 
+ 6                     0.28856   1.19155  -0.62956 
+ 16                    0.74032  -1.18661   0.83198 
+ 16                   -0.08256   0.32936  -2.13072 
+ 6                    -0.48995  -1.75407  -0.31193 
+ 6                    -0.81304  -1.15139  -1.48668 
+ 6                     0.89136   1.50251   1.55955 
+ 7                     0.29758   2.50208  -0.64692 
+ 16                    0.74523   3.07717   0.84967 
+ 6                    -1.11119  -2.97119   0.09277 
+ 7                    -1.57169  -3.97589   0.45292 
+ 6                    -1.78792  -1.71801  -2.35988 
+ 7                    -2.55384  -2.15881  -3.11486 
+ 6                     1.26954   1.30467   2.90974 
+ 7                     1.58977   1.16089   4.01783 
+ 6                    -0.96811   0.31455   5.77899 
+ 6                    -0.71451  -0.50762   4.64518 
+ 16                   -0.12749   0.20341   7.31832 
+ 16                    0.52628  -1.76944   4.59191 
+ 6                     1.48162  -0.30166   6.7708 
+ 6                     1.73752  -1.08518   5.68994 
+ 6                    -2.0224    1.16389   5.5099 
+ 7                    -1.47492  -0.33343   3.59195 
+ 16                   -2.60584   0.84621   3.90881 
+ 6                     2.53124   0.16189   7.6161 
+ 7                     3.35015   0.54277   8.34788 
+ 6                     3.07012  -1.47369   5.36257 
+ 7                     4.13573  -1.83837   5.07549 
+ 6                    -2.60825   2.13431   6.35857 
+ 7                    -3.10727   2.92885   7.0447 
+ 
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  C    1.423315   0.000000
+     3  S    1.757418   2.827694   0.000000
+     4  S    2.825849   1.770477   3.428253   0.000000
+     5  C    2.713774   3.063280   1.773167   2.795470   0.000000
+     6  C    3.047557   2.727187   2.791121   1.772288   1.359281
+     7  C    1.380327   2.291783   2.789903   3.992857   4.001979
+     8  N    2.336642   1.310672   3.998700   2.658358   4.341342
+     9  S    2.542129   2.439721   4.263822   4.137445   5.120151
+    10  C    3.955208   4.450782   2.675676   4.110426   1.425163
+    11  N    5.029770   5.597745   3.642685   5.237162   2.586817
+    12  C    4.436049   3.971317   4.106384   2.674416   2.424897
+    13  N    5.583831   5.047859   5.232040   3.642352   3.504263
+    14  C    2.517432   3.674472   3.286888   5.309014   4.778168
+    15  N    3.607292   4.826214   4.047461   6.425950   5.618639
+    16  C    5.422549   6.589227   5.444736   7.959145   6.450369
+    17  C    4.389436   5.631715   4.137392   6.856581   5.116350
+    18  S    6.769845   8.019874   6.690133   9.449989   7.885679
+    19  S    4.619469   6.007307   3.810845   7.068904   5.008056
+    20  C    6.290790   7.643197   6.049981   9.059911   7.494116
+    21  C    5.464200   6.871617   4.960291   8.153307   6.436738
+    22  C    5.608965   6.560052   5.919491   7.927073   6.690042
+    23  N    3.757083   4.822512   3.640420   5.926799   4.269512
+    24  S    4.628947   5.393847   4.979557   6.565816   5.390094
+    25  C    7.284686   8.607015   7.144933  10.092596   8.697826
+    26  N    8.217600   9.507293   8.141907  11.028603   9.747523
+    27  C    5.728669   7.123640   5.102609   8.327055   6.704679
+    28  N    6.175738   7.518563   5.473665   8.626854   7.101297
+    29  C    6.788490   7.623268   7.265297   9.039077   8.006390
+    30  N    7.814958   8.569955   8.386823  10.004723   9.104953
+                    6          7          8          9         10
+     6  C    0.000000
+     7  C    4.384939   0.000000
+     8  N    3.909794   2.494036   0.000000
+     9  S    5.076167   1.733444   1.664607   0.000000
+    10  C    2.428007   5.116215   5.699860   6.371958   0.000000
+    11  N    3.509330   6.107712   6.831389   7.434461   1.162408
+    12  C    1.426163   5.736923   5.009263   6.301738   2.836178
+    13  N    2.587713   6.864751   5.995430   7.349618   3.609722
+    14  C    5.449573   1.416040   3.876636   2.767765   5.646781
+    15  N    6.435818   2.578302   5.022796   3.797715   6.306769
+    16  C    7.413706   4.761573   6.905043   5.904728   6.568843
+    17  C    6.166346   4.017533   6.171624   5.421021   5.191428
+    18  S    8.934960   5.990760   8.301185   7.131872   7.953260
+    19  S    6.254998   4.475955   6.763396   6.127147   4.936370
+    20  C    8.612406   5.546224   8.017825   6.857007   7.644945
+    21  C    7.616670   4.946947   7.422781   6.460496   6.557481
+    22  C    7.468279   4.920359   6.714128   5.747885   6.875640
+    23  N    5.186487   3.619482   5.399068   4.907281   4.397082
+    24  S    6.026259   4.263818   5.650346   5.056203   5.600768
+    25  C    9.786187   6.416250   8.873738   7.581110   8.926584
+    26  N   10.812994   7.283415   9.698631   8.332577  10.019894
+    27  C    7.880041   5.297903   7.720604   6.817751   6.891783
+    28  N    8.247691   5.835178   8.143519   7.315434   7.324005
+    29  C    8.692897   5.973022   7.593153   6.517881   8.219941
+    30  N    9.731199   6.936162   8.422361   7.296722   9.334026
+                   11         12         13         14         15
+    11  N    0.000000
+    12  C    3.613393   0.000000
+    13  N    4.122555   1.162293   0.000000
+    14  C    6.480188   6.800997   7.931563   0.000000
+    15  N    7.006418   7.769948   8.891861   1.162367   0.000000
+    16  C    6.865805   8.428802   9.366574   3.770941   3.218808
+    17  C    5.508054   7.189445   8.144185   3.198842   2.913279
+    18  S    8.166150  10.005824  10.968981   4.753954   3.841746
+    19  S    5.138202   7.327043   8.308613   3.582219   3.169762
+    20  C    7.920754   9.801294  10.837911   4.187253   3.119228
+    21  C    6.836193   8.810728   9.853581   3.695933   2.804029
+    22  C    7.224507   8.384139   9.257928   4.197318   3.908204
+    23  N    4.809406   6.118770   7.034017   3.268156   3.436091
+    24  S    6.022063   6.822071   7.639680   4.028255   4.208809
+    25  C    9.233977  11.032195  12.099468   5.004765   3.851218
+    26  N   10.342784  12.089955  13.173838   5.872205   4.714900
+    27  C    7.205004   9.126694  10.196332   4.120413   3.307681
+    28  N    7.649306   9.507313  10.579934   4.773288   4.073827
+    29  C    8.560701   9.566849  10.400941   5.255465   4.904079
+    30  N    9.668761  10.572610  11.375725   6.236366   5.860874
+                   16         17         18         19         20
+    16  C    0.000000
+    17  C    1.423315   0.000000
+    18  S    1.757418   2.827694   0.000000
+    19  S    2.825849   1.770477   3.428253   0.000000
+    20  C    2.713774   3.063280   1.773167   2.795470   0.000000
+    21  C    3.047557   2.727187   2.791121   1.772288   1.359281
+    22  C    1.380327   2.291783   2.789903   3.992857   4.001979
+    23  N    2.336642   1.310672   3.998700   2.658358   4.341342
+    24  S    2.542129   2.439721   4.263822   4.137445   5.120151
+    25  C    3.955208   4.450782   2.675676   4.110426   1.425163
+    26  N    5.029770   5.597745   3.642685   5.237162   2.586817
+    27  C    4.436049   3.971317   4.106384   2.674416   2.424897
+    28  N    5.583831   5.047859   5.232040   3.642352   3.504263
+    29  C    2.517432   3.674472   3.286888   5.309014   4.778168
+    30  N    3.607292   4.826214   4.047461   6.425950   5.618639
+                   21         22         23         24         25
+    21  C    0.000000
+    22  C    4.384939   0.000000
+    23  N    3.909794   2.494036   0.000000
+    24  S    5.076167   1.733444   1.664607   0.000000
+    25  C    2.428007   5.116215   5.699860   6.371958   0.000000
+    26  N    3.509330   6.107712   6.831389   7.434461   1.162408
+    27  C    1.426163   5.736923   5.009263   6.301738   2.836178
+    28  N    2.587713   6.864751   5.995430   7.349618   3.609722
+    29  C    5.449573   1.416040   3.876636   2.767765   5.646781
+    30  N    6.435818   2.578302   5.022796   3.797715   6.306769
+                   26         27         28         29         30
+    26  N    0.000000
+    27  C    3.613393   0.000000
+    28  N    4.122555   1.162293   0.000000
+    29  C    6.480188   6.800997   7.931563   0.000000
+    30  N    7.006418   7.769948   8.891861   1.162367   0.000000
+ Symmetry turned off by external request.
+ Framework group  C1[X(C16N8S6)]
+ Deg. of freedom    84
+ Rotational constants (GHZ):      0.1826307      0.0754118      0.0721281
+   714 basis functions,  1518 primitive gaussians,   774 cartesian basis functions
+   124 alpha electrons      124 beta electrons
+       nuclear repulsion energy      3654.6431408628 Hartrees.
+ IMHF & INEx in M05                  599485                  400514
+ NAtoms=   30 NActive=   30 NUniq=   30 SFac= 1.00D+00 NAtFMM=   60 NAOKFM=F Big=F
+ PrsmSu:  requested number of processors reduced to:  25 ShMem   1 Linda.
+ ExpMin= 3.99D-02 ExpMax= 1.11D+05 ExpMxC= 1.07D+03 IAcc=3 IRadAn=         5 AccDes= 0.00D+00
+ Harris functional with IExCor= 1009 and IRadAn=       5 diagonalized for initial guess.
+ HarFok:  IExCor= 1009 AccDes= 0.00D+00 IRadAn=         5 IDoV= 1 UseB2=F ITyADJ=14
+ ICtDFT=  3500011 ScaDFX=  1.000000  1.000000  1.000000  1.000000
+ FoFCou: FMM=F IPFlag=           0 FMFlag=      100000 FMFlg1=           0
+         NFxFlg=           0 DoJE=T BraDBF=F KetDBF=T FulRan=T
+         wScrn=  0.000000 ICntrl=     500 IOpCl=  0 I1Cent=   200000004 NGrid=           0
+         NMat0=    1 NMatS0=      1 NMatT0=    0 NMatD0=    1 NMtDS0=    0 NMtDT0=    0
+ Symmetry not used in FoFCou.
+ Restarting incremental Fock formation.
+ Restarting incremental Fock formation.
+ >>>>>>>>>> Convergence criterion not met.
+ SCF Done:  E(RM05) =  -3448.34892877     A.U. after   61 cycles
+            NFock= 60  Conv=0.11D-06     -V/T= 2.0058
+ Convergence failure -- run terminated.
+ Error termination via Lnk1e in /data/szalewicgrp/connornm/opt/Gaussian/g09-M05-par/g09/l502.exe at Sat Jan 19 13:07:14 2019.
+ Job cpu time:       1 days 12 hours 36 minutes 47.2 seconds.
+ File lengths (MBytes):  RWF=    225 Int=      0 D2E=      0 Chk=      9 Scr=      1
