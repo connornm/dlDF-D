@@ -5,23 +5,30 @@ from praxis import praxis
 import lib, os, pdb
 tolerance = 0.03
 max_step = 1
-from numpy import log, exp
+from numpy import log, exp, sqrt
 global hart
+global data
+global N
 hart = 627.51 #Hartree to kcal/mol conversion factor
 
 # Write to the output
-def w(s):
-	os.system("echo '"+s+"' >> output")	
+def w(s, raw=False):
+	if raw:
+		os.system("echo '"+s+"' >> raw_output")
+	else:
+		os.system("echo '"+s+"' >> output")	
 
 def get_error(dat):
 	error = 0
 	E_mon = dat.vals['BLIND_monomer']['gaussian']['energy']	
+	os.system('rm -f raw_output')
 	for system in dat.meta['dimer']:	
 #		E_monA = dat.vals[system+'_mA']['gaussian']['energy']
 #		E_monB = dat.vals[system+'_mB']['gaussian']['energy']
 		E_dim = dat.vals[system]['gaussian']['energy']
 		E_disp = dat.vals[system]['disp']['energy']
 		E_sapt = dat.vals[system]['sapt']['energy']
+		w(system)
 		if E_dim and E_mon and E_disp and E_sapt:
 #			dE = hart*(E_dim-E_monA-E_monB)+E_disp
 			dE = hart*(E_dim-2*E_mon) + E_disp
@@ -35,10 +42,14 @@ def get_error(dat):
 			w('E_sapt='+str(E_sapt))	
 			w('E_dim-2*E_mon+E_disp='+str(dE))
 			w('er='+str(er))
-			w(' ')
+			w('"'+system+'"'+':{"E_sapt":'+str(E_sapt)+', "er":'+str(er)+'}, ', raw=True)
 			error += er
 		else:
+			w(system)
+			w('Failed to converge')
+			w('Adding 1000000 to error')
 			error += 1000000
+		w(' ')
 	return error
 
 def print_param(param, error, iteration):
@@ -52,22 +63,7 @@ def print_param(param, error, iteration):
 	w('--------------------------------------------')
 	w(' ')
 
-global data
-global N
-N=50
-data = lib.data()
-data.meta['dimer']={'BLIND'+(str(random.randint(1,2680)).zfill(5)) for i in range(N)}
-data.meta['dimer'].add('BLIND_dimer00001')
-data.split('xyz','xyz',15,'BLIND_dimer00001','BLIND_monomer','extra')
-data.meta['system'].add('BLIND_monomer')
-for s in data.meta['dimer']:
-	data.meta['system'].add(s)	
-data.convert('xyz', 'gaussian')
-data.convert('gaussian', 'disp_dimer', key='dimer')
-data.get('energy', 'disp', key='dimer')
-data.get('energy', 'sapt', key='dimer')
-data.get('distance', 'sapt', key='dimer')
-os.system('echo $(date) > output')
+
 # Main loop called by praxis with input parameters to be optimized
 def loop(param, dummy):
 
@@ -83,39 +79,75 @@ def loop(param, dummy):
 	lib.save_array(paramx, 'data/gaussian/ParamM05X.dat')
 	lib.save_array(paramcp, 'data/gaussian/ParamM05CP.dat')
 	lib.save_array(paramcap, 'data/gaussian/ParamM05CAP.dat')
+
+	os.system('')
 	
 	data.wait('BLIND')
 	data.run('gaussian')
 	data.wait('BLIND')
 	data.get('energy', 'gaussian')
 	data.iteration += 1
-	error = get_error(data)
+	error = sqrt(get_error(data)/N)
 	print_param(param, error, data.iteration)	
-	if error < 0.02*N:
+	# Szalewicz's file format
+	outstr=str(data.iteration)+' '+str(error)
+	for i in range(len(param)):
+		outstr += ' '+str(param[i])
+	os.system("echo '"+outstr+"' >> szw_output")
+	if error < 0.02:
 		sys.exit()
 	
 	return error 
+N=50
+data = lib.data()
+data.meta['dimer']={'BLIND'+(str(random.randint(1,2680)).zfill(5)) for i in range(N)}
+data.meta['dimer'].add('BLIND_dimer00001')
+data.split('xyz','xyz',15,'BLIND_dimer00001','BLIND_monomer','extra')
+data.meta['system'].add('BLIND_monomer')
+for s in data.meta['dimer']:
+	data.meta['system'].add(s)	
+#	data.split('xyz', 'xyz', 15, s,)
+data.convert('xyz', 'gaussian')
+data.convert('gaussian', 'disp_dimer', key='dimer')
+data.get('energy', 'disp', key='dimer')
+data.get('energy', 'sapt', key='dimer')
+data.get('distance', 'sapt', key='dimer')
+os.system('echo $(date) > output')
+w('--------------------------------------------')
 
 # Initial parameters
 paradict = {
- 0 : 0.00118328602,
- 1 : 4.58671865512,
- 2 : -0.143287030854,
- 3 : -0.0470989967546,
- 4 : -0.405760074055,
- 5 : 0.0648415072706,
- 6 : 4.32613300189,
- 7 : -10.7515744045,
- 8 : 0.599485542764,
- 9 : -2.40178165311,
- 10 : 1.92115316339
+ 0 : 0.00118328602,	#
+ 1 : 4.58671865512,	#
+ 2 : -0.143287030854,	#
+ 3 : -0.0470989967546,	#
+ 4 : -0.405760074055,	#
+ 5 : 0.0648415072706,	#
+ 6 : 4.32613300189,	#
+ 7 : -10.7515744045,	#
+ 8 : 0.599485542764,	#
+ 9 : -2.40178165311,	#
+ 10 : 1.92115316339	#
+# Older parameters
+#From dlDF paper
+# 0 : 0.3511128,		# mu
+# 1 : 4.8827323,		# kappa
+# 2 : -0.1637571,	# a_1
+# 3 : -0.1880028,	# a_2
+# 4 : -0.4490609,	# a_3
+# 5 : -0.0082359,	# a_4
+# 6 : -2.5960897,	# caa1
+# 7 : 2.2233793,		# caa2
+# 8 : 0.6144129,		# zeta_hf
+# 9 : 5.9515308,		# cab1
+# 10 : -11.1602877	# cab2
 }	
 
 param = []
-
 for i in range(11):
 	param += [paradict[i]]
 
+os.system('echo "iteration error mu kappa a_1 a_2 a_3 a_4 caa_1 caa_2 zeta_hf cab_1 cab_2" > szw_output')
 output=praxis(tolerance, max_step, 11, 4, param, loop)
 print(output)
 
