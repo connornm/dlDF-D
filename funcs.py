@@ -2,6 +2,7 @@
 import sys, random, os, pdb, pickle
 from numpy import log, exp, sqrt
 
+
 # Write to the output
 def w(s, raw=False):
 	if raw:
@@ -12,8 +13,8 @@ def w(s, raw=False):
 # Gets the error
 def get_error(dat):
 	error = 0
-	E_mon = dat.vals['CH4_monomer']['gaussian']['energy']	
-#	E_mon = dat.vals['CH4_monomer']['gaussian']['energy']	
+	E_mon = dat.vals['BLIND_monomer']['gaussian']['energy']	
+#	E_mon = dat.vals['BLIND_monomer']['gaussian']['energy']	
 	os.system('rm -f raw_output')
 	for system in dat.meta['dimer']:	
 #		E_monA = dat.vals[system+'_mA']['gaussian']['energy']
@@ -81,3 +82,11 @@ def load_array(filename):
                 except:
                         pass
         return array
+
+# sigmoid function:
+def sig(x):
+	return 1.0/(exp(x)+1.0)
+
+# inverse sigmoid function
+def isig(x):
+	return log(1.0/x - 1.0 )

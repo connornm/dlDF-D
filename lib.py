@@ -82,31 +82,3 @@ class data:
 		self.meta=pickle.load(open(f+'meta', 'rb'))
 
 
-# new_list - make a new list of inputs
-def new_list(SYSTEM, NUMBER):
-	os.system('bin/new_list '+SYSTEM+' '+str(NUMBER))
-# save_array
-def save_array(array, filename):
-        fstr = ''
-        for i in range(len(array)):
-                fstr += str(array[i]) + ' '
-        fstr += '\n'
-        f = open(filename, 'w')
-        f.seek(0)
-        f.write(fstr)
-        f.close()
-
-# load_array - load an array from a filename, space seperated
-def load_array(filename):
-        array = []
-        f = open(filename, 'r')
-        f.seek(0)
-        fstr=f.read()
-        f.close()
-        fvect = fstr.split(' ')
-        for i in range(len(fvect)):
-                try:
-                        array += [float(fvect[i])]
-                except:
-                        pass
-        return array

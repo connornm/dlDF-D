@@ -3,42 +3,51 @@ Connor Dolan
 
 
 # Code organization
-Parameter fitting for dispersionless density functionals with dispersion added in.
 
 This program is for running jobs and organizing data with molecular dynamic software.
 The location of directories and programs are mostly self-contained, with
 use of relative paths to data, a python library, and modular executables. 
 
-Heavy emphasis on consistency and standardization allows for greater flexibility and
-ease of manipulating data and adapting tasks to new software. 
-A keyword repeatedly used all throughout this software is the variable:
+# lib.py
 
-	$ NAMEKEY
+The main data structure can be found in the file 'lib.py', which contains a class object 'data'.
+The data contained in this object is organized into two dictionary structures, 'vals' and 'meta'.
+'vals' can contain the values of possible quantities of interest; lengths, energies, density matrices, ect. 
+'meta' contains information about what quantities are available, as well as what systems are stored in the
+data structure, and even the software being used to obtain quantities.
 
-The NAMEKEY variables are listed in the text file called "input", and refere to a specific systems, 
-such as H20_CH4, or MY_AMAZING_MOLECULE. This way instead of having to deal with many different 
-file names we can always refer to the NAMEKEY reference given in input with a file descripter after.
+These dictionaries can be edited and changed freely, and the only default entries are four in 'meta'
+called 'system', 'software' and 'quantity'.
 
-The other variable repeatedly used is:
+Suppose that we have an instance of the data object called 'dat'.
+Let's say in this object we have 3 systems; an H20 monomer, a CH4 monomer and a dimer configuration between them.
+We are interested in the energy ('E') and the dipole moment ('dip'), and we use both Gaussian ('gaussian') and Orca ('orca')
+to compute these quantities. The python console would give us:
 
-	$ TYPEKEY
+	$ >>> dat.meta['system']
+	$ {'H20_monomer', 'CH4_monomer', 'H20_CH4_dimer'}	
+	$ >>> dat.meta['software']
+	$ {'gaussian', 'orca'}
+	$ >>> dat.meta['quantity']
+	$ {'E', 'dip'}
 
-TYPEKEY is the variable normally referred to as a file descriptor ('com' for Gaussian), 
-but can also include more specific information. 
-For example, if for every NAMEKEY system you want to move one atom by
-some amount, instead of making all new NAMEKEYs and running into consistency issues with
-other parts of the program, it is recommended that you make a new TYPEKEY (i.e.: 'moved_atom_com')
-and can now easily refer to all the altered molecules with this new type.
+The values are stored in the vals dictionary object, which is organzed such that the sets in our meta-deta
+can act as keys to reference a value. The convention is data.meta[system][software][quantity]
 
-Currently this program is set to run with SLURM, and the submit_master and master files
-are not meant to be fundamental and only used as scripts to accomplish your particular task.
+For example, suppose we were interested in the 'CH4_monomer' energy that was obtained by Gaussian.
+Using our above convention we'd type:
 
-The library lib.py is meant to automate all the low level file-conversion and job-running
-so that high level tasks may be accomplished more flexibly and easily. 
+	$ >>> data.vals['CH4_monomer']['gaussian']['E']
+	$ -44.1012
+
+In this example our answer is given in kcal/mol, but it is ultimately up to the user on which naming units as well
+as naming conventions to use. This allows for convienient comparison and organization of data between different systems
+and softwares. 
+
 
 # bin/
 
-Folder of exectuables, mainly for file type conversion and variable retrival. 
+Folder of executables, mainly for file type conversion and variable retrieval. 
 
 # data/
 

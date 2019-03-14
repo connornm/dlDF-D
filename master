@@ -1,70 +1,22 @@
 #!/usr/bin/env python
-import sys, random, lib, os, pdb, funcs as f
+import pickle, sys, random, lib, os, pdb, funcs as f
 sys.path.append('praxis/')
 from praxis import praxis
 from numpy import log, exp, sqrt
-global hart
 global data
-global N
-sample=200
-atoms=8
-N=2
+global samples
+global maxiter
+maxiter=10000
+max_sample=200
+atoms=15
+samples=50
 tolerance = 0.03
 max_step = 1
-# Main loop called by praxis with input parameters to be optimized
-def loop(param, dummy):
-
-	cutoff = 0.04
-	global data
-	global hart
-	global N
-
-	paramx=[param[0],1.0,param[1],0.0,0.0,0.0,1.0,param[2],param[3],param[4],param[5]]
-	paramcp= [1.0,param[6],param[7],0.0,0.0,param[8]]
-	paramcap=[1.0,param[9],param[10],0.0,0.0]
-
-	f.save_array(paramx, 'data/gaussian/ParamM05X.dat')
-	f.save_array(paramcp, 'data/gaussian/ParamM05CP.dat')
-	f.save_array(paramcap, 'data/gaussian/ParamM05CAP.dat')
-	
-	data.wait('CH4')
-	data.run('gaussian')
-	data.wait('CH4')
-	data.get('energy', 'gaussian')
-	data.iteration += 1
-	error = sqrt(f.get_error(data)/N)
-	f.print_param(param, error, data.iteration)	
-	# Szalewicz's file format
-	outstr=str(data.iteration)+' '+str(error)
-	for i in range(len(param)):
-		outstr += ' '+str(param[i])
-	os.system("echo '"+outstr+"' >> szw_output")
-	if data.iteration > 10:
-		sys.exit()
-	
-	return error 
-
-data = lib.data()
-data.meta['dimer']={'CH4'+(str(random.randint(1,sample)).zfill(5)) for i in range(N)}
-data.meta['dimer'].add('CH4_dimer00001')
-data.split('xyz','xyz',atoms,'CH4_dimer00001','CH4_monomer','extra')
-data.meta['system'].add('CH4_monomer')
-data.meta['system']-={'extra'}
-for s in data.meta['dimer']:
-	data.meta['system'].add(s)	
-#	data.split('xyz', 'xyz', 15, s,)
-data.convert('xyz', 'gaussian')
-data.convert('gaussian', 'disp_dimer', key='dimer')
-data.get('energy', 'disp', key='dimer')
-data.get('energy', 'sapt', key='dimer')
-data.get('distance', 'sapt', key='dimer')
-os.system('echo $(date) > output')
-w('--------------------------------------------')
-
 # Initial parameters
+
+
 param = [
-	0.00118328602,	
-	4.58671865512,	
+
 	-0.143287030854,
 	-0.0470989967546,
 	-0.405760074055,
@@ -75,7 +27,61 @@ param = [
 	-2.40178165311,	
 	 1.92115316339	
 ]
+
+#param[0] = f.isgin(param[0])
+data = lib.data()
+#data.meta['dimer']={'BLIND_dimer'+(str(random.randint(1,max_sample)).zfill(5)) for i in range(samples)}
+data.meta['dimer']={'BLIND_dimer'+str(i).zfill(5) for i in range(1, samples)}
+data.split('xyz','xyz',atoms,'BLIND_dimer00001','BLIND_monomer','extra')
+data.meta['system'].add('BLIND_monomer')
+data.meta['system']-={'extra'}
+for s in data.meta['dimer']:
+	data.meta['system'].add(s)	
+data.convert('xyz', 'gaussian')
+data.convert('gaussian', 'disp_dimer', key='dimer')
+data.get('energy', 'disp', key='dimer')
+data.get('energy', 'sapt', key='dimer')
+data.get('distance', 'sapt', key='dimer')
+os.system('echo $(date) > output')
+f.w('--------------------------------------------')
 os.system('echo "iteration error mu kappa a_1 a_2 a_3 a_4 caa_1 caa_2 zeta_hf cab_1 cab_2" > szw_output')
-output=praxis(tolerance, max_step, 11, 4, param, loop)
-print(output)
+
+# Main loop called by praxis with input parameters to be optimized
+def loop(param, dummy):
+
+	print('grepkey')
+	print(param)
+
+	cutoff = 0.02
+	global data
+	global samples
+
+	paramx=[0.00118328602,1.0,5.33671865512,0.0,0.0,0.0,1.0,param[0],param[1],param[2],param[3]]
+	paramcp= [1.0,param[4],param[5],0.0,0.0,param[6]]
+	paramcap=[1.0,param[7],param[8],0.0,0.0]
+
+	f.save_array(paramx, 'data/gaussian/ParamM05X.dat')
+	f.save_array(paramcp, 'data/gaussian/ParamM05CP.dat')
+	f.save_array(paramcap, 'data/gaussian/ParamM05CAP.dat')
+
+	pickle.dump(data, open('.save/data', 'wb'))
+	
+	data.wait('BLIND')
+	data.run('gaussian')
+	data.wait('BLIND')
+	data.get('energy', 'gaussian')
+	data.iteration += 1
+	error = sqrt(f.get_error(data)/samples)
+	# Sigmoid of mu
+	f.print_param(param, error, data.iteration)	
+	# Szalewicz's file format
+	outstr=str(data.iteration)+' '+str(error)+' 0.00118328602'+' 5.33671865512'
+	for i in range(len(param)):
+		outstr += ' '+str(param[i])
+	os.system("echo '"+outstr+"' >> szw_output")
+	if data.iteration > maxiter:
+		sys.exit()	
+	return error 
+
+output=praxis(tolerance, max_step, len(param), 0, param, loop)
 
