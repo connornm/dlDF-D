@@ -26,7 +26,7 @@ def get_error(dat):
 		if E_dim and E_mon and E_disp and E_sapt:
 #			dE = dat.Hartree*(E_dim-E_monA-E_monB)+E_disp
 			dE = dat.Hartree*(E_dim-2*E_mon) + E_disp
-			er = ((E_sapt-dE)/(E_sapt))**2
+			er = (E_sapt-dE)**2
 			w('All energies in kcal/mol')
 			w('E_dim='+str(E_dim))
 #			w('E_monA='+str(E_monA))

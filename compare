@@ -54,6 +54,7 @@ data.meta['system'].add('BLIND_monomer')
 data.meta['system']-={'extra'}
 for s in data.meta['dimer']:
 	data.meta['system'].add(s)	
+	data.split('xyz','xyz',s,'BLIND_monA'+s[11:16],'BLIND_monB'+s[11:16])
 data.convert('xyz', 'gaussian')
 data.convert('gaussian', 'disp_dimer', key='dimer')
 data.get('energy', 'disp', key='dimer')
@@ -63,42 +64,20 @@ os.system('echo $(date) > output')
 f.w('--------------------------------------------')
 os.system('echo "iteration error mu kappa a_1 a_2 a_3 a_4 caa_1 caa_2 zeta_hf cab_1 cab_2" > szw_output')
 
-# Main loop called by praxis with input parameters to be optimized
-def loop(param, dummy):
 
-	print('grepkey')
-	print(param)
 
-	cutoff = 0.02
-	global data
-	global samples
+paramx=[param[0],1.0,param[1],0.0,0.0,0.0,1.0,param[2],param[3],param[4],param[5]]
+paramcp= [1.0,param[6],param[7],0.0,0.0,param[8]]
+paramcap=[1.0,param[9],param[10],0.0,0.0]
 
-	paramx=[param[0],1.0,param[1],0.0,0.0,0.0,1.0,param[2],param[3],param[4],param[5]]
-	paramcp= [1.0,param[6],param[7],0.0,0.0,param[8]]
-	paramcap=[1.0,param[9],param[10],0.0,0.0]
+f.save_array(paramx, 'data/gaussian/ParamM05X.dat')
+f.save_array(paramcp, 'data/gaussian/ParamM05CP.dat')
+f.save_array(paramcap, 'data/gaussian/ParamM05CAP.dat')
 
-	f.save_array(paramx, 'data/gaussian/ParamM05X.dat')
-	f.save_array(paramcp, 'data/gaussian/ParamM05CP.dat')
-	f.save_array(paramcap, 'data/gaussian/ParamM05CAP.dat')
 
-	pickle.dump(data, open('.save/data', 'wb'))
-	
-	data.wait('BLIND')
-	data.run('gaussian')
-	data.wait('BLIND')
-	data.get('energy', 'gaussian')
-	data.iteration += 1
-	error = sqrt(f.get_error(data)/samples)
-	# Sigmoid of mu
-	f.print_param(param, error, data.iteration)	
-	# Szalewicz's file format
-	outstr=str(data.iteration)+' '+str(error)+' 0.00118328602'+' 5.33671865512')
-	for i in range(len(param)):
-		outstr += ' '+str(param[i])
-	os.system("echo '"+outstr+"' >> szw_output")
-	if data.iteration > maxiter:
-		sys.exit()	
-	return error 
+data.wait('BLIND')
+data.run('BLIND')
+data.wait('BLIND')
 
-output=praxis(tolerance, max_step, len(param), 0, param, loop)
+pickle.dump(data, open('.save/data', 'wb'))
 
